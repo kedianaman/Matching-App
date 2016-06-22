@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED8BA3CE1D19906000773D69 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
 		EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C711D0E6489008CE0BB /* AppDelegate.swift */; };
-		EDB46C741D0E6489008CE0BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C731D0E6489008CE0BB /* ViewController.swift */; };
 		EDB46C771D0E6489008CE0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C751D0E6489008CE0BB /* Main.storyboard */; };
 		EDB46C791D0E6489008CE0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C781D0E6489008CE0BB /* Assets.xcassets */; };
 		EDB46C7C1D0E6489008CE0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C7A1D0E6489008CE0BB /* LaunchScreen.storyboard */; };
 		EDB46C871D0E6489008CE0BB /* Matching_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C861D0E6489008CE0BB /* Matching_AppTests.swift */; };
 		EDB46C921D0E6489008CE0BB /* Matching_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C911D0E6489008CE0BB /* Matching_AppUITests.swift */; };
+		EDB46CA01D0E665B008CE0BB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
+		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
+		EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDB46C6E1D0E6489008CE0BB /* Matching App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matching App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB46C711D0E6489008CE0BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDB46C731D0E6489008CE0BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDB46C761D0E6489008CE0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDB46C781D0E6489008CE0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB46C7B1D0E6489008CE0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		EDB46C8D1D0E6489008CE0BB /* Matching AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matching AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB46C911D0E6489008CE0BB /* Matching_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matching_AppUITests.swift; sourceTree = "<group>"; };
 		EDB46C931D0E6489008CE0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB46C9F1D0E665B008CE0BB /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		EDB46C701D0E6489008CE0BB /* Matching App */ = {
 			isa = PBXGroup;
 			children = (
-				EDB46C711D0E6489008CE0BB /* AppDelegate.swift */,
-				EDB46C731D0E6489008CE0BB /* ViewController.swift */,
+				EDB46C9F1D0E665B008CE0BB /* Collection.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
+				ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */,
+				EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */,
+				EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */,
 				EDB46C781D0E6489008CE0BB /* Assets.xcassets */,
 				EDB46C7A1D0E6489008CE0BB /* LaunchScreen.storyboard */,
 				EDB46C7D1D0E6489008CE0BB /* Info.plist */,
+				EDB46C711D0E6489008CE0BB /* AppDelegate.swift */,
 			);
 			path = "Matching App";
 			sourceTree = "<group>";
@@ -193,13 +202,19 @@
 				TargetAttributes = {
 					EDB46C6D1D0E6489008CE0BB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = T252EPP745;
+						DevelopmentTeamName = "Naman Kedia (Personal Team)";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					EDB46C811D0E6489008CE0BB = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = EDB46C6D1D0E6489008CE0BB;
 					};
 					EDB46C8C1D0E6489008CE0BB = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = EDB46C6D1D0E6489008CE0BB;
 					};
 				};
@@ -256,7 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB46C741D0E6489008CE0BB /* ViewController.swift in Sources */,
+				ED8BA3CE1D19906000773D69 /* TextCollectionViewCell.swift in Sources */,
+				EDB46CA01D0E665B008CE0BB /* Collection.swift in Sources */,
+				EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */,
+				EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,10 +419,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Matching App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -412,10 +434,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Matching App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -427,6 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matching App.app/Matching App";
 			};
 			name = Debug;
@@ -439,6 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matching App.app/Matching App";
 			};
 			name = Release;
@@ -450,6 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Matching App";
 			};
 			name = Debug;
@@ -461,6 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Matching App";
 			};
 			name = Release;
@@ -484,6 +514,7 @@
 				EDB46C981D0E6489008CE0BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB46C991D0E6489008CE0BB /* Build configuration list for PBXNativeTarget "Matching AppTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +523,7 @@
 				EDB46C9B1D0E6489008CE0BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDB46C9C1D0E6489008CE0BB /* Build configuration list for PBXNativeTarget "Matching AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +532,7 @@
 				EDB46C9E1D0E6489008CE0BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
