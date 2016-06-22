@@ -54,7 +54,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="0CI-BN-ECW" customClass="ImageCollectionViewCell" customModule="Matching_App" customModuleProvider="target">
-                                        <frame key="frameInset" minX="15" minY="10" width="140" height="140"/>
+                                        <frame key="frameInset" minX="14.5" minY="10" width="140" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
@@ -90,7 +90,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TextCell" id="WkQ-92-LWE" customClass="TextCollectionViewCell" customModule="Matching_App" customModuleProvider="target">
-                                        <frame key="frameInset" minX="15" minY="10" width="140" height="140"/>
+                                        <frame key="frameInset" minX="14.5" minY="10" width="140" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
@@ -157,15 +157,16 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ujc-G5-hJt"/>
                                 <exclude reference="CMD-SH-Kor"/>
                                 <exclude reference="naU-Kw-9Uw"/>
-                                <exclude reference="ujc-G5-hJt"/>
                                 <exclude reference="jdw-Yl-4mc"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="imageCollectionView" destination="zjx-w1-hgs" id="2Ep-mK-YqO"/>
+                        <outlet property="scoreLabel" destination="bTW-De-trz" id="y27-YG-CCz"/>
                         <outlet property="textCollectionView" destination="nhb-XE-dS1" id="tdc-3g-5Kd"/>
                     </connections>
                 </viewController>

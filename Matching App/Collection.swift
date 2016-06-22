@@ -9,39 +9,70 @@
 import Foundation
 import UIKit
 
-class Collection {
+
+
+class SectionData {
+    private var texts = [String]()
+    private var images = [UIImage]()
     
+    private var imagesWithText = [UIImage: String]()
     
-    var animals = ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]
-    
-    var imagesWithLabel = [UIImage: String]()
-    
-    init() {
-        for i in 1...12 {
-            let image = UIImage(named: "animal image - \(i)")
-            imagesWithLabel[image!] = animals[i-1]
+    init(imagesWithText: [UIImage:String]) {
+        self.imagesWithText = imagesWithText
+        for key in imagesWithText.keys {
+            images.append(key)
+        }
+        for value in imagesWithText.values {
+            texts.append(value)
         }
     }
     
-    func match(_ image: UIImage, name: String) -> Bool {
-        if imagesWithLabel[image] == name {
+    func match(image: UIImage, text: String) -> Bool {
+        if imagesWithText[image] == text {
             return true
         } else {
             return false
         }
     }
     
-    func getImages() -> [UIImage] {
-        var images = [UIImage]()
-        for key in imagesWithLabel.keys {
-            images.append(key)
-        }
-        return images
+    func numberOfAssets() -> Int {
+        return texts.count
     }
     
-    func getNames() -> [String] {
-        return animals
+    func imageAtIndex(index: Int) -> UIImage {
+        return images[index]
     }
+    
+    func textAtIndex(index: Int) -> String {
+        return texts[index]
+    }
+}
+
+class Collection {
+    
+    
+    private var animals = ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]
+    
+    private var animalImagesWithLabel = [UIImage: String]()
+    private var sectionDatas = [String: SectionData]()
+
+    
+    init() {
+        for i in 1...12 {
+            let image = UIImage(named: "animal image - \(i)")
+            animalImagesWithLabel[image!] = animals[i-1]
+        }
+        sectionDatas["Animals"] = SectionData(imagesWithText: animalImagesWithLabel)
+    }
+    
+    func getSectionDataWithKey(key: String) -> SectionData? {
+        if let sectionData = sectionDatas[key] {
+            return sectionData
+        } else {
+            return nil
+        }
+    }
+    
     
     
 }
