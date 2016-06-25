@@ -14,10 +14,11 @@ import UIKit
 class SectionData {
     private var texts = [String]()
     private var images = [UIImage]()
+    var title: String?
     
     private var imagesWithText = [UIImage: String]()
     
-    init(imagesWithText: [UIImage:String]) {
+    init(imagesWithText: [UIImage:String], key: String) {
         self.imagesWithText = imagesWithText
         for key in imagesWithText.keys {
             images.append(key)
@@ -25,6 +26,9 @@ class SectionData {
         for value in imagesWithText.values {
             texts.append(value)
         }
+        title = key
+        backgroundImage = UIImage(named: "\(key) - bg")
+        
     }
     
     func match(image: UIImage, text: String) -> Bool {
@@ -46,33 +50,51 @@ class SectionData {
     func textAtIndex(index: Int) -> String {
         return texts[index]
     }
+    
+    var backgroundImage: UIImage?
 }
 
 class Collection {
     
-    
-    private var animals = ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]
+    var keys = ["Animals"]
     
     private var animalImagesWithLabel = [UIImage: String]()
-    private var sectionDatas = [String: SectionData]()
+    private var wordsForKeys = ["Animals": ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]]
+    private var sectionDatas = [SectionData]()
 
     
+    
     init() {
-        for i in 1...12 {
-            let image = UIImage(named: "animal image - \(i)")
-            animalImagesWithLabel[image!] = animals[i-1]
-        }
-        sectionDatas["Animals"] = SectionData(imagesWithText: animalImagesWithLabel)
-    }
-    
-    func getSectionDataWithKey(key: String) -> SectionData? {
-        if let sectionData = sectionDatas[key] {
-            return sectionData
-        } else {
-            return nil
+        
+        for key in keys {
+            var imagesWithLabel = [UIImage: String]()
+            for i in 1...12 {
+                let image = UIImage(named: "\(key) image - \(i)")
+                imagesWithLabel[image!] = wordsForKeys[key]![i-1]
+            }
+            sectionDatas.append(SectionData(imagesWithText: imagesWithLabel, key: key))
+
+            
         }
     }
     
+//    func getSectionDataWithKey(key: String) -> SectionData? {
+//        if let sectionData = sectionDatas[key] {
+//            return sectionData
+//        } else {
+//            return nil
+//        }
+//    }
+//    
+    func numberOfSectionDatas() -> Int {
+        return sectionDatas.count
+    }
+    
+    func sectionDataAtIndex(index: Int) -> SectionData {
+        return sectionDatas[index]
+    }
     
     
 }
+
+

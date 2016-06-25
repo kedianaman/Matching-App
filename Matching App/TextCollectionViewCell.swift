@@ -11,6 +11,7 @@ import UIKit
 class TextCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     func setHighlighted(selected: Bool) {
         if selected == true {
@@ -21,8 +22,9 @@ class TextCollectionViewCell: UICollectionViewCell {
     }
     
     func setMatched() {
+        self.nameLabel.alpha = 0.0
         UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
-            self.nameLabel.removeFromSuperview()
+            
             }, completion: nil)
         self.alpha = 1.0
         self.isUserInteractionEnabled = false
@@ -32,7 +34,16 @@ class TextCollectionViewCell: UICollectionViewCell {
         self.shake()
         
     }
+    
+    func reset() {
+        self.nameLabel.alpha = 1.0
+        self.isUserInteractionEnabled = true
+    }
+    
+    
 }
+
+
 
 extension UIView {
     func shake() {
@@ -42,6 +53,4 @@ extension UIView {
         animation.values = [-10.0, 10.0, -10.0, 10.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
         layer.add(animation, forKey: "shake")
     }
-    
-    
 }

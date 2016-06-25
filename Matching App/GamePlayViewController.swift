@@ -19,6 +19,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     var matched = 0
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var textCollectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -28,13 +30,18 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionData = collection.getSectionDataWithKey(key: "Animals")
+//        sectionData = collection.sectionDataAtIndex(index: 0)
+        backgroundImageView.image = sectionData.backgroundImage
+        titleLabel.text = sectionData.title
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
+ 
     }
+    
     
     //MARK: Helper Methods 
     
@@ -46,8 +53,11 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func endGame() {
         timer.invalidate()
+        performSegue(withIdentifier: "EndGameIdentifier", sender: self)
         
     }
+    
+
     
     //MARK: Collection View Delegate Methopds
 
@@ -61,21 +71,24 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == imageCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
-            cell.contentImageView.image = sectionData.imageAtIndex(index: indexPath.row)
-            cell.layer.cornerRadius = 20
-            return cell
+            let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
+            imageCell.contentImageView.image = sectionData.imageAtIndex(index: indexPath.row)
+            imageCell.layer.cornerRadius = 20
+            return imageCell
         } else if collectionView == textCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
-            cell.nameLabel.text = sectionData.textAtIndex(index: indexPath.row)
-            cell.layer.cornerRadius = 20
-            return cell
+            let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
+            textCell.nameLabel.text = sectionData.textAtIndex(index: indexPath.row)
+            textCell.backgroundImage.image = sectionData.backgroundImage
+            textCell.layer.cornerRadius = 20
+            return textCell
         }
         return UICollectionViewCell()
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("Selected")
         if collectionView == imageCollectionView {
             if let oldselectedImageCell = selectedImageCell {
                 oldselectedImageCell.setHighlighted(selected: false)
@@ -100,6 +113,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 selectedTextCell?.setMatched()
                 selectedTextCell = nil
                 selectedImageCell?.setMatched()
+                selectedImageCell?.contentImageView.image = sectionData.backgroundImage
                 selectedImageCell = nil
                 matched = matched + 1
                 if matched == sectionData.numberOfAssets() {
@@ -122,6 +136,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         
+    }
+    
+    @IBAction func resetGame(segue:UIStoryboardSegue) {
+        print("Unwinded")
+        score = 0
+        matched = 0
+        imageCollectionView.reloadData()
+        textCollectionView.reloadData()
     }
     
  
