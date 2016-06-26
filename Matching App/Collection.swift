@@ -12,10 +12,25 @@ import UIKit
 
 
 class SectionData {
+    
     private var texts = [String]()
     private var images = [UIImage]()
     var title: String?
+    var backgroundImage: UIImage?
     
+    var topScore: Int? {
+        set {
+            UserDefaults.standard().set(topScore, forKey: title!)
+        }
+        get {
+            if let value = UserDefaults.value(forKey: title!) as? Int {
+                return value
+            } else {
+                return nil
+            }
+        }
+    }
+
     private var imagesWithText = [UIImage: String]()
     
     init(imagesWithText: [UIImage:String], key: String) {
@@ -28,7 +43,6 @@ class SectionData {
         }
         title = key
         backgroundImage = UIImage(named: "\(key) - bg")
-        
     }
     
     func match(image: UIImage, text: String) -> Bool {
@@ -50,19 +64,18 @@ class SectionData {
     func textAtIndex(index: Int) -> String {
         return texts[index]
     }
-    
-    var backgroundImage: UIImage?
 }
 
 class Collection {
     
-    var keys = ["Animals"]
+    var keys = ["Animals", "Vegetables", "Fruits", "Solar System"]
+    
     
     private var animalImagesWithLabel = [UIImage: String]()
-    private var wordsForKeys = ["Animals": ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]]
-    private var sectionDatas = [SectionData]()
-
     
+    private var wordsForKeys = ["Animals": ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"], "Vegetables" :["cabbage","potato", "cauliflower", "carrot", "onions", "tomato", "chilli", "okra", "corn", "eggplant", "cucumber", "brocolli"], "Fruits":["apple", "banana", "orange", "grape", "strawberry", "watermelon", "pineapple", "cherry", "pomogrenate", "pear", "lychee", "mango"], "Solar System": ["Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Moon", "Milky Way"]]
+    
+    private var sectionDatas = [SectionData]()
     
     init() {
         
@@ -73,28 +86,18 @@ class Collection {
                 imagesWithLabel[image!] = wordsForKeys[key]![i-1]
             }
             sectionDatas.append(SectionData(imagesWithText: imagesWithLabel, key: key))
-
-            
         }
     }
     
-//    func getSectionDataWithKey(key: String) -> SectionData? {
-//        if let sectionData = sectionDatas[key] {
-//            return sectionData
-//        } else {
-//            return nil
-//        }
-//    }
-//    
-    func numberOfSectionDatas() -> Int {
+        func numberOfSectionDatas() -> Int {
         return sectionDatas.count
     }
     
     func sectionDataAtIndex(index: Int) -> SectionData {
         return sectionDatas[index]
     }
-    
-    
 }
+
+
 
 

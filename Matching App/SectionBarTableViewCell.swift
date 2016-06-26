@@ -12,5 +12,6 @@ class SectionBarTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var scoreLabel: UILabel!
    
 }

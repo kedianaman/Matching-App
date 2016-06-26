@@ -12,13 +12,19 @@ class EndGameViewController: UIViewController {
     
     
     var score: Int?
+    var sectionData: SectionData?
     
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundImage.image = sectionData?.backgroundImage
+        scoreLabel.text = "\(score!) s."
 
-        // Do any additional setup after loading the view.
+        
+
     }
     @IBAction func playAgain(_ sender: AnyObject) {
 //        dismiss(animated: true, completion: nil)
@@ -26,6 +32,7 @@ class EndGameViewController: UIViewController {
     
     
     @IBAction func playAnother(_ sender: AnyObject) {
+    self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
   }

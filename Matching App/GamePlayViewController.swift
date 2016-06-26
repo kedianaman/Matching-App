@@ -19,6 +19,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     var matched = 0
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
@@ -30,10 +31,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        sectionData = collection.sectionDataAtIndex(index: 0)
         backgroundImageView.image = sectionData.backgroundImage
         titleLabel.text = sectionData.title
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,9 +45,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     //MARK: Helper Methods 
     
     func updateCounter() {
-        if score >= 1 {
-            score = score - 1
-        }
+        score = score + 1
     }
     
     func endGame() {
@@ -103,13 +100,12 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             selectedTextCell?.setHighlighted(selected: true)
         }
         
-        // check to see if they match if both are non-nil 
+        // check to see if they match only if both are non-nil
         if selectedTextCell != nil && selectedImageCell != nil {
             let image = selectedImageCell?.contentImageView.image
             let text = selectedTextCell?.nameLabel.text
             let match = sectionData.match(image: image!, text: text!)
             if match == true {
-                score = score + 20
                 selectedTextCell?.setMatched()
                 selectedTextCell = nil
                 selectedImageCell?.setMatched()
@@ -121,11 +117,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
                 
             } else {
-                if score >= 10 {
-                    score = score - 10
-                } else {
-                    score = 0
-                }
                 selectedImageCell?.setHighlighted(selected: false)
                 selectedImageCell?.shake()
                 selectedImageCell = nil
@@ -146,7 +137,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         textCollectionView.reloadData()
     }
     
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EndGameIdentifier" {
+            if let endGameViewConroller = segue.destinationViewController as? EndGameViewController {
+                endGameViewConroller.sectionData = sectionData
+                endGameViewConroller.score = score
+            }
+        }
+    }
     
 
 
