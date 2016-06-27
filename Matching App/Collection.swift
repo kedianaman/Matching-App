@@ -1,4 +1,4 @@
-//
+    //
 //  Collection.swift
 //  Matching App
 //
@@ -82,7 +82,8 @@ class Collection {
     
     private var animalImagesWithLabel = [UIImage: String]()
     
-    private var wordsForKeys = ["Animals": ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"], "Vegetables" :["cabbage","potato", "cauliflower", "carrot", "onions", "tomato", "chilli", "okra", "corn", "eggplant", "cucumber", "brocolli"], "Fruits":["apple", "banana", "orange", "grape", "strawberry", "watermelon", "pineapple", "cherry", "pomogrenate", "pear", "lychee", "mango"], "Solar System": ["Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Moon", "Milky Way"]]
+    
+    private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem]
     
     private var sectionDatas = [SectionData]()
     
@@ -106,6 +107,15 @@ class Collection {
         return sectionDatas[index]
     }
 }
+
+    struct texts {
+        var animals = ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]
+        var vegetables = ["cabbage","potato", "cauliflower", "carrot", "onions", "tomato", "chilli", "okra", "corn", "eggplant", "cucumber", "brocolli"]
+        var fruits = ["apple", "banana", "orange", "grape", "strawberry", "watermelon", "pineapple", "cherry", "pomogrenate", "pear", "lychee", "mango"]
+        var solarSystem = ["Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Moon", "Milky Way"]
+    }
+    
+    
 
 extension Array {
     /// Shuffle the elements of `self` in-place.

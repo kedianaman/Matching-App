@@ -9,7 +9,14 @@
 /* Begin PBXBuildFile section */
 		ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */; };
 		ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
+		ED4FB5131D210E1700E700A4 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
+		ED4FB5171D2112FB00E700A4 /* ImageTVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */; };
+		ED4FB5191D21136A00E700A4 /* TextTVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */; };
 		ED8BA3CE1D19906000773D69 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
+		EDA2873A1D2103130049F03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C781D0E6489008CE0BB /* Assets.xcassets */; };
+		EDA2873B1D2106D10049F03D /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
+		EDA2873D1D210A530049F03D /* GamePlayTVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2873C1D210A530049F03D /* GamePlayTVViewController.swift */; };
+		EDA2873E1D210B390049F03D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
 		EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C711D0E6489008CE0BB /* AppDelegate.swift */; };
 		EDB46C771D0E6489008CE0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C751D0E6489008CE0BB /* Main.storyboard */; };
 		EDB46C791D0E6489008CE0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C781D0E6489008CE0BB /* Assets.xcassets */; };
@@ -17,6 +24,15 @@
 		EDB46C871D0E6489008CE0BB /* Matching_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C861D0E6489008CE0BB /* Matching_AppTests.swift */; };
 		EDB46C921D0E6489008CE0BB /* Matching_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C911D0E6489008CE0BB /* Matching_AppUITests.swift */; };
 		EDB46CA01D0E665B008CE0BB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
+		EDC0503F1D20FDE100B9FD96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0503E1D20FDE100B9FD96 /* AppDelegate.swift */; };
+		EDC050411D20FDE100B9FD96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC050401D20FDE100B9FD96 /* ViewController.swift */; };
+		EDC050441D20FDE100B9FD96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC050421D20FDE100B9FD96 /* Main.storyboard */; };
+		EDC050461D20FDE100B9FD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC050451D20FDE100B9FD96 /* Assets.xcassets */; };
+		EDC050511D20FDE200B9FD96 /* Matching_App_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC050501D20FDE200B9FD96 /* Matching_App_TVTests.swift */; };
+		EDC0505C1D20FDE200B9FD96 /* Matching_App_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0505B1D20FDE200B9FD96 /* Matching_App_TVUITests.swift */; };
+		EDC050681D21005200B9FD96 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC050671D21005200B9FD96 /* HomeScreenViewController.swift */; };
+		EDC0506A1D2100C600B9FD96 /* SectionDataTVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC050691D2100C600B9FD96 /* SectionDataTVTableViewCell.swift */; };
+		EDC0506B1D2101AA00B9FD96 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
 		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
 		EDEE99FB1D1FDCF200FFF65A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */; };
@@ -39,12 +55,29 @@
 			remoteGlobalIDString = EDB46C6D1D0E6489008CE0BB;
 			remoteInfo = "Matching App";
 		};
+		EDC0504D1D20FDE200B9FD96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB46C661D0E6489008CE0BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDC0503B1D20FDE100B9FD96;
+			remoteInfo = "Matching App TV";
+		};
+		EDC050581D20FDE200B9FD96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB46C661D0E6489008CE0BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDC0503B1D20FDE100B9FD96;
+			remoteInfo = "Matching App TV";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBarTableViewCell.swift; sourceTree = "<group>"; };
+		ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTVCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTVCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDA2873C1D210A530049F03D /* GamePlayTVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayTVViewController.swift; sourceTree = "<group>"; };
 		EDB46C6E1D0E6489008CE0BB /* Matching App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matching App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB46C711D0E6489008CE0BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB46C761D0E6489008CE0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +91,20 @@
 		EDB46C911D0E6489008CE0BB /* Matching_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matching_AppUITests.swift; sourceTree = "<group>"; };
 		EDB46C931D0E6489008CE0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB46C9F1D0E665B008CE0BB /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		EDC0503C1D20FDE100B9FD96 /* Matching App TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matching App TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC0503E1D20FDE100B9FD96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDC050401D20FDE100B9FD96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDC050431D20FDE100B9FD96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDC050451D20FDE100B9FD96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDC050471D20FDE100B9FD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC0504C1D20FDE200B9FD96 /* Matching App TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matching App TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC050501D20FDE200B9FD96 /* Matching_App_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matching_App_TVTests.swift; sourceTree = "<group>"; };
+		EDC050521D20FDE200B9FD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC050571D20FDE200B9FD96 /* Matching App TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matching App TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC0505B1D20FDE200B9FD96 /* Matching_App_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matching_App_TVUITests.swift; sourceTree = "<group>"; };
+		EDC0505D1D20FDE200B9FD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC050671D21005200B9FD96 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		EDC050691D2100C600B9FD96 /* SectionDataTVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDataTVTableViewCell.swift; sourceTree = "<group>"; };
 		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +134,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDC050391D20FDE100B9FD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC050491D20FDE200B9FD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC050541D20FDE200B9FD96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +164,9 @@
 				EDB46C701D0E6489008CE0BB /* Matching App */,
 				EDB46C851D0E6489008CE0BB /* Matching AppTests */,
 				EDB46C901D0E6489008CE0BB /* Matching AppUITests */,
+				EDC0503D1D20FDE100B9FD96 /* Matching App TV */,
+				EDC0504F1D20FDE200B9FD96 /* Matching App TVTests */,
+				EDC0505A1D20FDE200B9FD96 /* Matching App TVUITests */,
 				EDB46C6F1D0E6489008CE0BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +177,9 @@
 				EDB46C6E1D0E6489008CE0BB /* Matching App.app */,
 				EDB46C821D0E6489008CE0BB /* Matching AppTests.xctest */,
 				EDB46C8D1D0E6489008CE0BB /* Matching AppUITests.xctest */,
+				EDC0503C1D20FDE100B9FD96 /* Matching App TV.app */,
+				EDC0504C1D20FDE200B9FD96 /* Matching App TVTests.xctest */,
+				EDC050571D20FDE200B9FD96 /* Matching App TVUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +221,41 @@
 				EDB46C931D0E6489008CE0BB /* Info.plist */,
 			);
 			path = "Matching AppUITests";
+			sourceTree = "<group>";
+		};
+		EDC0503D1D20FDE100B9FD96 /* Matching App TV */ = {
+			isa = PBXGroup;
+			children = (
+				EDC0503E1D20FDE100B9FD96 /* AppDelegate.swift */,
+				EDC050401D20FDE100B9FD96 /* ViewController.swift */,
+				EDC050671D21005200B9FD96 /* HomeScreenViewController.swift */,
+				EDC050421D20FDE100B9FD96 /* Main.storyboard */,
+				EDA2873C1D210A530049F03D /* GamePlayTVViewController.swift */,
+				ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */,
+				ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */,
+				EDC050691D2100C600B9FD96 /* SectionDataTVTableViewCell.swift */,
+				EDC050451D20FDE100B9FD96 /* Assets.xcassets */,
+				EDC050471D20FDE100B9FD96 /* Info.plist */,
+			);
+			path = "Matching App TV";
+			sourceTree = "<group>";
+		};
+		EDC0504F1D20FDE200B9FD96 /* Matching App TVTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDC050501D20FDE200B9FD96 /* Matching_App_TVTests.swift */,
+				EDC050521D20FDE200B9FD96 /* Info.plist */,
+			);
+			path = "Matching App TVTests";
+			sourceTree = "<group>";
+		};
+		EDC0505A1D20FDE200B9FD96 /* Matching App TVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDC0505B1D20FDE200B9FD96 /* Matching_App_TVUITests.swift */,
+				EDC0505D1D20FDE200B9FD96 /* Info.plist */,
+			);
+			path = "Matching App TVUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,13 +314,66 @@
 			productReference = EDB46C8D1D0E6489008CE0BB /* Matching AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EDC0503B1D20FDE100B9FD96 /* Matching App TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDC050641D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TV" */;
+			buildPhases = (
+				EDC050381D20FDE100B9FD96 /* Sources */,
+				EDC050391D20FDE100B9FD96 /* Frameworks */,
+				EDC0503A1D20FDE100B9FD96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Matching App TV";
+			productName = "Matching App TV";
+			productReference = EDC0503C1D20FDE100B9FD96 /* Matching App TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDC0504B1D20FDE200B9FD96 /* Matching App TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDC050651D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVTests" */;
+			buildPhases = (
+				EDC050481D20FDE200B9FD96 /* Sources */,
+				EDC050491D20FDE200B9FD96 /* Frameworks */,
+				EDC0504A1D20FDE200B9FD96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDC0504E1D20FDE200B9FD96 /* PBXTargetDependency */,
+			);
+			name = "Matching App TVTests";
+			productName = "Matching App TVTests";
+			productReference = EDC0504C1D20FDE200B9FD96 /* Matching App TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EDC050561D20FDE200B9FD96 /* Matching App TVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDC050661D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVUITests" */;
+			buildPhases = (
+				EDC050531D20FDE200B9FD96 /* Sources */,
+				EDC050541D20FDE200B9FD96 /* Frameworks */,
+				EDC050551D20FDE200B9FD96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDC050591D20FDE200B9FD96 /* PBXTargetDependency */,
+			);
+			name = "Matching App TVUITests";
+			productName = "Matching App TVUITests";
+			productReference = EDC050571D20FDE200B9FD96 /* Matching App TVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EDB46C661D0E6489008CE0BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Naman Kedia";
 				TargetAttributes = {
@@ -232,6 +394,26 @@
 						LastSwiftMigration = 0800;
 						TestTargetID = EDB46C6D1D0E6489008CE0BB;
 					};
+					EDC0503B1D20FDE100B9FD96 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T252EPP745;
+						DevelopmentTeamName = "Naman Kedia (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
+					EDC0504B1D20FDE200B9FD96 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T252EPP745;
+						DevelopmentTeamName = "Naman Kedia (Personal Team)";
+						ProvisioningStyle = Automatic;
+						TestTargetID = EDC0503B1D20FDE100B9FD96;
+					};
+					EDC050561D20FDE200B9FD96 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T252EPP745;
+						DevelopmentTeamName = "Naman Kedia (Personal Team)";
+						ProvisioningStyle = Automatic;
+						TestTargetID = EDC0503B1D20FDE100B9FD96;
+					};
 				};
 			};
 			buildConfigurationList = EDB46C691D0E6489008CE0BB /* Build configuration list for PBXProject "Matching App" */;
@@ -250,6 +432,9 @@
 				EDB46C6D1D0E6489008CE0BB /* Matching App */,
 				EDB46C811D0E6489008CE0BB /* Matching AppTests */,
 				EDB46C8C1D0E6489008CE0BB /* Matching AppUITests */,
+				EDC0503B1D20FDE100B9FD96 /* Matching App TV */,
+				EDC0504B1D20FDE200B9FD96 /* Matching App TVTests */,
+				EDC050561D20FDE200B9FD96 /* Matching App TVUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,6 +458,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EDB46C8B1D0E6489008CE0BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC0503A1D20FDE100B9FD96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC050461D20FDE100B9FD96 /* Assets.xcassets in Resources */,
+				EDA2873A1D2103130049F03D /* Assets.xcassets in Resources */,
+				EDC050441D20FDE100B9FD96 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC0504A1D20FDE200B9FD96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC050551D20FDE200B9FD96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -315,6 +524,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDC050381D20FDE100B9FD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED4FB5171D2112FB00E700A4 /* ImageTVCollectionViewCell.swift in Sources */,
+				EDA2873D1D210A530049F03D /* GamePlayTVViewController.swift in Sources */,
+				EDC050411D20FDE100B9FD96 /* ViewController.swift in Sources */,
+				EDA2873E1D210B390049F03D /* ImageCollectionViewCell.swift in Sources */,
+				EDC0506B1D2101AA00B9FD96 /* Collection.swift in Sources */,
+				EDC0503F1D20FDE100B9FD96 /* AppDelegate.swift in Sources */,
+				EDC0506A1D2100C600B9FD96 /* SectionDataTVTableViewCell.swift in Sources */,
+				EDC050681D21005200B9FD96 /* HomeScreenViewController.swift in Sources */,
+				ED4FB5131D210E1700E700A4 /* TextCollectionViewCell.swift in Sources */,
+				EDA2873B1D2106D10049F03D /* SectionBarTableViewCell.swift in Sources */,
+				ED4FB5191D21136A00E700A4 /* TextTVCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC050481D20FDE200B9FD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC050511D20FDE200B9FD96 /* Matching_App_TVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC050531D20FDE200B9FD96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC0505C1D20FDE200B9FD96 /* Matching_App_TVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -327,6 +570,16 @@
 			isa = PBXTargetDependency;
 			target = EDB46C6D1D0E6489008CE0BB /* Matching App */;
 			targetProxy = EDB46C8E1D0E6489008CE0BB /* PBXContainerItemProxy */;
+		};
+		EDC0504E1D20FDE200B9FD96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDC0503B1D20FDE100B9FD96 /* Matching App TV */;
+			targetProxy = EDC0504D1D20FDE200B9FD96 /* PBXContainerItemProxy */;
+		};
+		EDC050591D20FDE200B9FD96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDC0503B1D20FDE100B9FD96 /* Matching App TV */;
+			targetProxy = EDC050581D20FDE200B9FD96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -345,6 +598,14 @@
 				EDB46C7B1D0E6489008CE0BB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EDC050421D20FDE100B9FD96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDC050431D20FDE100B9FD96 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -515,6 +776,108 @@
 			};
 			name = Release;
 		};
+		EDC0505E1D20FDE200B9FD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "Matching App TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		EDC0505F1D20FDE200B9FD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "Matching App TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		EDC050601D20FDE200B9FD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "Matching App TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matching App TV.app/Matching App TV";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		EDC050611D20FDE200B9FD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "Matching App TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matching App TV.app/Matching App TV";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		EDC050621D20FDE200B9FD96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "Matching App TVUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Matching App TV";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		EDC050631D20FDE200B9FD96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = "Matching App TVUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Matching App TV";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -550,6 +913,33 @@
 			buildConfigurations = (
 				EDB46C9D1D0E6489008CE0BB /* Debug */,
 				EDB46C9E1D0E6489008CE0BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDC050641D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDC0505E1D20FDE200B9FD96 /* Debug */,
+				EDC0505F1D20FDE200B9FD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDC050651D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDC050601D20FDE200B9FD96 /* Debug */,
+				EDC050611D20FDE200B9FD96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDC050661D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDC050621D20FDE200B9FD96 /* Debug */,
+				EDC050631D20FDE200B9FD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

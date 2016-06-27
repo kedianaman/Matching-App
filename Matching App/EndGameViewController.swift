@@ -23,7 +23,7 @@ class EndGameViewController: UIViewController {
         super.viewDidLoad()
         backgroundImage.image = sectionData?.backgroundImage
         feedbackLabel.text = "Congratulations! You've finished set \((sectionData?.title)!)."
-        scoreLabel.text = "\(score!) sec."
+        scoreLabel.text = "\(score!)"
         if sectionData?.topScore != nil {
             if sectionData?.topScore < score {
                 sectionData?.topScore = score

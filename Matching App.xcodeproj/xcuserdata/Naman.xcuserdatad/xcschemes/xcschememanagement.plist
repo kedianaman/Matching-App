@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Matching App TV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Matching App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>EDB46C8C1D0E6489008CE0BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDC0503B1D20FDE100B9FD96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDC0504B1D20FDE200B9FD96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDC050561D20FDE200B9FD96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
