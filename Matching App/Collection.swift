@@ -14,7 +14,9 @@ import UIKit
 class SectionData {
     
     private var texts = [String]()
+    private var randomizedTexts = [String]()
     private var images = [UIImage]()
+    private var randomizedImages = [UIImage]()
     var title: String?
     var backgroundImage: UIImage?
     
@@ -35,9 +37,11 @@ class SectionData {
         for key in imagesWithText.keys {
             images.append(key)
         }
+        randomizedImages = images.shuffled()
         for value in imagesWithText.values {
             texts.append(value)
         }
+        randomizedTexts = texts.shuffled()
         title = key
         backgroundImage = UIImage(named: "\(key) - bg")
     }
@@ -60,6 +64,14 @@ class SectionData {
     
     func textAtIndex(index: Int) -> String {
         return texts[index]
+    }
+    
+    func randomImageAtIndex(index: Int) -> UIImage {
+        return randomizedImages[index]
+    }
+    
+    func randomTextAtIndex(index: Int) -> String {
+        return randomizedTexts[index]
     }
 }
 
@@ -92,6 +104,25 @@ class Collection {
     
     func sectionDataAtIndex(index: Int) -> SectionData {
         return sectionDatas[index]
+    }
+}
+
+extension Array {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffle() {
+        for i in 0..<(count - 1) {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            if i != j {
+                swap(&self[i], &self[j])
+            }
+        }
+    }
+    
+    /// Return a copy of `self` with its elements shuffled
+    func shuffled() -> [Element] {
+        var list = self
+        list.shuffle()
+        return list
     }
 }
 
