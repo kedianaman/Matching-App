@@ -14,6 +14,7 @@ class EndGameViewController: UIViewController {
     var score: Int?
     var sectionData: SectionData?
     
+    @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
 
@@ -21,10 +22,15 @@ class EndGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImage.image = sectionData?.backgroundImage
-        scoreLabel.text = "\(score!) s."
-
-        
-
+        feedbackLabel.text = "Congratulations! You've finished set \((sectionData?.title)!)."
+        scoreLabel.text = "\(score!) sec."
+        if sectionData?.topScore != nil {
+            if sectionData?.topScore < score {
+                sectionData?.topScore = score
+            }
+        } else {
+            sectionData?.topScore = score
+        }
     }
     @IBAction func playAgain(_ sender: AnyObject) {
 //        dismiss(animated: true, completion: nil)
@@ -33,6 +39,17 @@ class EndGameViewController: UIViewController {
     
     @IBAction func playAnother(_ sender: AnyObject) {
     self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func reviewButtonPressed(_ sender: AnyObject) {
+        performSegue(withIdentifier: "ReviewSegueIdentifier", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ReviewSegueIdentifier" {
+            let reviewViewController = segue.destinationViewController as! ReviewViewController
+            reviewViewController.sectionData = self.sectionData
+            
+        }
     }
 
   }

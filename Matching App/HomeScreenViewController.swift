@@ -13,6 +13,11 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var sectionDataTableView: UITableView!
     var collection = Collection()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        sectionDataTableView.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collection.numberOfSectionDatas()
@@ -23,6 +28,11 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
         cell.titleLabel.text = sectionData.title
         cell.backgroundImageView.image = sectionData.backgroundImage
+        if sectionData.topScore != nil {
+            cell.scoreLabel.text = String(sectionData.topScore!)
+        } else {
+            cell.scoreLabel.text = ""
+        }
         return cell
         
     }

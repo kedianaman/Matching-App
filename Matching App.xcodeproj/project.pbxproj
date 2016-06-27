@@ -19,6 +19,8 @@
 		EDB46CA01D0E665B008CE0BB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
 		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
+		EDEE99FB1D1FDCF200FFF65A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */; };
+		EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE99FC1D1FDD5700FFF65A /* ReviewTableViewCell.swift */; };
 		EDF021811D1BECC6009C6610 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF021801D1BECC6009C6610 /* EndGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		EDB46C9F1D0E665B008CE0BB /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		EDEE99FC1D1FDD5700FFF65A /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		EDF021801D1BECC6009C6610 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,12 +115,14 @@
 			children = (
 				EDB46C9F1D0E665B008CE0BB /* Collection.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
-				ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */,
 				ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */,
-				ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */,
-				EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */,
+				ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */,
 				EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */,
+				EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */,
+				ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */,
 				EDF021801D1BECC6009C6610 /* EndGameViewController.swift */,
+				EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */,
+				EDEE99FC1D1FDD5700FFF65A /* ReviewTableViewCell.swift */,
 				EDB46C781D0E6489008CE0BB /* Assets.xcassets */,
 				EDB46C7A1D0E6489008CE0BB /* LaunchScreen.storyboard */,
 				EDB46C7D1D0E6489008CE0BB /* Info.plist */,
@@ -211,8 +217,8 @@
 				TargetAttributes = {
 					EDB46C6D1D0E6489008CE0BB = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = T252EPP745;
-						DevelopmentTeamName = "Naman Kedia (Personal Team)";
+						DevelopmentTeam = R8VRS65L49;
+						DevelopmentTeamName = "Rajesh Kedia";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -287,7 +293,9 @@
 				EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */,
 				ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
+				EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */,
 				ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */,
+				EDEE99FB1D1FDCF200FFF65A /* ReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,11 +23,8 @@ class SectionData {
             UserDefaults.standard().set(topScore, forKey: title!)
         }
         get {
-            if let value = UserDefaults.value(forKey: title!) as? Int {
-                return value
-            } else {
-                return nil
-            }
+            
+            return UserDefaults.standard().integer(forKey: title!)
         }
     }
 
