@@ -34,5 +34,5 @@ class TextTVCollectionViewCell: UICollectionViewCell {
         self.shake()
         
     }
-
+    
 }

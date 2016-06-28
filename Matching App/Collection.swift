@@ -77,13 +77,13 @@ class SectionData {
 
 class Collection {
     
-    var keys = ["Animals", "Vegetables", "Fruits", "Solar System"]
+    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Colors", "Flowers"]
     
     
     private var animalImagesWithLabel = [UIImage: String]()
     
     
-    private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem]
+    private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem, "Shapes": texts().shapes, "Colors": texts().colors, "Flowers" : texts().flowers]
     
     private var sectionDatas = [SectionData]()
     
@@ -113,6 +113,9 @@ class Collection {
         var vegetables = ["cabbage","potato", "cauliflower", "carrot", "onions", "tomato", "chilli", "okra", "corn", "eggplant", "cucumber", "brocolli"]
         var fruits = ["apple", "banana", "orange", "grape", "strawberry", "watermelon", "pineapple", "cherry", "pomogrenate", "pear", "lychee", "mango"]
         var solarSystem = ["Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Moon", "Milky Way"]
+        var shapes = ["circle", "square", "triangle", "rectangle", "oval", "diamond", "pentagon", "hexagon", "octagon", "star", "heart", "arrow"]
+        var colors = ["red", "orange", "yellow", "green", "blue", "gray", "violet", "purple", "pink", "brown", "white", "black"]
+        var flowers = ["Sunflower", "Tulip", "Hibiscus", "Daisy", "Rose", "Lily", "Daffodil", "Orchid", "Iris", "Lotus", "Jasmine", "Marigold"]
     }
     
     

@@ -62,11 +62,13 @@ class GamePlayTVViewController: UIViewController, UICollectionViewDelegate, UICo
         if collectionView == imageCollectionView {
             let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageTVCollectionViewCell
             imageCell.contentImageView.image = sectionData.randomImageAtIndex(index: indexPath.row)
+            imageCell.contentImageView.adjustsImageWhenAncestorFocused = true
             imageCell.layer.cornerRadius = 100
             return imageCell
         } else if collectionView == textCollectionView {
             let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextTVCollectionViewCell
             textCell.nameLabel.text = sectionData.randomTextAtIndex(index: indexPath.row)
+            textCell.backgroundImage.adjustsImageWhenAncestorFocused = true
             textCell.backgroundImage.image = sectionData.backgroundImage
             textCell.layer.cornerRadius = 100
             return textCell
@@ -117,6 +119,7 @@ class GamePlayTVViewController: UIViewController, UICollectionViewDelegate, UICo
         }
 
     }
+    
     
     
 

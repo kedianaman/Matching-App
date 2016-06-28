@@ -31,6 +31,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         backgroundImageView.image = sectionData.backgroundImage
         titleLabel.text = sectionData.title
     }
@@ -137,14 +138,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         textCollectionView.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "EndGameIdentifier" {
-            if let endGameViewConroller = segue.destinationViewController as? EndGameViewController {
-                endGameViewConroller.sectionData = sectionData
-                endGameViewConroller.score = score
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "EndGameIdentifier" {
+//            if let endGameViewConroller = segue.destinationViewController as? EndGameViewController {
+//                endGameViewConroller.sectionData = sectionData
+//                endGameViewConroller.score = score
+//            }
+//        }
+//    }
     
 
 

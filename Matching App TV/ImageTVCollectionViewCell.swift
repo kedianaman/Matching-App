@@ -11,6 +11,7 @@ import UIKit
 class ImageTVCollectionViewCell: UICollectionViewCell {
     @IBOutlet var contentImageView: UIImageView!
     
+    
     func setHighlighted(selected: Bool) {
         if selected == true {
             self.alpha = 0.5
@@ -26,5 +27,7 @@ class ImageTVCollectionViewCell: UICollectionViewCell {
         self.alpha = 1.0
         self.isUserInteractionEnabled = false
     }
+    
+  
 
 }

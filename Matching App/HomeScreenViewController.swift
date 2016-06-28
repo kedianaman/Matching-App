@@ -10,10 +10,13 @@ import UIKit
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var backgroundTVImageView: UIImageView!
+    @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var sectionDataTableView: UITableView!
     var collection = Collection()
     
     override func viewWillAppear(_ animated: Bool) {
+        @IBOutlet var sectionImageView: UIImageView!
         super.viewWillAppear(animated)
         sectionDataTableView.reloadData()
     }

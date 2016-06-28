@@ -11,12 +11,14 @@ import UIKit
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var sectionDataTVTableView: UITableView!
+    @IBOutlet var sectionimageView: UIImageView!
+    @IBOutlet var backgroundImageView: UIImageView!
     
     var collection = Collection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sectionimageView.layer.cornerRadius = 40
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +30,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "SectionBarTableViewTVCellIdentifer", for: indexPath) as! SectionDataTVTableViewCell
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
         cell.titleLabel.text = sectionData.title
-        cell.backgroundImageView.image = sectionData.backgroundImage
         if sectionData.topScore != nil {
             cell.scoreLabel.text = String(sectionData.topScore!)
         } else {
@@ -50,11 +51,16 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             gameViewController.sectionData = collection.sectionDataAtIndex(index: index)
         }
     }
-
     
-   
-
-
+    func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        let index = context.nextFocusedIndexPath?.row
+        if let index = index {
+            let sectionData = collection.sectionDataAtIndex(index: index)
+            sectionimageView.image = sectionData.backgroundImage
+            backgroundImageView.image = sectionData.backgroundImage
+        }
+        
+    }
 
 
 }
