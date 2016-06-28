@@ -10,28 +10,43 @@ import UIKit
 
 class EndGameViewController: UIViewController {
     
-    
+    var paused = false 
     var score: Int?
     var sectionData: SectionData?
     
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
-
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var bestScoreLabel: UILabel!
+    @IBOutlet var reviewButton: UIButton!
+    @IBOutlet var continueButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImage.image = sectionData?.backgroundImage
-        feedbackLabel.text = "Congratulations! You've finished set \((sectionData?.title)!)."
-        scoreLabel.text = "\(score!)"
+        if paused == true {
+            reviewButton.removeFromSuperview()
+            titleLabel.text = "Paused."
+            feedbackLabel.text = " You've paused set \((sectionData?.title)!)."
+            scoreLabel.text = "\(score!)*"
+
+        } else {
+            continueButton.removeFromSuperview()
+            titleLabel.text = "Congratulations!"
+            feedbackLabel.text = " You've finished set \((sectionData?.title)!)."
+            scoreLabel.text = "\(score!)"
+        }
         if sectionData?.topScore != nil {
             if sectionData?.topScore < score {
                 sectionData?.topScore = score
             }
+            bestScoreLabel.text = String((sectionData?.topScore)!)
         } else {
             sectionData?.topScore = score
         }
     }
+    
     @IBAction func playAgain(_ sender: AnyObject) {
 //        dismiss(animated: true, completion: nil)
     }

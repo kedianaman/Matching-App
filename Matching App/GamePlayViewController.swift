@@ -51,7 +51,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func endGame() {
         timer.invalidate()
-        performSegue(withIdentifier: "EndGameIdentifier", sender: self)
+        performSegue(withIdentifier: "EndGameIdentifier", sender: false)
         
     }
     
@@ -130,23 +130,24 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
-    @IBAction func resetGame(segue:UIStoryboardSegue) {
-        print("Unwinded")
-        score = 0
-        matched = 0
-        imageCollectionView.reloadData()
-        textCollectionView.reloadData()
+    @IBAction func continueGame(segue:UIStoryboardSegue) {
+       print("game continued")
+    }
+
+    
+    @IBAction func pauseGame(_ sender: AnyObject) {
+        timer.invalidate()
+        performSegue(withIdentifier: "EndGameIdentifier", sender: true)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "EndGameIdentifier" {
-//            if let endGameViewConroller = segue.destinationViewController as? EndGameViewController {
-//                endGameViewConroller.sectionData = sectionData
-//                endGameViewConroller.score = score
-//            }
-//        }
-//    }
-    
-
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EndGameIdentifier" {
+            if let endGameViewConroller = segue.destinationViewController as? EndGameViewController {
+                endGameViewConroller.paused = sender as! Bool
+                endGameViewConroller.sectionData = sectionData
+                endGameViewConroller.score = score
+            }
+        }
+    }
 
 }

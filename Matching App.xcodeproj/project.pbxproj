@@ -165,15 +165,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED28922B1D22C66D0004697D /* Matching App TV */ = {
+			isa = PBXGroup;
+			children = (
+				EDC0503D1D20FDE100B9FD96 /* Matching App TV */,
+				EDC0504F1D20FDE200B9FD96 /* Matching App TVTests */,
+				EDC0505A1D20FDE200B9FD96 /* Matching App TVUITests */,
+			);
+			name = "Matching App TV";
+			sourceTree = "<group>";
+		};
 		EDB46C651D0E6489008CE0BB = {
 			isa = PBXGroup;
 			children = (
 				EDB46C701D0E6489008CE0BB /* Matching App */,
 				EDB46C851D0E6489008CE0BB /* Matching AppTests */,
 				EDB46C901D0E6489008CE0BB /* Matching AppUITests */,
-				EDC0503D1D20FDE100B9FD96 /* Matching App TV */,
-				EDC0504F1D20FDE200B9FD96 /* Matching App TVTests */,
-				EDC0505A1D20FDE200B9FD96 /* Matching App TVUITests */,
+				ED28922B1D22C66D0004697D /* Matching App TV */,
 				EDB46C6F1D0E6489008CE0BB /* Products */,
 			);
 			sourceTree = "<group>";

@@ -29,8 +29,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     func reset() {
         self.isUserInteractionEnabled = true
-        
-        
     }
   
     
