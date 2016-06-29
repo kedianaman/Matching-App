@@ -159,8 +159,7 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJP-ec-oDF">
-                                <frame key="frameInset" minY="234" width="768" height="790"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJP-ec-oDF">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="SsX-BN-EVh" customClass="ImageFlowLayout" customModule="Matching_App" customModuleProvider="target"/>
                                 <cells>
@@ -696,7 +695,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9u5-pn-ViV">
-                                <frame key="frameInset" minX="-1.5" height="44" maxX="1.5"/>
+                                <frame key="frameInset" minX="-2" height="44" maxX="2"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="60Q-n4-7Du">

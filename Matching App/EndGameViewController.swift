@@ -30,20 +30,21 @@ class EndGameViewController: UIViewController {
             titleLabel.text = "Paused."
             feedbackLabel.text = " You've paused set \((sectionData?.title)!)."
             scoreLabel.text = "\(score!)*"
-
+            bestScoreLabel.text = String((sectionData?.topScore)!)
         } else {
             continueButton.removeFromSuperview()
             titleLabel.text = "Congratulations!"
             feedbackLabel.text = " You've finished set \((sectionData?.title)!)."
             scoreLabel.text = "\(score!)"
-        }
-        if sectionData?.topScore != nil {
-            if sectionData?.topScore < score {
+            if sectionData?.topScore != nil {
+                if sectionData?.topScore < score {
+                    sectionData?.topScore = score
+                }
+                bestScoreLabel.text = String((sectionData?.topScore)!)
+            } else {
                 sectionData?.topScore = score
             }
-            bestScoreLabel.text = String((sectionData?.topScore)!)
-        } else {
-            sectionData?.topScore = score
+
         }
     }
     
