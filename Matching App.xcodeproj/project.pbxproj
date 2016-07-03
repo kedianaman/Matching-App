@@ -13,8 +13,6 @@
 		ED4FB5131D210E1700E700A4 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
 		ED4FB5171D2112FB00E700A4 /* ImageTVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */; };
 		ED4FB5191D21136A00E700A4 /* TextTVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */; };
-		ED508F0B1D21983C00F84880 /* HomeScreenCoverFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED508F0A1D21983C00F84880 /* HomeScreenCoverFlowViewController.swift */; };
-		ED508F0D1D21986700F84880 /* SectionDataCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED508F0C1D21986700F84880 /* SectionDataCoverCollectionViewCell.swift */; };
 		ED8BA3CE1D19906000773D69 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
 		EDA2873A1D2103130049F03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C781D0E6489008CE0BB /* Assets.xcassets */; };
 		EDA2873B1D2106D10049F03D /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
@@ -38,7 +36,6 @@
 		EDC0506B1D2101AA00B9FD96 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
 		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
-		EDDACF941D21955C004E1017 /* ImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDACF931D21955C004E1017 /* ImageFlowLayout.swift */; };
 		EDEE99FB1D1FDCF200FFF65A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */; };
 		EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE99FC1D1FDD5700FFF65A /* ReviewTableViewCell.swift */; };
 		EDF021811D1BECC6009C6610 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF021801D1BECC6009C6610 /* EndGameViewController.swift */; };
@@ -80,8 +77,6 @@
 		ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBarTableViewCell.swift; sourceTree = "<group>"; };
 		ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTVCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTVCollectionViewCell.swift; sourceTree = "<group>"; };
-		ED508F0A1D21983C00F84880 /* HomeScreenCoverFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenCoverFlowViewController.swift; sourceTree = "<group>"; };
-		ED508F0C1D21986700F84880 /* SectionDataCoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDataCoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDA2873C1D210A530049F03D /* GamePlayTVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayTVViewController.swift; sourceTree = "<group>"; };
 		EDB46C6E1D0E6489008CE0BB /* Matching App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matching App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +108,6 @@
 		EDC050691D2100C600B9FD96 /* SectionDataTVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDataTVTableViewCell.swift; sourceTree = "<group>"; };
 		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		EDDACF931D21955C004E1017 /* ImageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFlowLayout.swift; path = ../../PhotoGift/PhotoGift/ImageFlowLayout.swift; sourceTree = "<group>"; };
 		EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		EDEE99FC1D1FDD5700FFF65A /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		EDF021801D1BECC6009C6610 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +198,6 @@
 			children = (
 				EDB46C9F1D0E665B008CE0BB /* Collection.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
-				EDD7B3AB1D219D7800628743 /* Backup Home Page */,
 				ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */,
 				ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */,
 				EDD7B3AC1D219D9700628743 /* Gameplay */,
@@ -268,16 +261,6 @@
 				EDC0505D1D20FDE200B9FD96 /* Info.plist */,
 			);
 			path = "Matching App TVUITests";
-			sourceTree = "<group>";
-		};
-		EDD7B3AB1D219D7800628743 /* Backup Home Page */ = {
-			isa = PBXGroup;
-			children = (
-				EDDACF931D21955C004E1017 /* ImageFlowLayout.swift */,
-				ED508F0A1D21983C00F84880 /* HomeScreenCoverFlowViewController.swift */,
-				ED508F0C1D21986700F84880 /* SectionDataCoverCollectionViewCell.swift */,
-			);
-			name = "Backup Home Page";
 			sourceTree = "<group>";
 		};
 		EDD7B3AC1D219D9700628743 /* Gameplay */ = {
@@ -542,14 +525,11 @@
 				EDF021811D1BECC6009C6610 /* EndGameViewController.swift in Sources */,
 				EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */,
 				EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */,
-				ED508F0B1D21983C00F84880 /* HomeScreenCoverFlowViewController.swift in Sources */,
 				ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
 				EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */,
-				ED508F0D1D21986700F84880 /* SectionDataCoverCollectionViewCell.swift in Sources */,
 				ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */,
 				EDEE99FB1D1FDCF200FFF65A /* ReviewViewController.swift in Sources */,
-				EDDACF941D21955C004E1017 /* ImageFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

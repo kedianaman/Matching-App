@@ -34,12 +34,10 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.scoreLabel.text = ""
         }
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "PlayGameSegueIdentifier", sender: indexPath.row)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -77,13 +77,9 @@ class SectionData {
 
 class Collection {
     
-    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Colors", "Flowers"]
+    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Colors", "Flowers", "Transportation"]
     
-    
-    private var animalImagesWithLabel = [UIImage: String]()
-    
-    
-    private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem, "Shapes": texts().shapes, "Colors": texts().colors, "Flowers" : texts().flowers]
+    private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem, "Shapes": texts().shapes, "Colors": texts().colors, "Flowers" : texts().flowers, "Transportation" : texts().transportation]
     
     private var sectionDatas = [SectionData]()
     
@@ -108,7 +104,7 @@ class Collection {
     }
 }
 
-    struct texts {
+    private struct texts {
         var animals = ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]
         var vegetables = ["cabbage","potato", "cauliflower", "carrot", "onions", "tomato", "chilli", "okra", "corn", "eggplant", "cucumber", "brocolli"]
         var fruits = ["apple", "banana", "orange", "grape", "strawberry", "watermelon", "pineapple", "cherry", "pomogrenate", "pear", "lychee", "mango"]
@@ -116,6 +112,7 @@ class Collection {
         var shapes = ["circle", "square", "triangle", "rectangle", "oval", "diamond", "pentagon", "hexagon", "octagon", "star", "heart", "arrow"]
         var colors = ["red", "orange", "yellow", "green", "blue", "gray", "violet", "purple", "pink", "brown", "white", "black"]
         var flowers = ["Sunflower", "Tulip", "Hibiscus", "Daisy", "Rose", "Lily", "Daffodil", "Orchid", "Iris", "Lotus", "Jasmine", "Marigold"]
+        var transportation = ["airplane", "helicopter", "rocket", "train", "bicycle", "motorcycle", "bus", "car", "ship", "crane", "boat", "truck"]
     }
     
     
@@ -138,6 +135,15 @@ extension Array {
         return list
     }
 }
+    
+    extension UILabel {
+        func addShadow() {
+            self.layer.shadowOffset = CGSize(width: 0, height: 3);
+            self.layer.shadowRadius = 1;
+            self.layer.shadowOpacity = 0.75;
+            self.layer.shadowColor = UIColor.black().cgColor;
+        }
+    }
 
 
 

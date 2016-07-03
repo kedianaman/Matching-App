@@ -52,7 +52,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func endGame() {
         timer.invalidate()
         performSegue(withIdentifier: "EndGameIdentifier", sender: false)
-        
+    
     }
     
 
@@ -73,14 +73,13 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             imageCell.contentImageView.image = sectionData.randomImageAtIndex(index: indexPath.row)
             imageCell.layer.cornerRadius = 20
             return imageCell
-        } else if collectionView == textCollectionView {
+        } else  {
             let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
             textCell.nameLabel.text = sectionData.randomTextAtIndex(index: indexPath.row)
             textCell.backgroundImage.image = sectionData.backgroundImage
             textCell.layer.cornerRadius = 20
             return textCell
         }
-        return UICollectionViewCell()
     }
     
     
@@ -149,5 +148,5 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }
     }
-
+    
 }

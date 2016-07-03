@@ -24,6 +24,13 @@ class EndGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpView(paused: paused)
+   
+    }
+    
+    func setUpView(paused: Bool) {
+        titleLabel.addShadow()
+        
         backgroundImage.image = sectionData?.backgroundImage
         if paused == true {
             reviewButton.removeFromSuperview()
@@ -44,8 +51,9 @@ class EndGameViewController: UIViewController {
             } else {
                 sectionData?.topScore = score
             }
-
+            
         }
+        
     }
     
     @IBAction func playAgain(_ sender: AnyObject) {

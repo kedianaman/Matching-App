@@ -19,17 +19,17 @@
                         <viewControllerLayoutGuide type="bottom" id="hNh-h5-Wrj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rEw-BR-j70">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Zs-YT-5DV">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionBarTableViewCellIdentifer" focusStyle="custom" rowHeight="180" id="Uqc-HR-JxF" customClass="SectionBarTableViewCell" customModule="Matching_App" customModuleProvider="target">
-                                        <frame key="frameInset" minY="28" width="768" height="180"/>
+                                        <frame key="frameInset" minY="28" width="1024" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uqc-HR-JxF" id="OwS-ih-giZ">
-                                            <frame key="frameInset" width="768" height="180"/>
+                                            <frame key="frameInset" width="1024" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Animals - bg" translatesAutoresizingMaskIntoConstraints="NO" id="nvh-h4-iUo"/>
@@ -118,109 +118,6 @@
             </objects>
             <point key="canvasLocation" x="118" y="373"/>
         </scene>
-        <!--Home Screen Cover Flow View Controller-->
-        <scene sceneID="Tag-HX-LSp">
-            <objects>
-                <viewController id="jPM-9i-7p6" customClass="HomeScreenCoverFlowViewController" customModule="Matching_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KHn-Zt-7o0"/>
-                        <viewControllerLayoutGuide type="bottom" id="qzl-Aa-Wnr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="koz-8Z-ws5">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fruits - bg" translatesAutoresizingMaskIntoConstraints="NO" id="AOe-TZ-vcd"/>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbk-2r-aFm">
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bfV-Jc-O0m">
-                                    <frame key="frameInset"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oes-7B-xfJ">
-                                            <frame key="frameInset" minY="-0.5" maxX="0.5"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="d78-do-VXt">
-                                                <frame key="frameInset"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-I7-MUg">
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="extraLight"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AJP-ec-oDF">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewLayout key="collectionViewLayout" id="SsX-BN-EVh" customClass="ImageFlowLayout" customModule="Matching_App" customModuleProvider="target"/>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionDataCoverCollectionViewCellIdentifier" id="l4H-bs-DGX" customClass="SectionDataCoverCollectionViewCell" customModule="Matching_App" customModuleProvider="target">
-                                        <frame key="frameInset" minX="134" width="500" height="500"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VY6-9M-rZJ"/>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="VY6-9M-rZJ" secondAttribute="trailing" id="5vY-Sz-zjN"/>
-                                            <constraint firstAttribute="bottom" secondItem="VY6-9M-rZJ" secondAttribute="bottom" id="RXf-W1-cxD"/>
-                                            <constraint firstItem="VY6-9M-rZJ" firstAttribute="top" secondItem="l4H-bs-DGX" secondAttribute="top" id="ivd-N7-b0M"/>
-                                            <constraint firstItem="VY6-9M-rZJ" firstAttribute="leading" secondItem="l4H-bs-DGX" secondAttribute="leading" id="mqG-el-d7c"/>
-                                        </constraints>
-                                        <size key="customSize" width="500" height="500"/>
-                                        <connections>
-                                            <outlet property="backgroundImage" destination="VY6-9M-rZJ" id="DwA-eg-ufj"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="jPM-9i-7p6" id="vFM-qr-6JV"/>
-                                    <outlet property="delegate" destination="jPM-9i-7p6" id="ihP-Dx-cCl"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ljM-I7-MUg" firstAttribute="leading" secondItem="koz-8Z-ws5" secondAttribute="leading" id="87Y-ZZ-XFC"/>
-                            <constraint firstItem="AOe-TZ-vcd" firstAttribute="top" secondItem="koz-8Z-ws5" secondAttribute="topMargin" id="92b-M4-uNV"/>
-                            <constraint firstItem="Gbk-2r-aFm" firstAttribute="top" secondItem="koz-8Z-ws5" secondAttribute="topMargin" id="Akh-7f-gEP"/>
-                            <constraint firstAttribute="trailing" secondItem="ljM-I7-MUg" secondAttribute="trailing" id="B1U-qA-pxz"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="AJP-ec-oDF" secondAttribute="bottom" id="FaT-Cy-98N"/>
-                            <constraint firstItem="AOe-TZ-vcd" firstAttribute="leading" secondItem="koz-8Z-ws5" secondAttribute="leading" id="KO3-8B-GdX"/>
-                            <constraint firstAttribute="trailing" secondItem="AJP-ec-oDF" secondAttribute="trailing" id="PIo-VO-llk"/>
-                            <constraint firstItem="Gbk-2r-aFm" firstAttribute="leading" secondItem="koz-8Z-ws5" secondAttribute="leading" id="RXA-U1-fCR"/>
-                            <constraint firstItem="AJP-ec-oDF" firstAttribute="top" secondItem="ljM-I7-MUg" secondAttribute="bottom" constant="40" id="WSe-Yl-oHJ"/>
-                            <constraint firstItem="ljM-I7-MUg" firstAttribute="top" secondItem="koz-8Z-ws5" secondAttribute="topMargin" constant="40" id="Z0q-Zr-GIS"/>
-                            <constraint firstAttribute="trailing" secondItem="Gbk-2r-aFm" secondAttribute="trailing" id="bzV-CL-tdP"/>
-                            <constraint firstItem="AJP-ec-oDF" firstAttribute="leading" secondItem="koz-8Z-ws5" secondAttribute="leading" id="eUS-bD-z4n"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="AOe-TZ-vcd" secondAttribute="bottom" id="eiG-3P-ias"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Gbk-2r-aFm" secondAttribute="bottom" id="hJk-iX-qyx"/>
-                            <constraint firstItem="ljM-I7-MUg" firstAttribute="height" secondItem="koz-8Z-ws5" secondAttribute="height" multiplier="0.15" id="joq-5q-CNJ"/>
-                            <constraint firstAttribute="trailing" secondItem="AOe-TZ-vcd" secondAttribute="trailing" id="rOh-Tv-579"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="backgroundImage" destination="AOe-TZ-vcd" id="Oby-H6-eRZ"/>
-                        <outlet property="coverFlowCollectionView" destination="AJP-ec-oDF" id="Dd0-qH-kBQ"/>
-                        <outlet property="titleLabel" destination="ljM-I7-MUg" id="oyf-3v-omY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qgI-df-tKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1204" y="-630"/>
-        </scene>
         <!--Game Play View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -230,7 +127,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Animals - bg" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-E1-288"/>
@@ -396,12 +293,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="CMD-SH-Kor"/>
-                                <exclude reference="naU-Kw-9Uw"/>
-                                <exclude reference="ujc-G5-hJt"/>
                                 <exclude reference="A2U-8L-Vks"/>
                                 <exclude reference="BPQ-4w-Sef"/>
                                 <exclude reference="es5-Q7-uUm"/>
+                                <exclude reference="ujc-G5-hJt"/>
+                                <exclude reference="CMD-SH-Kor"/>
+                                <exclude reference="naU-Kw-9Uw"/>
                                 <exclude reference="jdw-Yl-4mc"/>
                             </mask>
                         </variation>
@@ -728,7 +625,6 @@
     </scenes>
     <resources>
         <image name="Animals - bg" width="1600" height="1200"/>
-        <image name="Fruits - bg" width="1920" height="1200"/>
         <image name="animal bg " width="1600" height="1200"/>
     </resources>
 </document>
