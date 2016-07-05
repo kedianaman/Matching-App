@@ -28,9 +28,7 @@ class EndGameViewController: UIViewController {
    
     }
     
-    func setUpView(paused: Bool) {
-        titleLabel.addShadow()
-        
+    func setUpView(paused: Bool) {        
         backgroundImage.image = sectionData?.darkBlurredBackgroundImage
         if paused == true {
             reviewButton.removeFromSuperview()

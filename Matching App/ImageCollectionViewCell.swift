@@ -21,7 +21,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     func setMatched() {
         UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
-//            self.contentImageView.image = 
             }, completion: nil)
         self.alpha = 1.0
         self.isUserInteractionEnabled = false

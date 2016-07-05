@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     var collection = Collection()
     var sectionData: SectionData!
+    var correctSound = NSURL(fileURLWithPath: Bundle.main().pathForResource("CorrectSound", ofType: "mp3")!)
+    var audioPlayer = AVAudioPlayer()
     var timer = Timer()
     var score = 0 {
         didSet {
@@ -31,9 +34,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         titleLabel.text = sectionData.title
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf:correctSound as URL)
+        }catch {
+            print("Error getting the audio file")
+        }
+        audioPlayer.prepareToPlay()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,6 +120,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 selectedImageCell?.contentImageView.image = sectionData.backgroundImage
                 selectedImageCell = nil
                 matched = matched + 1
+                audioPlayer.play()
                 if matched == sectionData.numberOfAssets() {
                     endGame()
                 }
@@ -148,5 +157,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }
     }
+    
     
 }
