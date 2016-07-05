@@ -12,5 +12,4 @@ class ReviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet var wordLabel: UILabel!
-    @IBOutlet var backgroundImageView: UIImageView!
 }

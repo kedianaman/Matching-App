@@ -21,7 +21,6 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCellIdentifier", for: indexPath) as! ReviewTableViewCell
         cell.pictureImageView.image = sectionData.imageAtIndex(index: indexPath.row)
-        cell.backgroundImageView.image = sectionData.backgroundImage
         cell.wordLabel.text = sectionData.textAtIndex(index: indexPath.row)
         return cell
     }

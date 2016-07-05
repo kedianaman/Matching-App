@@ -19,6 +19,8 @@ class SectionData {
     private var randomizedImages = [UIImage]()
     var title: String?
     var backgroundImage: UIImage?
+    var lightBlurredBackgroundImage: UIImage?
+    var darkBlurredBackgroundImage: UIImage?
     
     var topScore: Int? {
         set {
@@ -44,6 +46,8 @@ class SectionData {
         randomizedTexts = texts.shuffled()
         title = key
         backgroundImage = UIImage(named: "\(key) - bg")
+        lightBlurredBackgroundImage = UIImage(named: "\(key) - bgLightBlur")
+        darkBlurredBackgroundImage = UIImage(named: "\(key) - bgDarkBlur")
     }
     
     func match(image: UIImage, text: String) -> Bool {
@@ -77,7 +81,7 @@ class SectionData {
 
 class Collection {
     
-    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Colors", "Flowers", "Transportation"]
+    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Flowers"]
     
     private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem, "Shapes": texts().shapes, "Colors": texts().colors, "Flowers" : texts().flowers, "Transportation" : texts().transportation]
     

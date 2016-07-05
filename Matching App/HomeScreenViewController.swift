@@ -27,7 +27,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "SectionBarTableViewCellIdentifer", for: indexPath) as! SectionBarTableViewCell
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
         cell.titleLabel.text = sectionData.title
-        cell.backgroundImageView.image = sectionData.backgroundImage
+        cell.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         if sectionData.topScore != nil {
             cell.scoreLabel.text = String(sectionData.topScore!)
         } else {

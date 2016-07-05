@@ -32,7 +32,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImageView.image = sectionData.backgroundImage
+        backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         titleLabel.text = sectionData.title
     }
     
