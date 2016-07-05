@@ -210,7 +210,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZgR-E1-288" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="2wN-Gx-iVI"/>
+                            <constraint firstItem="ZgR-E1-288" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="2wN-Gx-iVI"/>
                             <constraint firstItem="zjx-w1-hgs" firstAttribute="top" secondItem="1Y2-JY-F8Y" secondAttribute="bottom" id="59b-i8-pLX"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="height" secondItem="3aq-Kb-Ehb" secondAttribute="height" id="A2U-8L-Vks"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3aq-Kb-Ehb" secondAttribute="trailing" constant="100" id="AXZ-CS-SKc"/>
@@ -225,10 +225,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nhb-XE-dS1" secondAttribute="bottom" id="TpP-D4-vSc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nhb-XE-dS1" secondAttribute="trailing" id="USL-gA-ARs"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="leading" secondItem="3aq-Kb-Ehb" secondAttribute="trailing" id="YKi-Ee-IbM"/>
-                            <constraint firstAttribute="trailing" secondItem="ZgR-E1-288" secondAttribute="trailing" id="YeA-PL-BjK"/>
+                            <constraint firstAttribute="trailing" secondItem="ZgR-E1-288" secondAttribute="trailing" constant="-20" id="YeA-PL-BjK"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="es5-Q7-uUm"/>
                             <constraint firstAttribute="trailing" secondItem="1Y2-JY-F8Y" secondAttribute="trailing" id="fra-MR-cii"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ZgR-E1-288" secondAttribute="bottom" id="fwU-4J-Lp7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZgR-E1-288" secondAttribute="bottom" constant="-20" id="fwU-4J-Lp7"/>
                             <constraint firstItem="nhb-XE-dS1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="gYg-vr-cGq"/>
                             <constraint firstItem="1Y2-JY-F8Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gh3-VF-3ga"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" constant="520" id="jdw-Yl-4mc"/>
@@ -238,7 +238,7 @@
                             <constraint firstItem="3aq-Kb-Ehb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pTB-rl-Oh7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zjx-w1-hgs" secondAttribute="bottom" id="rlV-eh-WSl"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="height" secondItem="3aq-Kb-Ehb" secondAttribute="height" multiplier="0.7" id="tR0-Lo-SFH"/>
-                            <constraint firstItem="ZgR-E1-288" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tjl-jt-RfB"/>
+                            <constraint firstItem="ZgR-E1-288" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="tjl-jt-RfB"/>
                             <constraint firstItem="nhb-XE-dS1" firstAttribute="leading" secondItem="zjx-w1-hgs" secondAttribute="trailing" constant="20" id="ujc-G5-hJt"/>
                             <constraint firstItem="zjx-w1-hgs" firstAttribute="top" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" id="v1W-nH-ecb"/>
                             <constraint firstAttribute="trailing" secondItem="bTW-De-trz" secondAttribute="trailing" id="xdg-b2-qnB"/>
@@ -303,13 +303,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ygD-99-2hp">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-dN-MIp" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" width="473" height="60"/>
+                                                <frame key="frameInset" width="472" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-nP-TPh" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" minX="473" width="61" height="60"/>
+                                                <frame key="frameInset" minX="472" width="61" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -354,12 +354,13 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="FEl-G5-yzm">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="FEl-G5-yzm">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z2-oE-AFg">
                                         <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Ehi-9l-Amd"/>
+                                            <constraint firstAttribute="height" constant="120" id="rdU-6s-WfR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Retry">
@@ -371,6 +372,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBv-Yi-k5g">
                                         <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="AZ1-BJ-ZqO"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Review">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -381,6 +385,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLl-oB-nG8">
                                         <color key="backgroundColor" white="1" alpha="0.62" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="aN9-cF-9Rf"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -391,6 +398,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSI-lx-00c">
                                         <color key="backgroundColor" white="1" alpha="0.62" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="ODL-2f-HOf"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Exit">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -481,7 +491,7 @@
                                             <frame key="frameInset" width="375" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kka-Ez-daQ"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kka-Ez-daQ"/>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mee-kS-Lxq">
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <nil key="highlightedColor"/>
