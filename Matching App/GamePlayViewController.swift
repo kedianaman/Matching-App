@@ -11,6 +11,7 @@ import AVFoundation
 
 class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet var collectionViewStackView: UIStackView!
     var collection = Collection()
     var sectionData: SectionData!
     var correctSound = NSURL(fileURLWithPath: Bundle.main().pathForResource("CorrectSound", ofType: "mp3")!)
@@ -178,6 +179,26 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }
     }
+    // MARK:- Trait Collection Changes
+
+    func updateAxisForBoundsChange(size: CGSize) {
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            // iPad - check orientation in this case.
+            if size.width > size.height {
+                self.collectionViewStackView.axis = UILayoutConstraintAxis.horizontal
+            }
+            else {
+                self.collectionViewStackView.axis = UILayoutConstraintAxis.vertical
+            }
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        updateAxisForBoundsChange(size: size)
+    }
+    
+    
     
     
 }

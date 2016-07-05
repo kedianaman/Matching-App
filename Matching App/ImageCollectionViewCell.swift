@@ -8,28 +8,6 @@
 
 import UIKit
 
-class ImageCollectionViewCell: UICollectionViewCell {
+class ImageCollectionViewCell: GamePlayCollectionViewCell {
     @IBOutlet weak var contentImageView: UIImageView!
-    
-    func setHighlighted(selected: Bool) {
-        if selected == true {
-            self.alpha = 0.5
-        } else {
-            self.alpha = 1.0
-        }
-    }
-    
-    func setMatched() {
-        UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
-            }, completion: nil)
-        self.alpha = 1.0
-        self.isUserInteractionEnabled = false
-    }
-    
-    func reset() {
-        self.isUserInteractionEnabled = true
-    }
- 
-  
-    
 }
