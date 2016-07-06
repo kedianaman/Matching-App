@@ -47,6 +47,9 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             gameViewController.sectionData = collection.sectionDataAtIndex(index: index)
         }
     }
+    
+    @IBAction func exitToHome(segue:UIStoryboardSegue) {
+    }
 
    
 }

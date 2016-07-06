@@ -49,7 +49,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
- 
     }
     
     

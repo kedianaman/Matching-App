@@ -53,15 +53,8 @@ class EndGameViewController: UIViewController {
         }
         
     }
+
     
-    @IBAction func playAgain(_ sender: AnyObject) {
-//        dismiss(animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func playAnother(_ sender: AnyObject) {
-    self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
     @IBAction func reviewButtonPressed(_ sender: AnyObject) {
         performSegue(withIdentifier: "ReviewSegueIdentifier", sender: nil)
     }

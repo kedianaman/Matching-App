@@ -297,14 +297,14 @@
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ygD-99-2hp">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-dN-MIp" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" width="472" height="60"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-dN-MIp" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                                <frame key="frameInset" width="473" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-nP-TPh" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" minX="472" width="61" height="60"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-nP-TPh" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                                <frame key="frameInset" minX="473" width="61" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -313,13 +313,13 @@
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WCG-ES-Msg">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Best" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXw-za-bXC" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Best" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXw-za-bXC" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
                                                 <frame key="frameInset" width="474" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDh-s7-65B" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDh-s7-65B" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
                                                 <frame key="frameInset" minX="474" width="59" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -339,13 +339,14 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="ygD-99-2hp" secondAttribute="trailing" constant="100" id="Lu0-ha-z5n"/>
                                     <constraint firstItem="WCG-ES-Msg" firstAttribute="leading" secondItem="X7o-y6-QJm" secondAttribute="leadingMargin" constant="100" id="fgp-Bb-8oC"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="WCG-ES-Msg" secondAttribute="trailing" constant="100" id="hDR-QW-KKR"/>
+                                    <constraint firstAttribute="height" constant="200" id="hPz-DT-fQz"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="fgp-Bb-8oC"/>
-                                        <exclude reference="hDR-QW-KKR"/>
                                         <exclude reference="JRh-rM-vdG"/>
                                         <exclude reference="Lu0-ha-z5n"/>
+                                        <exclude reference="fgp-Bb-8oC"/>
+                                        <exclude reference="hDR-QW-KKR"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -362,7 +363,6 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="playAgain:" destination="rOX-os-HrP" eventType="touchUpInside" id="h6v-bP-ho7"/>
                                             <segue destination="R01-Kz-l83" kind="unwind" unwindAction="resetGameWithSegue:" id="efj-hW-3T9"/>
                                         </connections>
                                     </button>
@@ -402,7 +402,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="playAnother:" destination="rOX-os-HrP" eventType="touchUpInside" id="nND-UF-qew"/>
+                                            <segue destination="R01-Kz-l83" kind="unwind" unwindAction="exitToHomeWithSegue:" id="GjM-CC-3gB"/>
                                         </connections>
                                     </button>
                                 </subviews>
