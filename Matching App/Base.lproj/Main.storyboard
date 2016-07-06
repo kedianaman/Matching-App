@@ -298,13 +298,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ygD-99-2hp">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-dN-MIp" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" width="473" height="60"/>
+                                                <frame key="frameInset" width="472" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-nP-TPh" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" minX="473" width="61" height="60"/>
+                                                <frame key="frameInset" minX="472" width="61" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -453,7 +453,9 @@
                         <outlet property="backgroundImage" destination="Uum-NC-l0R" id="elZ-Rm-emn"/>
                         <outlet property="bestScoreLabel" destination="oDh-s7-65B" id="tbr-0s-tbP"/>
                         <outlet property="continueButton" destination="aLl-oB-nG8" id="TEy-MU-C80"/>
+                        <outlet property="exitButton" destination="MSI-lx-00c" id="p5v-z0-J8y"/>
                         <outlet property="feedbackLabel" destination="669-PZ-i8c" id="3EK-ZQ-KUa"/>
+                        <outlet property="retryButton" destination="7z2-oE-AFg" id="wFz-zc-fWx"/>
                         <outlet property="reviewButton" destination="aBv-Yi-k5g" id="hXt-3S-Jcy"/>
                         <outlet property="scoreLabel" destination="sSk-nP-TPh" id="Nhi-mw-9X5"/>
                         <outlet property="titleLabel" destination="xZ0-Sn-3FB" id="yVy-Ip-uT4"/>

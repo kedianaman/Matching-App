@@ -19,12 +19,19 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var bestScoreLabel: UILabel!
+    @IBOutlet var retryButton: UIButton!
     @IBOutlet var reviewButton: UIButton!
     @IBOutlet var continueButton: UIButton!
+    @IBOutlet var exitButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView(paused: paused)
+        retryButton.layer.cornerRadius = 20
+        reviewButton.layer.cornerRadius = 20
+        continueButton.layer.cornerRadius = 20
+        exitButton.layer.cornerRadius = 20
+        
    
     }
     

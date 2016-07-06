@@ -17,14 +17,4 @@ class LabelWithShadow: UILabel {
         self.layer.shadowOpacity = 0.5;
         self.layer.shadowColor = UIColor.black().cgColor;
     }
-
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
