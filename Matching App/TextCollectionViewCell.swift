@@ -12,6 +12,11 @@ class TextCollectionViewCell: GamePlayCollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
+    
+    override func reset() {
+        super.reset()
+        self.nameLabel.alpha = 1.0
+    }
 }
 
 

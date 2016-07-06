@@ -82,6 +82,25 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         backgroundImageView.addMotionEffect(group)
     }
     
+    func reset() {
+        score = 0
+        matched = 0
+        selectedTextCell = nil
+        selectedImageCell = nil
+        for cell in imageCollectionView.visibleCells() {
+            if let imageCell = cell as? ImageCollectionViewCell {
+                imageCell.reset()
+                let index = imageCollectionView.indexPath(for: imageCell)
+                imageCell.contentImageView.image = sectionData.randomImageAtIndex(index: index!.row)
+            }
+        }
+        for cell in textCollectionView.visibleCells() {
+            if let textCell = cell as? TextCollectionViewCell {
+                textCell.reset()
+            }
+        }
+    }
+    
 
     
     //MARK: Collection View Delegate Methopds
@@ -158,6 +177,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         
+    }
+    
+    @IBAction func resetGame(segue: UIStoryboardSegue) {
+        reset()
     }
     
     @IBAction func continueGame(segue:UIStoryboardSegue) {

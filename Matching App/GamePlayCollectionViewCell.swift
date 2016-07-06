@@ -36,6 +36,11 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
         self.alpha = 1.0
         self.isUserInteractionEnabled = false
     }
+    
+    func reset() {
+        self.alpha = 1.0
+        self.isUserInteractionEnabled = true
+    }
 }
 
 extension UIView {
