@@ -106,22 +106,26 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Animals - bgLightBlur" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-E1-288"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Y2-JY-F8Y">
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uo-Cf-w49">
-                                        <state key="normal" image="PauseButton"/>
-                                        <connections>
-                                            <action selector="pauseGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xB1-2g-rFE"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aq-Kb-Ehb" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uo-Cf-w49">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3uo-Cf-w49" secondAttribute="height" multiplier="1:1" id="EQ8-gI-BC6"/>
+                                </constraints>
+                                <state key="normal" image="PauseButton"/>
+                                <connections>
+                                    <action selector="pauseGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xB1-2g-rFE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aq-Kb-Ehb" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTW-De-trz" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTW-De-trz" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bTW-De-trz" secondAttribute="height" multiplier="1:1" id="AqP-nK-Cfe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -214,38 +218,48 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3aq-Kb-Ehb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2QA-xU-m90"/>
                             <constraint firstAttribute="bottomMargin" secondItem="pil-QR-Ta7" secondAttribute="bottom" id="2ku-UK-Ot8"/>
                             <constraint firstItem="ZgR-E1-288" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="2wN-Gx-iVI"/>
+                            <constraint firstItem="bTW-De-trz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9l2-PM-jHz"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="height" secondItem="3aq-Kb-Ehb" secondAttribute="height" id="A2U-8L-Vks"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3aq-Kb-Ehb" secondAttribute="trailing" constant="100" id="AXZ-CS-SKc"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="top" secondItem="3aq-Kb-Ehb" secondAttribute="top" id="BPQ-4w-Sef"/>
-                            <constraint firstItem="3uo-Cf-w49" firstAttribute="centerX" secondItem="bTW-De-trz" secondAttribute="centerX" id="D9k-zR-tyt"/>
                             <constraint firstItem="3aq-Kb-Ehb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="ExM-dr-e8H"/>
-                            <constraint firstItem="bTW-De-trz" firstAttribute="top" secondItem="3uo-Cf-w49" secondAttribute="bottom" constant="10" id="IC4-Me-H7P"/>
                             <constraint firstItem="3aq-Kb-Ehb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="NXR-Fp-Kh2"/>
                             <constraint firstItem="pil-QR-Ta7" firstAttribute="top" secondItem="1Y2-JY-F8Y" secondAttribute="bottom" id="PHj-ja-sNq"/>
+                            <constraint firstItem="3uo-Cf-w49" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Uec-ir-FKe"/>
                             <constraint firstAttribute="trailing" secondItem="pil-QR-Ta7" secondAttribute="trailing" constant="20" id="WxI-a3-Li9"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="leading" secondItem="3aq-Kb-Ehb" secondAttribute="trailing" id="YKi-Ee-IbM"/>
                             <constraint firstAttribute="trailing" secondItem="ZgR-E1-288" secondAttribute="trailing" constant="-20" id="YeA-PL-BjK"/>
+                            <constraint firstItem="3uo-Cf-w49" firstAttribute="bottom" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" id="aYW-63-qA5"/>
+                            <constraint firstItem="3uo-Cf-w49" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="bT9-rs-2eP"/>
                             <constraint firstItem="pil-QR-Ta7" firstAttribute="top" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" id="dSS-YQ-Frj"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="es5-Q7-uUm"/>
                             <constraint firstAttribute="trailing" secondItem="1Y2-JY-F8Y" secondAttribute="trailing" id="fra-MR-cii"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ZgR-E1-288" secondAttribute="bottom" constant="-20" id="fwU-4J-Lp7"/>
                             <constraint firstItem="1Y2-JY-F8Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gh3-VF-3ga"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" constant="520" id="jdw-Yl-4mc"/>
+                            <constraint firstItem="3uo-Cf-w49" firstAttribute="centerY" secondItem="1Y2-JY-F8Y" secondAttribute="centerY" id="lDn-wq-KyH"/>
                             <constraint firstItem="1Y2-JY-F8Y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="lqa-Kv-y2l"/>
                             <constraint firstItem="3aq-Kb-Ehb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pTB-rl-Oh7"/>
+                            <constraint firstItem="3uo-Cf-w49" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="qEB-5x-9Ko"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="height" secondItem="3aq-Kb-Ehb" secondAttribute="height" multiplier="0.7" id="tR0-Lo-SFH"/>
                             <constraint firstItem="ZgR-E1-288" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="tjl-jt-RfB"/>
                             <constraint firstItem="pil-QR-Ta7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="uHQ-G2-0Se"/>
-                            <constraint firstAttribute="trailing" secondItem="bTW-De-trz" secondAttribute="trailing" id="xdg-b2-qnB"/>
+                            <constraint firstAttribute="trailing" secondItem="bTW-De-trz" secondAttribute="trailing" constant="20" id="xdg-b2-qnB"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="bottom" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" id="zz0-sm-b8i"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="aYW-63-qA5"/>
+                                <exclude reference="qEB-5x-9Ko"/>
+                                <exclude reference="NXR-Fp-Kh2"/>
                                 <exclude reference="A2U-8L-Vks"/>
                                 <exclude reference="BPQ-4w-Sef"/>
+                                <exclude reference="YKi-Ee-IbM"/>
                                 <exclude reference="es5-Q7-uUm"/>
+                                <exclude reference="tR0-Lo-SFH"/>
                                 <exclude reference="jdw-Yl-4mc"/>
                             </mask>
                         </variation>
@@ -297,14 +311,14 @@
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ygD-99-2hp">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-dN-MIp" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" width="472" height="60"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-dN-MIp" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                                <frame key="frameInset" width="473" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-nP-TPh" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" minX="472" width="61" height="60"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-nP-TPh" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
+                                                <frame key="frameInset" minX="473" width="61" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -343,10 +357,10 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="JRh-rM-vdG"/>
-                                        <exclude reference="Lu0-ha-z5n"/>
                                         <exclude reference="fgp-Bb-8oC"/>
                                         <exclude reference="hDR-QW-KKR"/>
+                                        <exclude reference="JRh-rM-vdG"/>
+                                        <exclude reference="Lu0-ha-z5n"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -486,7 +500,7 @@
                                         <frame key="frameInset" minY="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yrt-ht-gaj" id="QPv-Ko-Jg2">
-                                            <frame key="frameInset" width="375" height="139"/>
+                                            <frame key="frameInset" width="375" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kka-Ez-daQ"/>
