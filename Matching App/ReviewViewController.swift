@@ -10,18 +10,21 @@ import UIKit
 
 class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var reviewTableView: UITableView!
+    @IBOutlet var backgroundImageView: UIImageView!
     var sectionData: SectionData!
-    @IBOutlet weak var reviewTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        reviewTableView.separatorColor = UIColor.init(white: 1.0, alpha: 0.3)
+        backgroundImageView.image = sectionData.darkBlurredBackgroundImage
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCellIdentifier", for: indexPath) as! ReviewTableViewCell
         cell.pictureImageView.image = sectionData.imageAtIndex(index: indexPath.row)
         cell.wordLabel.text = sectionData.textAtIndex(index: indexPath.row)
+        cell.backgroundColor = UIColor.clear()
         return cell
     }
     
