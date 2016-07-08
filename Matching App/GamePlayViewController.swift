@@ -14,6 +14,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet var collectionViewStackView: UIStackView!
     var collection = Collection()
     var sectionData: SectionData!
+    var retrying = false
     var correctSound = NSURL(fileURLWithPath: Bundle.main().pathForResource("CorrectSound", ofType: "mp3")!)
     var audioPlayer = AVAudioPlayer()
     var timer = Timer()
@@ -46,9 +47,16 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         audioPlayer.prepareToPlay()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateAxisForBoundsChange(size: view.bounds.size)
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
+        if retrying == true {
+            reset()
+        }
     }
     
     
@@ -179,7 +187,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     @IBAction func resetGame(segue: UIStoryboardSegue) {
-        reset()
+        retrying = true
     }
     
     @IBAction func continueGame(segue:UIStoryboardSegue) {
@@ -219,8 +227,5 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewWillTransition(to: size, with: coordinator)
         updateAxisForBoundsChange(size: size)
     }
-    
-    
-    
     
 }

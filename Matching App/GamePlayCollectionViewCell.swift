@@ -44,7 +44,13 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     }
     
     func reset() {
+        if matched == true {
+            UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {
+                }, completion: nil)
+        }
         if matched == true || isCurrentlySelected == true {
+            matched = false
+            isCurrentlySelected = false
             self.alpha = 1.0
             self.isUserInteractionEnabled = true
             self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
