@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */; };
 		ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
+		ED2042901D45F90300AF59F2 /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */; };
 		ED2754321D2BB19F00612B9E /* LabelWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */; };
 		ED290B8D1D225CCA004DBBC6 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		ED3E729B1D2BAA6D008DAC7F /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */; };
@@ -36,6 +37,9 @@
 		EDC050681D21005200B9FD96 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC050671D21005200B9FD96 /* HomeScreenViewController.swift */; };
 		EDC0506A1D2100C600B9FD96 /* SectionDataTVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC050691D2100C600B9FD96 /* SectionDataTVTableViewCell.swift */; };
 		EDC0506B1D2101AA00B9FD96 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
+		EDC2F46F1D4743E6000684D0 /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */; };
+		EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */; };
+		EDC2F4771D475181000684D0 /* ImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F4761D475181000684D0 /* ImageFlowLayout.swift */; };
 		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
 		EDC8AEA81D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8AEA71D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift */; };
@@ -78,6 +82,7 @@
 /* Begin PBXFileReference section */
 		ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBarTableViewCell.swift; sourceTree = "<group>"; };
+		ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithShadow.swift; sourceTree = "<group>"; };
 		ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
 		ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTVCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +116,9 @@
 		EDC0505D1D20FDE200B9FD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDC050671D21005200B9FD96 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		EDC050691D2100C600B9FD96 /* SectionDataTVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDataTVTableViewCell.swift; sourceTree = "<group>"; };
+		EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
+		EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverFlowViewController.swift; sourceTree = "<group>"; };
+		EDC2F4761D475181000684D0 /* ImageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFlowLayout.swift; sourceTree = "<group>"; };
 		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDC8AEA71D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -205,8 +213,8 @@
 				EDB46C9F1D0E665B008CE0BB /* Collection.swift */,
 				ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
-				ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */,
-				ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */,
+				EDC2F4721D474553000684D0 /* New Home Screen */,
+				EDC2F4731D474560000684D0 /* TableView Homescreen */,
 				EDD7B3AC1D219D9700628743 /* Gameplay */,
 				EDD7B3AD1D219DA000628743 /* Post Gameplay */,
 				EDB46C781D0E6489008CE0BB /* Assets.xcassets */,
@@ -269,6 +277,26 @@
 				EDC0505D1D20FDE200B9FD96 /* Info.plist */,
 			);
 			path = "Matching App TVUITests";
+			sourceTree = "<group>";
+		};
+		EDC2F4721D474553000684D0 /* New Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */,
+				ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */,
+				EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */,
+				EDC2F4761D475181000684D0 /* ImageFlowLayout.swift */,
+			);
+			name = "New Home Screen";
+			sourceTree = "<group>";
+		};
+		EDC2F4731D474560000684D0 /* TableView Homescreen */ = {
+			isa = PBXGroup;
+			children = (
+				ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */,
+				ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */,
+			);
+			name = "TableView Homescreen";
 			sourceTree = "<group>";
 		};
 		EDD7B3AC1D219D9700628743 /* Gameplay */ = {
@@ -537,9 +565,13 @@
 				EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */,
 				EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */,
 				ED2754321D2BB19F00612B9E /* LabelWithShadow.swift in Sources */,
+				ED2042901D45F90300AF59F2 /* SectionCollectionViewCell.swift in Sources */,
 				ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */,
+				EDC2F4771D475181000684D0 /* ImageFlowLayout.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
 				EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */,
+				EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */,
+				EDC2F46F1D4743E6000684D0 /* CircularCollectionViewLayout.swift in Sources */,
 				ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */,
 				EDEE99FB1D1FDCF200FFF65A /* ReviewViewController.swift in Sources */,
 			);
@@ -738,12 +770,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Matching App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -753,6 +787,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Matching App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

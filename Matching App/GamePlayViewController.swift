@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 
 class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -137,9 +138,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print("Selected")
-        if collectionView == imageCollectionView {
+            if collectionView == imageCollectionView {
             if let oldselectedImageCell = selectedImageCell {
                 oldselectedImageCell.setHighlighted(selected: false)
             }
@@ -160,20 +159,22 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let match = sectionData.match(image: image!, text: text!)
             if match == true {
                 selectedTextCell?.setMatched()
-                selectedTextCell?.nameLabel.alpha = 0.0
+//                selectedTextCell?.nameLabel.alpha = 0.0
                 selectedTextCell = nil
                 selectedImageCell?.setMatched()
-                selectedImageCell?.contentImageView.image = sectionData.backgroundImage
+//                selectedImageCell?.contentImageView.image = sectionData.backgroundImage
                 selectedImageCell = nil
                 matched = matched + 1
-                audioPlayer.pause()
-                audioPlayer.play()
+//                audioPlayer.pause()
+//                audioPlayer.play()
+                AudioServicesPlaySystemSound(1111);
 
                 if matched == sectionData.numberOfAssets() {
                     endGame()
                 }
                 
             } else {
+                AudioServicesPlaySystemSound(1006);
                 selectedImageCell?.setHighlighted(selected: false)
                 selectedImageCell?.shake()
                 selectedImageCell = nil
@@ -181,6 +182,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 selectedTextCell?.shake()
                 selectedTextCell = nil
             }
+        } else {
+            // plays toc sound when only one is selected
+            AudioServicesPlaySystemSound(1104);
         }
         
         

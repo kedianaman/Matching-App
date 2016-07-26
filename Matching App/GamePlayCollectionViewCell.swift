@@ -36,10 +36,13 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     
     func setMatched() {
         matched = true
-        UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
-            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+//        UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
+//            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+//            }, completion: nil)
+//        self.alpha = 1.0
+        UIView.transition(with: self, duration: 0.2, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 0.0
             }, completion: nil)
-        self.alpha = 1.0
         self.isUserInteractionEnabled = false
     }
     
@@ -70,9 +73,9 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
 extension UIView {
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        animation.duration = 0.4
-        animation.values = [-10.0, 10.0, -10.0, 10.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.duration = 0.6
+        animation.values = [-10.0, 10.0, -8.0, 8.0, -6.0, 6.0, -4, 4.0, 0.0 ]
         layer.add(animation, forKey: "shake")
     }
 }
