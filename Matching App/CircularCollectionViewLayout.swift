@@ -2,8 +2,8 @@
 //  CircularCollectionViewLayout.swift
 //  CircularCollectionView
 //
-//  Created by Rounak Jain on 27/05/15.
-//  Copyright (c) 2015 Rounak Jain. All rights reserved.
+//  Created by Naman Kedia on 7/25/16.
+//  Copyright © 2016 Naman Kedia. All rights reserved.
 //
 
 import UIKit

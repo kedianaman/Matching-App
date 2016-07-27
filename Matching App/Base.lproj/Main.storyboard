@@ -399,7 +399,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Animals - bgDarkBlur" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-NC-l0R"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Animals - bgLightBlur" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-NC-l0R"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edw-AG-b2L">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-Sn-3FB" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -421,13 +424,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ygD-99-2hp">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-dN-MIp" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" width="472" height="60"/>
+                                                <frame key="frameInset" width="473" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-nP-TPh" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                                <frame key="frameInset" minX="472" width="61" height="60"/>
+                                                <frame key="frameInset" minX="473" width="61" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -466,10 +469,10 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="JRh-rM-vdG"/>
-                                        <exclude reference="Lu0-ha-z5n"/>
                                         <exclude reference="fgp-Bb-8oC"/>
                                         <exclude reference="hDR-QW-KKR"/>
+                                        <exclude reference="JRh-rM-vdG"/>
+                                        <exclude reference="Lu0-ha-z5n"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -540,8 +543,11 @@
                             <constraint firstAttribute="trailing" secondItem="Uum-NC-l0R" secondAttribute="trailing" id="Fix-ds-KHn"/>
                             <constraint firstItem="FEl-G5-yzm" firstAttribute="height" secondItem="apX-m5-F24" secondAttribute="height" multiplier="0.2" id="FkM-6f-XlF"/>
                             <constraint firstItem="xZ0-Sn-3FB" firstAttribute="top" secondItem="apX-m5-F24" secondAttribute="topMargin" constant="40" id="L76-b7-6ND"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Edw-AG-b2L" secondAttribute="bottom" id="N12-44-AHf"/>
+                            <constraint firstAttribute="trailing" secondItem="Edw-AG-b2L" secondAttribute="trailing" id="Q67-2s-20O"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Uum-NC-l0R" secondAttribute="bottom" id="Tc8-DU-c3e"/>
                             <constraint firstItem="FEl-G5-yzm" firstAttribute="height" secondItem="xZ0-Sn-3FB" secondAttribute="height" id="Wb3-Hj-dfP"/>
+                            <constraint firstItem="Edw-AG-b2L" firstAttribute="top" secondItem="apX-m5-F24" secondAttribute="topMargin" id="XhJ-VT-zy8"/>
                             <constraint firstItem="SD1-nK-LM5" firstAttribute="top" secondItem="X7o-y6-QJm" secondAttribute="bottomMargin" constant="40" id="Xye-oh-Ryo"/>
                             <constraint firstItem="xZ0-Sn-3FB" firstAttribute="height" secondItem="apX-m5-F24" secondAttribute="height" multiplier="0.2" id="Ybk-km-zPK"/>
                             <constraint firstItem="X7o-y6-QJm" firstAttribute="top" secondItem="669-PZ-i8c" secondAttribute="bottom" constant="40" id="ZzW-3J-vis"/>
@@ -559,13 +565,14 @@
                             <constraint firstItem="ygD-99-2hp" firstAttribute="width" secondItem="669-PZ-i8c" secondAttribute="width" id="vOy-6R-FU6"/>
                             <constraint firstItem="SD1-nK-LM5" firstAttribute="top" secondItem="FEl-G5-yzm" secondAttribute="bottom" constant="100" id="w6X-nT-6hv"/>
                             <constraint firstItem="fEp-E2-PW0" firstAttribute="width" secondItem="669-PZ-i8c" secondAttribute="width" id="xc9-cp-NtE"/>
+                            <constraint firstItem="Edw-AG-b2L" firstAttribute="leading" secondItem="apX-m5-F24" secondAttribute="leading" id="yZG-ER-Fmy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="fGW-uK-GLB"/>
                                 <exclude reference="0Mf-am-LcV"/>
                                 <exclude reference="aHZ-dn-2rp"/>
                                 <exclude reference="Wb3-Hj-dfP"/>
-                                <exclude reference="fGW-uK-GLB"/>
                                 <exclude reference="Xye-oh-Ryo"/>
                             </mask>
                         </variation>

@@ -18,7 +18,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        sectionCollectionView.addShadow()
         // Do any additional setup after loading the view.
     }
 
@@ -74,7 +74,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
 //                currentIndexPath = indexPath
 //                UIView.transition(with: backgroundImageView, duration: 0.4, options: .transitionCrossDissolve, animations: {
 //                    let sectionData = self.collection.sectionDataAtIndex(index: self.currentIndexPath!.row + 1)
-//                    self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+//                    self.backgroundImageView.image = sectionData.darkBlurredBackgroundImage
 //                    }, completion: nil)
 //                
 //            }

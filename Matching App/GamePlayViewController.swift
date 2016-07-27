@@ -37,9 +37,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageCollectionView.addShadow()
+        textCollectionView.addShadow()
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         titleLabel.text = sectionData.title
-        addParalax()
         do{
             audioPlayer = try AVAudioPlayer(contentsOf:correctSound as URL)
         }catch {
@@ -70,24 +71,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func endGame() {
         timer.invalidate()
         performSegue(withIdentifier: "EndGameIdentifier", sender: false)
-    }
-    
-    func addParalax() {
-        let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y",
-                                                               type: .tiltAlongVerticalAxis)
-        verticalMotionEffect.minimumRelativeValue = -20
-        verticalMotionEffect.maximumRelativeValue = 20
-        
-        // Set horizontal effect
-        let horizontalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x",
-                                                                 type: .tiltAlongHorizontalAxis)
-        horizontalMotionEffect.minimumRelativeValue = -20
-        horizontalMotionEffect.maximumRelativeValue = 20
-        
-        // Create group to combine both
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [horizontalMotionEffect, verticalMotionEffect]
-        backgroundImageView.addMotionEffect(group)
     }
     
     func reset() {
