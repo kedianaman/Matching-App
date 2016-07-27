@@ -84,7 +84,6 @@
 		ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBarTableViewCell.swift; sourceTree = "<group>"; };
 		ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithShadow.swift; sourceTree = "<group>"; };
-		ED336C981D4892DB00AC8981 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
 		ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTVCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTVCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -192,7 +191,6 @@
 				EDB46C901D0E6489008CE0BB /* Matching AppUITests */,
 				ED28922B1D22C66D0004697D /* Matching App TV */,
 				EDB46C6F1D0E6489008CE0BB /* Products */,
-				ED336C981D4892DB00AC8981 /* MyPlayground.playground */,
 			);
 			sourceTree = "<group>";
 		};

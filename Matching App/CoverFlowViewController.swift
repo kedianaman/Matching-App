@@ -53,33 +53,33 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     }
 
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        var indexPath: NSIndexPath?
-//        var minimumDistanceToCell = CGFloat.greatestFiniteMagnitude
-//        let visibleCells = sectionCollectionView.visibleCells()
-//        for cell in visibleCells {
-//            
-//            let cellBoundsInSuperview = cell.convert(cell.bounds, to: self.view)
-//            let distanceToCell = abs((cellBoundsInSuperview.origin.x + cellBoundsInSuperview.width) - self.view.center.x)
-//            if distanceToCell < minimumDistanceToCell {
-//                minimumDistanceToCell = distanceToCell
-//                indexPath = sectionCollectionView.indexPath(for: cell)
-//            }
-//        }
-//        
-//        
-//        
-//        if indexPath != nil {
-//            if currentIndexPath != indexPath {
-//                currentIndexPath = indexPath
-//                UIView.transition(with: backgroundImageView, duration: 0.4, options: .transitionCrossDissolve, animations: {
-//                    let sectionData = self.collection.sectionDataAtIndex(index: self.currentIndexPath!.row + 1)
-//                    self.backgroundImageView.image = sectionData.darkBlurredBackgroundImage
-//                    }, completion: nil)
-//                
-//            }
-//        }
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var indexPath: NSIndexPath?
+        var minimumDistanceToCell = CGFloat.greatestFiniteMagnitude
+        let visibleCells = sectionCollectionView.visibleCells()
+        for cell in visibleCells {
+            
+            let cellBoundsInSuperview = cell.convert(cell.bounds, to: self.view)
+            let distanceToCell = abs((cellBoundsInSuperview.origin.x + cellBoundsInSuperview.width) - self.view.center.x)
+            if distanceToCell < minimumDistanceToCell {
+                minimumDistanceToCell = distanceToCell
+                indexPath = sectionCollectionView.indexPath(for: cell)
+            }
+        }
+        
+        
+        
+        if indexPath != nil {
+            if currentIndexPath != indexPath {
+                currentIndexPath = indexPath
+                UIView.transition(with: backgroundImageView, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                    let sectionData = self.collection.sectionDataAtIndex(index: self.currentIndexPath!.row + 1)
+                    self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+                    }, completion: nil)
+                
+            }
+        }
+    }
 
     
 
