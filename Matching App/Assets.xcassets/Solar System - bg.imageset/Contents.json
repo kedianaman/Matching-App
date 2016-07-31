@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Solar System - bg.jpg",
+      "filename" : "Solar System - bg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Solar System - bg - 2x.png",
       "scale" : "2x"
     },
     {

@@ -106,7 +106,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == imageCollectionView {
-            let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
+            var imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
             imageCell.contentImageView.image = sectionData.randomImageAtIndex(index: indexPath.row)
             imageCell.layer.cornerRadius = 20
             return imageCell
@@ -118,6 +118,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             return textCell
         }
     }
+
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ws_Jungle_Animals_One_1600x1200.jpg",
+      "filename" : "Animals - bg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Animals - bg - 2x.png",
       "scale" : "2x"
     },
     {

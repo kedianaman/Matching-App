@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Fruits bg.jpg",
+      "filename" : "Fruits - bg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Fruits - bg - 2x.png",
       "scale" : "2x"
     },
     {

@@ -18,8 +18,8 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        sectionCollectionView.addShadow()
-        // Do any additional setup after loading the view.
+        let sectionData = collection.sectionDataAtIndex(index: 0)
+        backgroundImageView.image = sectionData.lightBlurredBackgroundImage
     }
 
     
@@ -33,6 +33,17 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.sectionImage.image = sectionData.backgroundImage
         cell.titleLabel.text = sectionData.title
         cell.scoreLabel.text = "Score: \(sectionData.topScore!)"
+        
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOpacity = 0.75
+        cell.layer.shadowRadius = 5.0
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: 30.0).cgPath
+        cell.layer.shouldRasterize = true
+        cell.layer.rasterizationScale = UIScreen.main().scale
+
+        
+
         return cell
     }
     
@@ -72,8 +83,13 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         if indexPath != nil {
             if currentIndexPath != indexPath {
                 currentIndexPath = indexPath
+                //temporary hack because method returns one cell to the left
+                var modifiedIndex = currentIndexPath!.row + 1
+                if modifiedIndex == collection.numberOfSectionDatas() {
+                    modifiedIndex = modifiedIndex - 1
+                }
                 UIView.transition(with: backgroundImageView, duration: 0.4, options: .transitionCrossDissolve, animations: {
-                    let sectionData = self.collection.sectionDataAtIndex(index: self.currentIndexPath!.row + 1)
+                    let sectionData = self.collection.sectionDataAtIndex(index: modifiedIndex)
                     self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
                     }, completion: nil)
                 

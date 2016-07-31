@@ -47,25 +47,15 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     }
     
     func reset() {
-        if matched == true {
-            UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {
-                }, completion: nil)
-        }
-        if isCurrentlySelected == true {
-            if self.transform.isIdentity == false {
-                UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                    self.alpha = 1.0
-                    }, completion: nil)
-            }
 
-        }
-        if matched == true || isCurrentlySelected == true {
-            matched = false
-            isCurrentlySelected = false
-            self.alpha = 1.0
+        if isCurrentlySelected == true || matched == true {
+            UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.alpha = 1.0
+                }, completion: nil)
             self.isUserInteractionEnabled = true
-            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            isCurrentlySelected = false
+
         }
     }
 }
