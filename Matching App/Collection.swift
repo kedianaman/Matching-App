@@ -33,16 +33,16 @@ class SectionData {
         }
     }
 
-    private var imagesWithText = [UIImage: String]()
+    private var imagesWithText = [String: UIImage]()
     
-    init(imagesWithText: [UIImage:String], key: String) {
+    init(imagesWithText: [String:UIImage], key: String) {
         self.imagesWithText = imagesWithText
-        for key in imagesWithText.keys {
-            images.append(key)
+        for value in imagesWithText.values {
+            images.append(value)
         }
         randomizedImages = images.shuffled()
-        for value in imagesWithText.values {
-            texts.append(value)
+        for key in imagesWithText.keys {
+            texts.append(key)
         }
         randomizedTexts = texts.shuffled()
         title = key
@@ -52,7 +52,7 @@ class SectionData {
     }
     
     func match(image: UIImage, text: String) -> Bool {
-        if imagesWithText[image] == text {
+        if imagesWithText[text] == image {
             return true
         } else {
             return false
@@ -82,7 +82,7 @@ class SectionData {
 
 class Collection {
     
-    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Flowers"]
+    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Flowers", "Colors", "Transportation"]
     
     private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem, "Shapes": texts().shapes, "Colors": texts().colors, "Flowers" : texts().flowers, "Transportation" : texts().transportation]
     
@@ -91,10 +91,10 @@ class Collection {
     init() {
         
         for key in keys {
-            var imagesWithLabel = [UIImage: String]()
+            var imagesWithLabel = [String: UIImage]()
             for i in 1...12 {
                 let image = UIImage(named: "\(key) image - \(i)")
-                imagesWithLabel[image!] = wordsForKeys[key]![i-1]
+                imagesWithLabel[wordsForKeys[key]![i-1]] = image!
             }
             sectionDatas.append(SectionData(imagesWithText: imagesWithLabel, key: key))
         }

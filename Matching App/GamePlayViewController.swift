@@ -158,6 +158,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
                 
             } else {
+                score = score + 5
                 AudioServicesPlaySystemSound(1006);
                 selectedImageCell?.setHighlighted(selected: false)
                 selectedImageCell?.shake()
