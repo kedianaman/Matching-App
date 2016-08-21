@@ -10,8 +10,8 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
-class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, EndGameViewControllerDelegate {
+    var endGameViewController: EndGameViewController?
     @IBOutlet var collectionViewStackView: UIStackView!
     var collection = Collection()
     var sectionData: SectionData!
@@ -143,15 +143,13 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let match = sectionData.match(image: image!, text: text!)
             if match == true {
                 selectedTextCell?.setMatched()
-//                selectedTextCell?.nameLabel.alpha = 0.0
                 selectedTextCell = nil
                 selectedImageCell?.setMatched()
-//                selectedImageCell?.contentImageView.image = sectionData.backgroundImage
                 selectedImageCell = nil
                 matched = matched + 1
 //                audioPlayer.pause()
 //                audioPlayer.play()
-                AudioServicesPlaySystemSound(1111);
+                AudioServicesPlaySystemSound(1001);
 
                 if matched == sectionData.numberOfAssets() {
                     endGame()
@@ -180,25 +178,87 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     @IBAction func continueGame(segue:UIStoryboardSegue) {
+        animateCards(paused: false)
+        removeEndGameChildViewController()
        print("game continued")
+
+    }
+    
+    // EndGameViewControllerDelegate
+    func endGameViewControllerDidRetry() {
+        print("retyed")
+        retrying = true
+    }
+    
+    func endGameViewControllerDidContinue() {
+        print("continued")
     }
 
     
     @IBAction func pauseGame(_ sender: AnyObject) {
         timer.invalidate()
-        performSegue(withIdentifier: "EndGameIdentifier", sender: true)
+        animateCards(paused: true)
+        addEndGameChildViewController()
+        
+//        performSegue(withIdentifier: "EndGameIdentifier", sender: true)
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "EndGameIdentifier" {
-            if let endGameViewConroller = segue.destinationViewController as? EndGameViewController {
-                endGameViewConroller.paused = sender as! Bool
-                endGameViewConroller.sectionData = sectionData
-                endGameViewConroller.score = score
-            }
+    func addEndGameChildViewController() {
+        endGameViewController = self.storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as? EndGameViewController
+        if let endGameViewController = endGameViewController {
+            endGameViewController.paused = true
+            endGameViewController.sectionData = sectionData
+            endGameViewController.score = score
+            endGameViewController.willMove(toParentViewController: self)
+            self.addChildViewController(endGameViewController)
+            self.view.addSubview(endGameViewController.view)
+            let width = self.view.bounds.width * 0.75
+            let height = self.view.bounds.height * 0.75
+            endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
+            endGameViewController.didMove(toParentViewController: self)
+            endGameViewController.view.layer.cornerRadius = 40
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
+                endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
+            }, completion: nil)
         }
     }
-    // MARK:- Trait Collection Changes
+    
+    func removeEndGameChildViewController() {
+        if let endGameViewController = endGameViewController {
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
+                endGameViewController.view.frame.origin.y = self.view.bounds.height
+            }, completion: nil)
+            endGameViewController.removeFromParentViewController()
+        }
+    }
+
+    func animateCards(paused: Bool) {
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
+            if paused == true {
+                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x - 400
+                self.imageCollectionView.alpha = 0.5
+                self.imageCollectionView.isUserInteractionEnabled = false
+                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x + 400
+                self.textCollectionView.alpha = 0.5
+                self.textCollectionView.isUserInteractionEnabled = false
+            } else {
+                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x + 400
+                self.imageCollectionView.alpha = 1.0
+                self.imageCollectionView.isUserInteractionEnabled = true
+                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x - 400
+                self.textCollectionView.alpha = 1.0
+                self.textCollectionView.isUserInteractionEnabled = true
+
+
+
+            }
+           
+
+            }, completion: nil)
+    }
+    
+       // MARK:- Trait Collection Changes
 
     func updateAxisForBoundsChange(size: CGSize) {
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {

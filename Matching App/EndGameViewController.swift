@@ -8,6 +8,13 @@
 
 import UIKit
 
+// Add delegate: EndGameViewControllerDidRetry, EndGameViewControllerDidContinue
+
+protocol EndGameViewControllerDelegate {
+    func endGameViewControllerDidRetry()
+    func endGameViewControllerDidContinue()
+}
+
 class EndGameViewController: UIViewController {
     
     var paused = false 
@@ -16,7 +23,6 @@ class EndGameViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var bestScoreLabel: UILabel!
     @IBOutlet var retryButton: UIButton!
@@ -35,7 +41,6 @@ class EndGameViewController: UIViewController {
     }
     
     func setUpView(paused: Bool) {        
-        backgroundImage.image = sectionData?.lightBlurredBackgroundImage
         if paused == true {
             reviewButton.removeFromSuperview()
             titleLabel.text = "Paused."
