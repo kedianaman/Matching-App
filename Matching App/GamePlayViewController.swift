@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
-class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, EndGameViewControllerDelegate {
+class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var endGameViewController: EndGameViewController?
     @IBOutlet var collectionViewStackView: UIStackView!
     var collection = Collection()
@@ -31,6 +31,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var textCollectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var darkView: UIView!
  
     var selectedImageCell: ImageCollectionViewCell?
     var selectedTextCell: TextCollectionViewCell?
@@ -70,7 +72,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func endGame() {
         timer.invalidate()
-        performSegue(withIdentifier: "EndGameIdentifier", sender: false)
+        addEndGameChildViewController(paused: false)
     }
     
     func reset() {
@@ -174,40 +176,37 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     @IBAction func resetGame(segue: UIStoryboardSegue) {
-        retrying = true
+        animateCards(paused: false)
+        removeEndGameChildViewController()
+        reset()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
+
     }
     
     @IBAction func continueGame(segue:UIStoryboardSegue) {
         animateCards(paused: false)
         removeEndGameChildViewController()
-       print("game continued")
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
+        print("game continued")
 
     }
     
-    // EndGameViewControllerDelegate
-    func endGameViewControllerDidRetry() {
-        print("retyed")
-        retrying = true
-    }
-    
-    func endGameViewControllerDidContinue() {
-        print("continued")
-    }
-
     
     @IBAction func pauseGame(_ sender: AnyObject) {
         timer.invalidate()
         animateCards(paused: true)
-        addEndGameChildViewController()
+        addEndGameChildViewController(paused: true)
         
 //        performSegue(withIdentifier: "EndGameIdentifier", sender: true)
         
     }
     
-    func addEndGameChildViewController() {
+    func addEndGameChildViewController(paused: Bool) {
         endGameViewController = self.storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as? EndGameViewController
         if let endGameViewController = endGameViewController {
-            endGameViewController.paused = true
+            if paused == true {
+                endGameViewController.paused = true
+            }
             endGameViewController.sectionData = sectionData
             endGameViewController.score = score
             endGameViewController.willMove(toParentViewController: self)
@@ -218,20 +217,42 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
             endGameViewController.didMove(toParentViewController: self)
             endGameViewController.view.layer.cornerRadius = 40
+            endGameViewController.view.layer.masksToBounds = true
             UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
+                self.hideTopView(willHide: true)
             }, completion: nil)
+            
         }
     }
+    
     
     func removeEndGameChildViewController() {
         if let endGameViewController = endGameViewController {
             UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height
+                self.hideTopView(willHide: false)
             }, completion: nil)
             endGameViewController.removeFromParentViewController()
         }
     }
+    
+    func hideTopView(willHide: Bool) {
+        if willHide == true  {
+            self.scoreLabel.alpha = 0.0
+            self.titleLabel.alpha = 0.0
+            self.darkView.alpha = 0.0
+            self.pauseButton.alpha = 0.0
+            self.pauseButton.isUserInteractionEnabled = false
+        } else {
+            self.scoreLabel.alpha = 1.0
+            self.titleLabel.alpha = 1.0
+            self.darkView.alpha = 1.0
+            self.pauseButton.alpha = 1.0
+            self.pauseButton.isUserInteractionEnabled = true
+        }
+    }
+    
 
     func animateCards(paused: Bool) {
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {

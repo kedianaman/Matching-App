@@ -8,12 +8,8 @@
 
 import UIKit
 
-// Add delegate: EndGameViewControllerDidRetry, EndGameViewControllerDidContinue
 
-protocol EndGameViewControllerDelegate {
-    func endGameViewControllerDidRetry()
-    func endGameViewControllerDidContinue()
-}
+
 
 class EndGameViewController: UIViewController {
     
