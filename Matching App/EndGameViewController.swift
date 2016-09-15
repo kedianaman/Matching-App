@@ -36,6 +36,7 @@ class EndGameViewController: UIViewController {
 
     }
     
+    
     func setUpView(paused: Bool) {        
         if paused == true {
             reviewButton.removeFromSuperview()
@@ -49,7 +50,7 @@ class EndGameViewController: UIViewController {
             feedbackLabel.text = " You've finished set \((sectionData?.title)!)."
             scoreLabel.text = "\(score!)"
             if sectionData?.topScore != nil {
-                if sectionData?.topScore < score {
+                if (sectionData?.topScore)! < score! {
                     sectionData?.topScore = score
                 }
                 bestScoreLabel.text = String((sectionData?.topScore)!)
@@ -66,9 +67,10 @@ class EndGameViewController: UIViewController {
         performSegue(withIdentifier: "ReviewSegueIdentifier", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ReviewSegueIdentifier" {
-            let reviewViewController = segue.destinationViewController as! ReviewViewController
+            let reviewViewController = segue.destination as! ReviewViewController
             reviewViewController.sectionData = self.sectionData
             
         }

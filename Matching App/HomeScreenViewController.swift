@@ -40,9 +40,9 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         performSegue(withIdentifier: "PlayGameSegueIdentifier", sender: indexPath.row)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PlayGameSegueIdentifier" {
-            let gameViewController = segue.destinationViewController as! GamePlayViewController
+            let gameViewController = segue.destination as! GamePlayViewController
             let index = sender as! Int
             gameViewController.sectionData = collection.sectionDataAtIndex(index: index)
         }

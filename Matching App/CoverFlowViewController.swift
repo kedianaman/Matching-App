@@ -40,7 +40,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: 30.0).cgPath
         cell.layer.shouldRasterize = true
-        cell.layer.rasterizationScale = UIScreen.main().scale
+        cell.layer.rasterizationScale = UIScreen.main.scale
 
         
 
@@ -51,13 +51,15 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         performSegue(withIdentifier: "GamePlaySegueIdentifier", sender: indexPath.row)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GamePlaySegueIdentifier" {
-            let gameViewController = segue.destinationViewController as! GamePlayViewController
+            let gameViewController = segue.destination as! GamePlayViewController
             let index = sender as! Int
             gameViewController.sectionData = collection.sectionDataAtIndex(index: index)
         }
     }
+    
     
     @IBAction func exitToMenu(segue:UIStoryboardSegue) {
         //Unwind Segue
@@ -67,14 +69,14 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var indexPath: NSIndexPath?
         var minimumDistanceToCell = CGFloat.greatestFiniteMagnitude
-        let visibleCells = sectionCollectionView.visibleCells()
+        let visibleCells = sectionCollectionView.visibleCells
         for cell in visibleCells {
             
             let cellBoundsInSuperview = cell.convert(cell.bounds, to: self.view)
             let distanceToCell = abs((cellBoundsInSuperview.origin.x + cellBoundsInSuperview.width) - self.view.center.x)
             if distanceToCell < minimumDistanceToCell {
                 minimumDistanceToCell = distanceToCell
-                indexPath = sectionCollectionView.indexPath(for: cell)
+                indexPath = sectionCollectionView.indexPath(for: cell) as NSIndexPath?
             }
         }
         

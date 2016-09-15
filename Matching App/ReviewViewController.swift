@@ -24,7 +24,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCellIdentifier", for: indexPath) as! ReviewTableViewCell
         cell.pictureImageView.image = sectionData.imageAtIndex(index: indexPath.row)
         cell.wordLabel.text = sectionData.textAtIndex(index: indexPath.row)
-        cell.backgroundColor = UIColor.clear()
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     

@@ -16,7 +16,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     var collection = Collection()
     var sectionData: SectionData!
     var retrying = false
-    var correctSound = NSURL(fileURLWithPath: Bundle.main().pathForResource("CorrectSound", ofType: "mp3")!)
+    var correctSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "CorrectSound", ofType: "mp3")!)
     var audioPlayer = AVAudioPlayer()
     var timer = Timer()
     var score = 0 {
@@ -80,14 +80,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         matched = 0
         selectedTextCell = nil
         selectedImageCell = nil
-        for cell in imageCollectionView.visibleCells() {
+        for cell in imageCollectionView.visibleCells {
             if let imageCell = cell as? ImageCollectionViewCell {
                 imageCell.reset()
                 let index = imageCollectionView.indexPath(for: imageCell)
                 imageCell.contentImageView.image = sectionData.randomImageAtIndex(index: index!.row)
             }
         }
-        for cell in textCollectionView.visibleCells() {
+        for cell in textCollectionView.visibleCells {
             if let textCell = cell as? TextCollectionViewCell {
                 textCell.reset()
             }
@@ -130,12 +130,13 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
             selectedImageCell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
             selectedImageCell?.setHighlighted(selected: true)
+                
         } else if collectionView == textCollectionView {
             if let oldselectedTextCell = selectedTextCell {
                 oldselectedTextCell.setHighlighted(selected: false)
             }
             selectedTextCell = collectionView.cellForItem(at: indexPath) as! TextCollectionViewCell
-            selectedTextCell?.setHighlighted(selected: true)
+
         }
         
         // check to see if they match only if both are non-nil
@@ -149,10 +150,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 selectedImageCell?.setMatched()
                 selectedImageCell = nil
                 matched = matched + 1
-//                audioPlayer.pause()
-//                audioPlayer.play()
-                AudioServicesPlaySystemSound(1001);
-
+                audioPlayer.pause()
+                audioPlayer.play()
+//                AudioServicesPlaySystemSound(1001);
                 if matched == sectionData.numberOfAssets() {
                     endGame()
                 }
@@ -270,12 +270,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x - 400
                 self.textCollectionView.alpha = 1.0
                 self.textCollectionView.isUserInteractionEnabled = true
-
-
-
             }
-           
-
             }, completion: nil)
     }
     

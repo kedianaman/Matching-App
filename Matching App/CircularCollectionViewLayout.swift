@@ -19,7 +19,7 @@ class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
     }
   }
   
-  override func copy(with zone: NSZone?) -> AnyObject {
+  override func copy(with zone: NSZone?) -> Any {
     let copiedAttributes: CircularCollectionViewLayoutAttributes = super.copy(with: zone) as! CircularCollectionViewLayoutAttributes
     copiedAttributes.anchorPoint = self.anchorPoint
     copiedAttributes.angle = self.angle
@@ -37,7 +37,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
   }
   
   var angle: CGFloat {
-    return angleAtExtreme*collectionView!.contentOffset.x/(collectionViewContentSize().width - collectionView!.bounds.width)
+    return angleAtExtreme*collectionView!.contentOffset.x/(collectionViewContentSize.width - collectionView!.bounds.width)
   }
   
   var radius: CGFloat = 1000 {
@@ -51,15 +51,35 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
   }
   
   var attributesList = [CircularCollectionViewLayoutAttributes]()
-  
-  override func collectionViewContentSize() -> CGSize {
-    return CGSize(width: CGFloat(collectionView!.numberOfItems(inSection: 0))*itemSize.width,
-      height: collectionView!.bounds.height)
-  }
-  
-  override class func layoutAttributesClass() -> AnyClass {
-    return CircularCollectionViewLayoutAttributes.self
-  }
+    
+    override var collectionViewContentSize: CGSize {
+        get {
+            return CGSize(width: CGFloat(collectionView!.numberOfItems(inSection: 0))*itemSize.width,
+                          height: collectionView!.bounds.height)
+
+        }
+    }
+
+    
+//  override var collectionViewContentSize() -> CGSize {
+//    return CGSize(width: CGFloat(collectionView!.numberOfItems(inSection: 0))*itemSize.width,
+//      height: collectionView!.bounds.height)
+//  }
+    
+//    override var layoutAttributesClass: AnyClass {
+//        get {
+//            return CircularCollectionViewLayoutAttributes.self
+//        }
+//    }
+//  
+//  override class func layoutAttributesClass() -> AnyClass {
+//    return CircularCollectionViewLayoutAttributes.self
+//  }
+    
+
+    
+    
+
   
   override func prepare() {
     super.prepare()
@@ -107,7 +127,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
 
   override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
     var finalContentOffset = proposedContentOffset
-    let factor = -angleAtExtreme/(collectionViewContentSize().width - collectionView!.bounds.width)
+    let factor = -angleAtExtreme/(collectionViewContentSize.width - collectionView!.bounds.width)
     let proposedAngle = proposedContentOffset.x*factor
     let ratio = proposedAngle/anglePerItem
     var multiplier: CGFloat

@@ -21,6 +21,7 @@
 		EDA2873B1D2106D10049F03D /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
 		EDA2873D1D210A530049F03D /* GamePlayTVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2873C1D210A530049F03D /* GamePlayTVViewController.swift */; };
 		EDA2873E1D210B390049F03D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
+		EDA2F89C1D854CEF0049B735 /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */; };
 		EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C711D0E6489008CE0BB /* AppDelegate.swift */; };
 		EDB46C771D0E6489008CE0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C751D0E6489008CE0BB /* Main.storyboard */; };
 		EDB46C791D0E6489008CE0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C781D0E6489008CE0BB /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBarTableViewCell.swift; sourceTree = "<group>"; };
+		ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
 		ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithShadow.swift; sourceTree = "<group>"; };
 		ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				EDB46C7A1D0E6489008CE0BB /* LaunchScreen.storyboard */,
 				ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */,
 				EDB46C7D1D0E6489008CE0BB /* Info.plist */,
+				ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */,
 				EDB46C711D0E6489008CE0BB /* AppDelegate.swift */,
 			);
 			path = "Matching App";
@@ -506,6 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA2F89C1D854CEF0049B735 /* Bariol_Regular.otf in Resources */,
 				EDB46C7C1D0E6489008CE0BB /* LaunchScreen.storyboard in Resources */,
 				EDB46C791D0E6489008CE0BB /* Assets.xcassets in Resources */,
 				ED3E729B1D2BAA6D008DAC7F /* CorrectSound.mp3 in Resources */,
@@ -773,7 +777,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Matching App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -790,7 +794,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Matching App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";

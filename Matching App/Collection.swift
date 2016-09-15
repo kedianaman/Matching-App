@@ -24,11 +24,11 @@ class SectionData {
     
     var topScore: Int? {
         set {
-            let defaults = UserDefaults.standard()
+            let defaults = UserDefaults.standard
             defaults.set(topScore, forKey: title!)
         }
         get {
-            let defaults = UserDefaults.standard()
+            let defaults = UserDefaults.standard
             return defaults.integer(forKey: title!)
         }
     }
