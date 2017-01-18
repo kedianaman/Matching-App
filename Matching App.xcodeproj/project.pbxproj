@@ -216,7 +216,6 @@
 				ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
 				EDC2F4721D474553000684D0 /* New Home Screen */,
-				EDC2F4731D474560000684D0 /* TableView Homescreen */,
 				EDD7B3AC1D219D9700628743 /* Gameplay */,
 				EDD7B3AD1D219DA000628743 /* Post Gameplay */,
 				EDB46C781D0E6489008CE0BB /* Assets.xcassets */,
@@ -225,6 +224,7 @@
 				EDB46C7D1D0E6489008CE0BB /* Info.plist */,
 				ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */,
 				EDB46C711D0E6489008CE0BB /* AppDelegate.swift */,
+				EDC2F4731D474560000684D0 /* TableView Homescreen */,
 			);
 			path = "Matching App";
 			sourceTree = "<group>";

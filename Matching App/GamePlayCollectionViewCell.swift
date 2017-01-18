@@ -34,12 +34,12 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func isMatched() -> Bool {
+        return matched
+    }
+    
     func setMatched() {
         matched = true
-//        UIView.transition(with: self.contentView, duration: 0.4, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
-//            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-//            }, completion: nil)
-//        self.alpha = 1.0
         UIView.transition(with: self, duration: 0.2, options: UIViewAnimationOptions.curveEaseIn, animations: {
             self.alpha = 0.0
             }, completion: nil)
@@ -69,4 +69,6 @@ extension UIView {
         layer.add(animation, forKey: "shake")
     }
 }
+
+
 

@@ -107,6 +107,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // if it's an image collection view, return an image cell of index. If it's a text collection view, return text cell of index.
         if collectionView == imageCollectionView {
             var imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
             imageCell.contentImageView.image = sectionData.randomImageAtIndex(index: indexPath.row)
@@ -136,6 +137,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 oldselectedTextCell.setHighlighted(selected: false)
             }
             selectedTextCell = collectionView.cellForItem(at: indexPath) as! TextCollectionViewCell
+            selectedTextCell?.setHighlighted(selected: true)
 
         }
         
@@ -152,7 +154,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 matched = matched + 1
                 audioPlayer.pause()
                 audioPlayer.play()
-//                AudioServicesPlaySystemSound(1001);
                 if matched == sectionData.numberOfAssets() {
                     endGame()
                 }
@@ -171,7 +172,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             // plays toc sound when only one is selected
             AudioServicesPlaySystemSound(1104);
         }
-        
         
     }
     
@@ -271,7 +271,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 self.textCollectionView.alpha = 1.0
                 self.textCollectionView.isUserInteractionEnabled = true
             }
-            }, completion: nil)
+        }, completion: nil)
     }
     
        // MARK:- Trait Collection Changes
