@@ -39,7 +39,11 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
         cell.sectionImage.image = sectionData.backgroundImage
         cell.titleLabel.text = sectionData.title
-        cell.scoreLabel.text = "Score: \(sectionData.topScore!)"
+        if sectionData.topScore != nil {
+            cell.scoreLabel.text = "Score: \(sectionData.topScore!)"
+        } else {
+            cell.scoreLabel.text = "Score: --"
+        }
         
         cell.layer.masksToBounds = false
         cell.layer.shadowOpacity = 0.75
@@ -70,6 +74,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBAction func exitToMenu(segue:UIStoryboardSegue) {
         //Unwind Segue
+        sectionCollectionView.reloadData()
     }
 
     

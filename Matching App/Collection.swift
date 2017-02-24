@@ -29,7 +29,7 @@ class SectionData {
         }
         get {
             let defaults = UserDefaults.standard
-            return defaults.integer(forKey: title!)
+            return defaults.value(forKey: title!) as? Int
         }
     }
 
