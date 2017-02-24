@@ -33,9 +33,7 @@ class EndGameViewController: UIViewController {
         reviewButton.layer.cornerRadius = 20
         continueButton.layer.cornerRadius = 20
         exitButton.layer.cornerRadius = 20
-
     }
-    
     
     func setUpView(paused: Bool) {        
         if paused == true {

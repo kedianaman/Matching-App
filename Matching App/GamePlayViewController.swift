@@ -51,6 +51,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         audioPlayer.prepareToPlay()
     }
     
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateAxisForBoundsChange(size: view.bounds.size)

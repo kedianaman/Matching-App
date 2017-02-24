@@ -20,6 +20,13 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         let sectionData = collection.sectionDataAtIndex(index: 0)
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+        test()
+    }
+    
+    func test() {
+        let defaults = UserDefaults.standard
+        defaults.setValue(20, forKey: "test")
+        print(defaults.integer(forKey: "test"))
     }
 
     
