@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "490C2CE3BB5C12A0B77052BBA55384C774BAFFF1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "490C2CE3BB5C12A0B77052BBA55384C774BAFFF1" : 0,
+    "C42C33840933106429142E9096A262A279DF629A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "76B4E8A9-AA84-4F71-ACA8-3651562D26CB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "490C2CE3BB5C12A0B77052BBA55384C774BAFFF1" : "Matching%20App\/",
+    "C42C33840933106429142E9096A262A279DF629A" : "PhotoGift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Matching App",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Matching App.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/namankedia\/matching-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "490C2CE3BB5C12A0B77052BBA55384C774BAFFF1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/namankedia\/photogift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C42C33840933106429142E9096A262A279DF629A"
+    }
+  ]
+}

@@ -10,6 +10,7 @@
 		ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */; };
 		ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
 		ED2042901D45F90300AF59F2 /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */; };
+		ED2409691E7A753C007E2314 /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2409681E7A753C007E2314 /* SectionData.swift */; };
 		ED2754321D2BB19F00612B9E /* LabelWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */; };
 		ED290B8D1D225CCA004DBBC6 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		ED3E729B1D2BAA6D008DAC7F /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */; };
@@ -84,6 +85,7 @@
 		ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBarTableViewCell.swift; sourceTree = "<group>"; };
 		ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
 		ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED2409681E7A753C007E2314 /* SectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
 		ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithShadow.swift; sourceTree = "<group>"; };
 		ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
 		ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTVCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				EDB46C9F1D0E665B008CE0BB /* Collection.swift */,
+				ED2409681E7A753C007E2314 /* SectionData.swift */,
 				ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
 				EDC2F4721D474553000684D0 /* New Home Screen */,
@@ -570,6 +573,7 @@
 				ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
 				EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */,
+				ED2409691E7A753C007E2314 /* SectionData.swift in Sources */,
 				EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */,
 				EDC2F46F1D4743E6000684D0 /* CircularCollectionViewLayout.swift in Sources */,
 				ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */,
