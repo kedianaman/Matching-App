@@ -5,7 +5,7 @@
 //  Created by Naman Kedia on 6/26/16.
 //  Copyright © 2016 Naman Kedia. All rights reserved.
 //
-
+// Additional controller which lists a table of images and their attributed texts to allow the user to review once they have finished a game. 
 import UIKit
 
 class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

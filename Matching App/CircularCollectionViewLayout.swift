@@ -6,8 +6,9 @@
 //  Copyright © 2016 Naman Kedia. All rights reserved.
 //
 
-import UIKit
+// Class which allows the Collection View to be displayed like a spinning wheel. Adapted from raywenderlich.com.
 
+import UIKit
 class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
   
   var anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -60,28 +61,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         }
     }
 
-    
-//  override var collectionViewContentSize() -> CGSize {
-//    return CGSize(width: CGFloat(collectionView!.numberOfItems(inSection: 0))*itemSize.width,
-//      height: collectionView!.bounds.height)
-//  }
-    
-//    override var layoutAttributesClass: AnyClass {
-//        get {
-//            return CircularCollectionViewLayoutAttributes.self
-//        }
-//    }
-//  
-//  override class func layoutAttributesClass() -> AnyClass {
-//    return CircularCollectionViewLayoutAttributes.self
-//  }
-    
-
-    
-    
-
-  
-  override func prepare() {
+ override func prepare() {
     super.prepare()
     let centerX = collectionView!.contentOffset.x + (collectionView!.bounds.width/2.0)
     let anchorPointY = ((itemSize.height/2.0) + radius)/itemSize.height

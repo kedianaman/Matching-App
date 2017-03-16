@@ -5,6 +5,7 @@
 //  Created by Naman Kedia on 6/21/16.
 //  Copyright © 2016 Naman Kedia. All rights reserved.
 //
+// Collection View Cell for the Text. 
 
 import UIKit
 

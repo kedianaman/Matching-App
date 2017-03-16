@@ -6,6 +6,8 @@
 //  Copyright © 2016 Naman Kedia. All rights reserved.
 //
 
+// Class which controls the game play screen of the user.
+
 import UIKit
 import AVFoundation
 import AudioToolbox
@@ -107,6 +109,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         return 1
     }
     
+    // function which returns either a text or image cell.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // if it's an image collection view, return an image cell of index. If it's a text collection view, return text cell of index.
         if collectionView == imageCollectionView {
@@ -124,8 +127,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 
     
-    
+    // function which is called when user selects either a text or an image.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // deselects old selected image or text and selects and highlights newly selected cell
             if collectionView == imageCollectionView {
             if let oldselectedImageCell = selectedImageCell {
                 oldselectedImageCell.setHighlighted(selected: false)
@@ -142,7 +146,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         }
         
-        // check to see if they match only if both are non-nil
+        // check to see if they match only if both are non-nil 
         if selectedTextCell != nil && selectedImageCell != nil {
             let image = selectedImageCell?.contentImageView.image
             let text = selectedTextCell?.nameLabel.text
@@ -189,7 +193,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         removeEndGameChildViewController()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
         print("game continued")
-
     }
     
     
@@ -197,9 +200,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         timer.invalidate()
         animateCards(paused: true)
         addEndGameChildViewController(paused: true)
-        
-//        performSegue(withIdentifier: "EndGameIdentifier", sender: true)
-        
     }
     
     func addEndGameChildViewController(paused: Bool) {

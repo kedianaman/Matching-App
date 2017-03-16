@@ -8,6 +8,7 @@
 
 import UIKit
 
+// The Collection View Cell of the Section Card. Has a title label and a score label.  
 class SectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sectionImage: UIImageView!

@@ -40,7 +40,6 @@
 		EDC0506B1D2101AA00B9FD96 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
 		EDC2F46F1D4743E6000684D0 /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */; };
 		EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */; };
-		EDC2F4771D475181000684D0 /* ImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F4761D475181000684D0 /* ImageFlowLayout.swift */; };
 		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
 		EDC8AEA81D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8AEA71D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift */; };
@@ -120,7 +119,6 @@
 		EDC050691D2100C600B9FD96 /* SectionDataTVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDataTVTableViewCell.swift; sourceTree = "<group>"; };
 		EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
 		EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverFlowViewController.swift; sourceTree = "<group>"; };
-		EDC2F4761D475181000684D0 /* ImageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFlowLayout.swift; sourceTree = "<group>"; };
 		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDC8AEA71D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 				EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */,
 				ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */,
 				EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */,
-				EDC2F4761D475181000684D0 /* ImageFlowLayout.swift */,
 			);
 			name = "New Home Screen";
 			sourceTree = "<group>";
@@ -571,7 +568,6 @@
 				ED2754321D2BB19F00612B9E /* LabelWithShadow.swift in Sources */,
 				ED2042901D45F90300AF59F2 /* SectionCollectionViewCell.swift in Sources */,
 				ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */,
-				EDC2F4771D475181000684D0 /* ImageFlowLayout.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
 				EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */,
 				EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */,

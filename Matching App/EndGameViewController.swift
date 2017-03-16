@@ -6,10 +6,9 @@
 //  Copyright © 2016 Naman Kedia. All rights reserved.
 //
 
+// Class which shows the end game screen or the pause screen. 
+
 import UIKit
-
-
-
 
 class EndGameViewController: UIViewController {
     
@@ -35,6 +34,7 @@ class EndGameViewController: UIViewController {
         exitButton.layer.cornerRadius = 20
     }
     
+    // Sets up the view for either a paused screen or an end screen.
     func setUpView(paused: Bool) {        
         if paused == true {
             reviewButton.removeFromSuperview()
@@ -60,9 +60,7 @@ class EndGameViewController: UIViewController {
                 sectionData?.topScore = score
                 bestScoreLabel.text = String((sectionData?.topScore)!)
             }
-            
         }
-        
     }
 
     
@@ -75,7 +73,6 @@ class EndGameViewController: UIViewController {
         if segue.identifier == "ReviewSegueIdentifier" {
             let reviewViewController = segue.destination as! ReviewViewController
             reviewViewController.sectionData = self.sectionData
-            
         }
     }
 

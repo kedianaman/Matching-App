@@ -5,6 +5,7 @@
 //  Created by Naman Kedia on 7/5/16.
 //  Copyright © 2016 Naman Kedia. All rights reserved.
 //
+// Superclass for both Text and Image Cells. Holds a boolean matched, which indicates whether the cell is already matched.
 
 import UIKit
 
@@ -13,6 +14,7 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     private var matched = false
     private var isCurrentlySelected = false
     
+    // Function which reduces the opacity and size of the cell, if the cell is highlighted.
     func setHighlighted(selected: Bool) {
         if selected == true {
             isCurrentlySelected = true
@@ -60,6 +62,7 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// function to shake the cards to indicate an incorrect answer. 
 extension UIView {
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")

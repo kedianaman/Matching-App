@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-
+// Complete data class for simple section including texts, images, and a background image.
 class SectionData {
     
     private var texts = [String]()
@@ -22,6 +22,7 @@ class SectionData {
     var lightBlurredBackgroundImage: UIImage?
     var darkBlurredBackgroundImage: UIImage?
     
+    // Highest score for section, stored in User Defaults.
     var topScore: Int? {
         set {
             let defaults = UserDefaults.standard
@@ -50,7 +51,7 @@ class SectionData {
         lightBlurredBackgroundImage = UIImage(named: "\(key) - bgLightBlur")
         darkBlurredBackgroundImage = UIImage(named: "\(key) - bgDarkBlur")
     }
-    
+    // function which takes in a text and image and decides whether the match is correct.
     func match(image: UIImage, text: String) -> Bool {
         if imagesWithText[text] == image {
             return true
@@ -80,6 +81,7 @@ class SectionData {
     }
 }
 
+//complete Collection with section datas for each different section
 class Collection {
     
     var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Flowers", "Colors", "Transportation"]
@@ -88,6 +90,7 @@ class Collection {
     
     private var sectionDatas = [SectionData]()
     
+    // initialization of Collection. Adds all the different section Datas
     init() {
         
         for key in keys {
@@ -100,7 +103,7 @@ class Collection {
         }
     }
     
-        func numberOfSectionDatas() -> Int {
+    func numberOfSectionDatas() -> Int {
         return sectionDatas.count
     }
     
@@ -109,6 +112,7 @@ class Collection {
     }
 }
 
+// arrays which hold texts from different categories
     private struct texts {
         var animals = ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]
         var vegetables = ["cabbage","potato", "cauliflower", "carrot", "onions", "tomato", "chilli", "okra", "corn", "eggplant", "cucumber", "brocolli"]
@@ -121,7 +125,7 @@ class Collection {
     }
     
     
-
+// Function for randomizing array
 extension Array {
     /// Shuffle the elements of `self` in-place.
     mutating func shuffle() {

@@ -10,6 +10,7 @@ import UIKit
 
 class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    // A class which holds the collection view that displays the different categories.
     
     var collection = Collection()
     var currentIndexPath: NSIndexPath?
@@ -20,20 +21,13 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         let sectionData = collection.sectionDataAtIndex(index: 0)
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
-        test()
     }
-    
-    func test() {
-        let defaults = UserDefaults.standard
-        defaults.setValue(20, forKey: "test")
-        print(defaults.integer(forKey: "test"))
-    }
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collection.numberOfSectionDatas()
     }
     
+    // Returns the card (cell) of the category at a particular indexPath. Customizes title and image for the particular catgory.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = sectionCollectionView.dequeueReusableCell(withReuseIdentifier: "SectionCollectionViewCellIdentifier", for: indexPath) as! SectionCollectionViewCell
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
@@ -52,17 +46,15 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: 30.0).cgPath
         cell.layer.shouldRasterize = true
         cell.layer.rasterizationScale = UIScreen.main.scale
-
-        
-
         return cell
     }
     
+    // Function which gets called when user selects a certain card. Takes user to the game view controller.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "GamePlaySegueIdentifier", sender: indexPath.row)
     }
     
-    
+    // Preperation for Segue. Passes the section data to the Game View Controller.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GamePlaySegueIdentifier" {
             let gameViewController = segue.destination as! GamePlayViewController
@@ -77,7 +69,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         sectionCollectionView.reloadData()
     }
 
-    
+    // Function which changes and animates the background image when user scrolls through the collection.
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var indexPath: NSIndexPath?
         var minimumDistanceToCell = CGFloat.greatestFiniteMagnitude
@@ -91,8 +83,6 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
                 indexPath = sectionCollectionView.indexPath(for: cell) as NSIndexPath?
             }
         }
-        
-        
         
         if indexPath != nil {
             if currentIndexPath != indexPath {
