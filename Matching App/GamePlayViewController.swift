@@ -13,8 +13,10 @@ import AVFoundation
 import AudioToolbox
 
 class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    //MARK: Properties 
+    
     var endGameViewController: EndGameViewController?
-    @IBOutlet var collectionViewStackView: UIStackView!
     var collection = Collection()
     var sectionData: SectionData!
     var retrying = false
@@ -27,7 +29,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     var matched = 0
+    var selectedImageCell: ImageCollectionViewCell?
+    var selectedTextCell: TextCollectionViewCell?
+
     
+    //MARK: IB Outlets
+
+    
+    @IBOutlet var collectionViewStackView: UIStackView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
@@ -36,8 +45,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var darkView: UIView!
  
-    var selectedImageCell: ImageCollectionViewCell?
-    var selectedTextCell: TextCollectionViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -180,6 +187,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
+    //MARK: IB Actions
+
+    
     @IBAction func resetGame(segue: UIStoryboardSegue) {
         animateCards(paused: false)
         removeEndGameChildViewController()
@@ -201,6 +211,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         animateCards(paused: true)
         addEndGameChildViewController(paused: true)
     }
+    
+    //MARK: Pause Controller Helper Functiosn
+
     
     func addEndGameChildViewController(paused: Bool) {
         endGameViewController = self.storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as? EndGameViewController
@@ -258,18 +271,26 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func animateCards(paused: Bool) {
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
             if paused == true {
-                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x - 400
-                self.imageCollectionView.alpha = 0.5
+//                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x - 400
+//                self.imageCollectionView.alpha = 0.5
+//                self.imageCollectionView.isUserInteractionEnabled = false
+//                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x + 400
+//                self.textCollectionView.alpha = 0.5
+//                self.textCollectionView.isUserInteractionEnabled = false
+                self.imageCollectionView.alpha = 0.0
+                self.textCollectionView.alpha = 0.0
                 self.imageCollectionView.isUserInteractionEnabled = false
-                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x + 400
-                self.textCollectionView.alpha = 0.5
                 self.textCollectionView.isUserInteractionEnabled = false
             } else {
-                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x + 400
+//                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x + 400
+//                self.imageCollectionView.alpha = 1.0
+//                self.imageCollectionView.isUserInteractionEnabled = true
+//                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x - 400
+//                self.textCollectionView.alpha = 1.0
+//                self.textCollectionView.isUserInteractionEnabled = true
                 self.imageCollectionView.alpha = 1.0
-                self.imageCollectionView.isUserInteractionEnabled = true
-                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x - 400
                 self.textCollectionView.alpha = 1.0
+                self.imageCollectionView.isUserInteractionEnabled = true
                 self.textCollectionView.isUserInteractionEnabled = true
             }
         }, completion: nil)
