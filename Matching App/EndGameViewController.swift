@@ -42,7 +42,7 @@ class EndGameViewController: UIViewController {
             feedbackLabel.text = " You've paused set \((sectionData?.title)!)."
             scoreLabel.text = "\(score!)*"
             if sectionData!.topScore != nil {
-                bestScoreLabel.text = "Score: \(sectionData!.topScore!)"
+                bestScoreLabel.text = "\(sectionData!.topScore!)"
             } else {
                 bestScoreLabel.text = "--"
             }

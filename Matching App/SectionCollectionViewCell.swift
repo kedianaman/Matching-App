@@ -19,6 +19,7 @@ class SectionCollectionViewCell: UICollectionViewCell {
         self.layer.anchorPoint = circularlayoutAttributes.anchorPoint
         self.center.y += (circularlayoutAttributes.anchorPoint.y - 0.5) * self.bounds.height
     }
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
