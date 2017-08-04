@@ -12,7 +12,7 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
-class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class GamePlayViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: Properties 
     
@@ -127,12 +127,19 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         } else  {
             let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
             textCell.nameLabel.text = sectionData.randomTextAtIndex(index: indexPath.row)
+            textCell.nameLabel.font = textCell.nameLabel.font.withSize(collectionView.bounds.width * 0.06)
             textCell.backgroundImage.image = sectionData.backgroundImage
             textCell.layer.cornerRadius = 20
             return textCell
         }
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sizeLength = collectionView.bounds.width/3 - (40/3)
+        return CGSize(width: sizeLength, height: sizeLength)
+    }
     
     // function which is called when user selects either a text or an image.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
