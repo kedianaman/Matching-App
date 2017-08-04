@@ -159,15 +159,11 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var sizeLength: CGFloat
         if (collectionViewStackView.axis == .horizontal) {
-            sizeLength = collectionView.bounds.width/3 - (40/3)
-            return CGSize(width: collectionView.bounds.width/3 - (40/3), height: collectionView.bounds.height/4 - (40/3))
+            return CGSize(width: collectionView.bounds.width/3 - (60/3), height: collectionView.bounds.height/4 - (60/3))
         } else {
-            sizeLength = collectionView.bounds.height/3 - (40/3)
-            return CGSize(width: collectionView.bounds.width/4 - (40/3), height: collectionView.bounds.height/3 - (40/3))
+            return CGSize(width: collectionView.bounds.width/4 - (60/3), height: collectionView.bounds.height/3 - (60/3))
         }
-        return CGSize(width: sizeLength, height: sizeLength)
     }
     
     // function which is called when user selects either a text or an image.
@@ -177,14 +173,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             if let oldselectedImageCell = selectedImageCell {
                 oldselectedImageCell.setHighlighted(selected: false)
             }
-            selectedImageCell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
+            selectedImageCell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell
             selectedImageCell?.setHighlighted(selected: true)
                 
         } else if collectionView == textCollectionView {
             if let oldselectedTextCell = selectedTextCell {
                 oldselectedTextCell.setHighlighted(selected: false)
             }
-            selectedTextCell = collectionView.cellForItem(at: indexPath) as! TextCollectionViewCell
+            selectedTextCell = collectionView.cellForItem(at: indexPath) as? TextCollectionViewCell
             selectedTextCell?.setHighlighted(selected: true)
 
         }

@@ -44,6 +44,7 @@
 		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		EDC34C831D1002F700F44EB0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
 		EDC8AEA81D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8AEA71D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift */; };
+		EDE465AC1F3533AA00EB95B5 /* Bariol_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDE465AB1F3533A500EB95B5 /* Bariol_Bold.otf */; };
 		EDEE99FB1D1FDCF200FFF65A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */; };
 		EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE99FC1D1FDD5700FFF65A /* ReviewTableViewCell.swift */; };
 		EDF021811D1BECC6009C6610 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF021801D1BECC6009C6610 /* EndGameViewController.swift */; };
@@ -124,6 +125,7 @@
 		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDC8AEA71D2BEB8500DF6D52 /* GamePlayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDE465AB1F3533A500EB95B5 /* Bariol_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Bold.otf; sourceTree = "<group>"; };
 		EDEE99FA1D1FDCF200FFF65A /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		EDEE99FC1D1FDD5700FFF65A /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		EDF021801D1BECC6009C6610 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */,
 				EDB46C7D1D0E6489008CE0BB /* Info.plist */,
 				ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */,
+				EDE465AB1F3533A500EB95B5 /* Bariol_Bold.otf */,
 				EDB46C711D0E6489008CE0BB /* AppDelegate.swift */,
 				EDC2F4731D474560000684D0 /* TableView Homescreen */,
 			);
@@ -510,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA2F89C1D854CEF0049B735 /* Bariol_Regular.otf in Resources */,
+				EDE465AC1F3533AA00EB95B5 /* Bariol_Bold.otf in Resources */,
 				EDB46C7C1D0E6489008CE0BB /* LaunchScreen.storyboard in Resources */,
 				EDB46C791D0E6489008CE0BB /* Assets.xcassets in Resources */,
 				ED3E729B1D2BAA6D008DAC7F /* CorrectSound.mp3 in Resources */,
