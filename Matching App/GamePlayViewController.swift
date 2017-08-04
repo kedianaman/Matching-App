@@ -45,6 +45,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var darkView: UIView!
  
+    // MARK:- Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,19 +53,19 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         textCollectionView.addShadow()
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         titleLabel.text = sectionData.title
-        do{
+        do {
             audioPlayer = try AVAudioPlayer(contentsOf:correctSound as URL)
-        }catch {
+        } catch {
             print("Error getting the audio file")
         }
         audioPlayer.prepareToPlay()
     }
     
-   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateAxisForBoundsChange(size: view.bounds.size)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
@@ -73,6 +74,27 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    
+    func updateAxisForBoundsChange(size: CGSize) {
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            // iPad - check orientation in this case.
+            if size.width > size.height {
+                self.collectionViewStackView.axis = UILayoutConstraintAxis.horizontal
+            }
+            else {
+                self.collectionViewStackView.axis = UILayoutConstraintAxis.vertical
+            }
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        updateAxisForBoundsChange(size: size)
+        coordinator.animate(alongsideTransition: { (context) in
+            self.imageCollectionView.collectionViewLayout.invalidateLayout()
+            self.textCollectionView.collectionViewLayout.invalidateLayout()
+        }, completion: nil)
+    }
     
     //MARK: Helper Methods 
     
@@ -137,7 +159,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let sizeLength = collectionView.bounds.width/3 - (40/3)
+        var sizeLength: CGFloat
+        if (collectionViewStackView.axis == .horizontal) {
+            sizeLength = collectionView.bounds.width/3 - (40/3)
+            return CGSize(width: collectionView.bounds.width/3 - (40/3), height: collectionView.bounds.height/4 - (40/3))
+        } else {
+            sizeLength = collectionView.bounds.height/3 - (40/3)
+            return CGSize(width: collectionView.bounds.width/4 - (40/3), height: collectionView.bounds.height/3 - (40/3))
+        }
         return CGSize(width: sizeLength, height: sizeLength)
     }
     
@@ -302,24 +331,4 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }, completion: nil)
     }
-    
-       // MARK:- Trait Collection Changes
-
-    func updateAxisForBoundsChange(size: CGSize) {
-        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-            // iPad - check orientation in this case.
-            if size.width > size.height {
-                self.collectionViewStackView.axis = UILayoutConstraintAxis.horizontal
-            }
-            else {
-                self.collectionViewStackView.axis = UILayoutConstraintAxis.vertical
-            }
-        }
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        updateAxisForBoundsChange(size: size)
-    }
-    
 }
