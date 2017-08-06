@@ -21,6 +21,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         let sectionData = collection.sectionDataAtIndex(index: 0)
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+        self.view.addParalaxToView()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

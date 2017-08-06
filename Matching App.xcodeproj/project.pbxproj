@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0AC6F91F378B6800DA40F3 /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0AC6F81F378B6800DA40F3 /* ParallaxEffect.swift */; };
 		ED0CA50F1D1DA18600E9A0FF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */; };
 		ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
 		ED2042901D45F90300AF59F2 /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED0AC6F81F378B6800DA40F3 /* ParallaxEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
 		ED0CA50E1D1DA18600E9A0FF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBarTableViewCell.swift; sourceTree = "<group>"; };
 		ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				EDB46C9F1D0E665B008CE0BB /* Collection.swift */,
 				ED2409681E7A753C007E2314 /* SectionData.swift */,
 				ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */,
+				ED0AC6F81F378B6800DA40F3 /* ParallaxEffect.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
 				EDC2F4721D474553000684D0 /* New Home Screen */,
 				EDD7B3AC1D219D9700628743 /* Gameplay */,
@@ -577,6 +580,7 @@
 				ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
 				EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */,
+				ED0AC6F91F378B6800DA40F3 /* ParallaxEffect.swift in Sources */,
 				ED2409691E7A753C007E2314 /* SectionData.swift in Sources */,
 				EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */,
 				EDC2F46F1D4743E6000684D0 /* CircularCollectionViewLayout.swift in Sources */,
@@ -788,7 +792,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -805,7 +809,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -31,6 +31,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     var matched = 0
     var selectedImageCell: ImageCollectionViewCell?
     var selectedTextCell: TextCollectionViewCell?
+    var fontSize = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height) * 0.028
 
     
     //MARK: IB Outlets
@@ -59,6 +60,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             print("Error getting the audio file")
         }
         audioPlayer.prepareToPlay()
+        self.view.addParalaxToView()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,7 +152,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         } else  {
             let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
             textCell.nameLabel.text = sectionData.randomTextAtIndex(index: indexPath.row)
-            textCell.nameLabel.font = textCell.nameLabel.font.withSize(collectionView.bounds.width * 0.06)
+            textCell.nameLabel.font = textCell.nameLabel.font.withSize(fontSize)
             textCell.backgroundImage.image = sectionData.backgroundImage
             textCell.layer.cornerRadius = 20
             return textCell
