@@ -18,6 +18,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var sectionCollectionView: UICollectionView!
+    @IBOutlet weak var titleImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

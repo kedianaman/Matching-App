@@ -22,23 +22,41 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         let fromViewController = transitionContext.viewController(forKey: .from) as! CoverFlowViewController
         let toViewController = transitionContext.viewController(forKey: .to) as! GamePlayViewController
+        toViewController.imageCollectionView.alpha = 0.0
+        toViewController.textCollectionView.alpha = 0.0
         containerView.addSubview(toViewController.view)
         toViewController.view.alpha = 0.0
-        
         UIView.animate(withDuration: 0.3, animations: {
-            let collectionView = fromViewController.sectionCollectionView
-            let flowLayout = collectionView?.collectionViewLayout as! CircularCollectionViewLayout
             fromViewController.sectionCollectionView.transform = CGAffineTransform(translationX: 0, y: fromViewController.sectionCollectionView.bounds.height)
-            flowLayout.radius = 1000
+            fromViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -fromViewController.titleImageView.bounds.height)
         }) { (finished) in
             UIView.animate(withDuration: 0.3, animations: {
                 toViewController.view.alpha = 1.0
-            }) { (finished) in
-                fromViewController.sectionCollectionView.transform = CGAffineTransform.identity
-                
-                transitionContext.completeTransition(true)
-            }
+            }, completion: { (finished) in
+                for cell in toViewController.imageCollectionView.visibleCells {
+                    cell.transform = CGAffineTransform(scaleX: 0, y: 0)
+                }
+                for cell in toViewController.textCollectionView.visibleCells {
+                    cell.transform = CGAffineTransform(scaleX: 0, y: 0)
+                }
+                toViewController.imageCollectionView.alpha = 1.0
+                toViewController.textCollectionView.alpha = 1.0
+                UIView.animate(withDuration: 0.3, animations: {
+                    for cell in toViewController.imageCollectionView.visibleCells {
+                        cell.transform = CGAffineTransform.identity
+                    }
+                    for cell in toViewController.textCollectionView.visibleCells {
+                        cell.transform = CGAffineTransform.identity
+                    }
+                }, completion: { (finished) in
+                    fromViewController.sectionCollectionView.transform = CGAffineTransform.identity
+                    fromViewController.titleImageView.transform = CGAffineTransform.identity
+                    transitionContext.completeTransition(true)                })
+            })
         }
+        
+        
+
         
         
 //        UIView.animate(withDuration: duration,
