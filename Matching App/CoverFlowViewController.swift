@@ -14,6 +14,8 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     
     var collection = Collection()
     var currentIndexPath: NSIndexPath?
+    let customAnimation = CustomAnimation()
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var sectionCollectionView: UICollectionView!
     
@@ -61,6 +63,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
             let gameViewController = segue.destination as! GamePlayViewController
             let index = sender as! Int
             gameViewController.sectionData = collection.sectionDataAtIndex(index: index)
+            gameViewController.transitioningDelegate = self
         }
     }
     
@@ -101,7 +104,16 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
             }
         }
     }
+}
 
+extension CoverFlowViewController: UIViewControllerTransitioningDelegate {
     
-
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return customAnimation
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+    
 }

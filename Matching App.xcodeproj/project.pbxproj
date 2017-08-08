@@ -15,6 +15,7 @@
 		ED2754321D2BB19F00612B9E /* LabelWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */; };
 		ED290B8D1D225CCA004DBBC6 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		ED3E729B1D2BAA6D008DAC7F /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */; };
+		ED4C168B1F395B9A00511C75 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C168A1F395B9A00511C75 /* CustomAnimation.swift */; };
 		ED4FB5131D210E1700E700A4 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
 		ED4FB5171D2112FB00E700A4 /* ImageTVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */; };
 		ED4FB5191D21136A00E700A4 /* TextTVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */; };
@@ -91,6 +92,7 @@
 		ED2409681E7A753C007E2314 /* SectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
 		ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithShadow.swift; sourceTree = "<group>"; };
 		ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CorrectSound.mp3; sourceTree = "<group>"; };
+		ED4C168A1F395B9A00511C75 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		ED4FB5161D2112FB00E700A4 /* ImageTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTVCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED4FB5181D21136A00E700A4 /* TextTVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTVCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				ED2409681E7A753C007E2314 /* SectionData.swift */,
 				ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */,
 				ED0AC6F81F378B6800DA40F3 /* ParallaxEffect.swift */,
+				ED4C168A1F395B9A00511C75 /* CustomAnimation.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
 				EDC2F4721D474553000684D0 /* New Home Screen */,
 				EDD7B3AC1D219D9700628743 /* Gameplay */,
@@ -580,6 +583,7 @@
 				ED0CA5111D1DA1E300E9A0FF /* SectionBarTableViewCell.swift in Sources */,
 				EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */,
 				EDEE99FD1D1FDD5700FFF65A /* ReviewTableViewCell.swift in Sources */,
+				ED4C168B1F395B9A00511C75 /* CustomAnimation.swift in Sources */,
 				ED0AC6F91F378B6800DA40F3 /* ParallaxEffect.swift in Sources */,
 				ED2409691E7A753C007E2314 /* SectionData.swift in Sources */,
 				EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */,
