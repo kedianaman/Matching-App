@@ -23,7 +23,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         let sectionData = collection.sectionDataAtIndex(index: 0)
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
-        self.view.addParalaxToView()
+        self.sectionCollectionView.addParalaxToView()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,7 +55,16 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     // Function which gets called when user selects a certain card. Takes user to the game view controller.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "GamePlaySegueIdentifier", sender: indexPath.row)
-    }
+        
+//        UIView.animate(withDuration: 0.5, animations: {
+//            collectionView.performBatchUpdates({
+//                let layout = collectionView.collectionViewLayout as! CircularCollectionViewLayout
+//                layout.radius = layout.radius == 1000 ? 10000 : 1000
+//                layout.spacingMultiplier = layout.radius == 1000 ? 1.0 : 0.1
+//                layout.invalidateLayout()
+//            }, completion: nil)
+//    })
+}
     
     // Preperation for Segue. Passes the section data to the Game View Controller.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

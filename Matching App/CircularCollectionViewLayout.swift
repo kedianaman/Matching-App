@@ -48,8 +48,14 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         }
     }
     
+    var spacingMultiplier: CGFloat = 1.0 {
+        didSet {
+            invalidateLayout()
+        }
+    }
+    
     var anglePerItem: CGFloat {
-        return atan(itemSize.width/radius)
+        return atan(itemSize.width/radius) * spacingMultiplier
     }
     
     var attributesList = [CircularCollectionViewLayoutAttributes]()
@@ -72,22 +78,27 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         var startIndex = 0
         var endIndex = collectionView!.numberOfItems(inSection: 0) - 1
         //3
-        if (angle < -theta) {
-            startIndex = Int(floor((-theta - angle)/anglePerItem))
-        }
-        //4
-        endIndex = min(endIndex, Int(ceil((theta - angle)/anglePerItem)))
-        //5
-        if (endIndex < startIndex) {
-            endIndex = 0
-            startIndex = 0
-        }
+//        if (angle < -theta) {
+//            startIndex = Int(floor((-theta - angle)/anglePerItem))
+//        }
+//        //4
+//        endIndex = min(endIndex, Int(ceil((theta - angle)/anglePerItem)))
+//        //5
+//        if (endIndex < startIndex) {
+//            endIndex = 0
+//            startIndex = 0
+//        }
+        
+        
         attributesList = (startIndex...endIndex).map { (i) -> CircularCollectionViewLayoutAttributes in
             let attributes = CircularCollectionViewLayoutAttributes(forCellWith: IndexPath(item: i, section: 0))
             attributes.size = self.itemSize
-            attributes.center = CGPoint(x: centerX, y: self.collectionView!.bounds.midY)
             attributes.angle = self.angle + (self.anglePerItem*CGFloat(i))
-            attributes.anchorPoint = CGPoint(x: 0.5, y: anchorPointY)
+            
+            let anchorPoint = CGPoint(x: centerX, y: self.collectionView!.bounds.midY + radius)
+            attributes.center = CGPoint(x: anchorPoint.x + radius * cos(.pi/2 - attributes.angle), y: anchorPoint.y - radius * sin(.pi/2 - attributes.angle))
+            
+            attributes.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             return attributes
         }
     }
@@ -97,7 +108,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath)
-        -> UICollectionViewLayoutAttributes! {
+        -> UICollectionViewLayoutAttributes? {
             return attributesList[(indexPath as NSIndexPath).row]
     }
     

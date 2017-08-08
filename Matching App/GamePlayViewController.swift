@@ -60,7 +60,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             print("Error getting the audio file")
         }
         audioPlayer.prepareToPlay()
-        self.view.addParalaxToView()
+        self.collectionViewStackView.addParalaxToView()
 
     }
     

@@ -20,17 +20,38 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
-        let toView = transitionContext.view(forKey: .to)!
-        containerView.addSubview(toView)
-        toView.alpha = 0.0
-        UIView.animate(withDuration: duration,
-                       animations: {
-                        toView.alpha = 1.0
-        },
-                       completion: { _ in
-                        transitionContext.completeTransition(true)
+        let fromViewController = transitionContext.viewController(forKey: .from) as! CoverFlowViewController
+        let toViewController = transitionContext.viewController(forKey: .to) as! GamePlayViewController
+        containerView.addSubview(toViewController.view)
+        toViewController.view.alpha = 0.0
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            let collectionView = fromViewController.sectionCollectionView
+            let flowLayout = collectionView?.collectionViewLayout as! CircularCollectionViewLayout
+            fromViewController.sectionCollectionView.transform = CGAffineTransform(translationX: 0, y: fromViewController.sectionCollectionView.bounds.height)
+            flowLayout.radius = 1000
+        }) { (finished) in
+            UIView.animate(withDuration: 0.3, animations: {
+                toViewController.view.alpha = 1.0
+            }) { (finished) in
+                fromViewController.sectionCollectionView.transform = CGAffineTransform.identity
+                
+                transitionContext.completeTransition(true)
+            }
         }
-        )
+        
+        
+//        UIView.animate(withDuration: duration,
+//                       animations: {
+//                        fromViewController.sectionCollectionView.transform = CGAffineTransform(translationX: 0, y: 500)
+//                        toViewController.view.alpha = 1.0
+//        },
+//                       completion: { _ in
+//                        fromViewController.sectionCollectionView.transform = CGAffineTransform.identity
+//
+//                        transitionContext.completeTransition(true)
+//        }
+//        )
     }
 
 
