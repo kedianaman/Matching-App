@@ -15,7 +15,7 @@ class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
     
     var angle: CGFloat = 0 {
         didSet {
-            zIndex = Int(angle*1000000)
+            zIndex = Int(angle)
             transform = CGAffineTransform(rotationAngle: angle)
         }
     }
@@ -71,24 +71,8 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     override func prepare() {
         super.prepare()
         let centerX = collectionView!.contentOffset.x + (collectionView!.bounds.width/2.0)
-        let anchorPointY = ((itemSize.height/2.0) + radius)/itemSize.height
-        //1
-        let theta = atan2(collectionView!.bounds.width/2.0, radius + (itemSize.height/2.0) - (collectionView!.bounds.height/2.0)) //1
-        //2
-        var startIndex = 0
-        var endIndex = collectionView!.numberOfItems(inSection: 0) - 1
-        //3
-//        if (angle < -theta) {
-//            startIndex = Int(floor((-theta - angle)/anglePerItem))
-//        }
-//        //4
-//        endIndex = min(endIndex, Int(ceil((theta - angle)/anglePerItem)))
-//        //5
-//        if (endIndex < startIndex) {
-//            endIndex = 0
-//            startIndex = 0
-//        }
-        
+        let startIndex = 0
+        let endIndex = collectionView!.numberOfItems(inSection: 0) - 1
         
         attributesList = (startIndex...endIndex).map { (i) -> CircularCollectionViewLayoutAttributes in
             let attributes = CircularCollectionViewLayoutAttributes(forCellWith: IndexPath(item: i, section: 0))

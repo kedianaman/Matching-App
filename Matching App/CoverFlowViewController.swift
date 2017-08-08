@@ -119,11 +119,13 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
 extension CoverFlowViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        customAnimation.presenting = true
         return customAnimation
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        customAnimation.presenting = false 
+        return customAnimation
     }
     
 }
