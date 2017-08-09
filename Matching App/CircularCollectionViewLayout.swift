@@ -15,7 +15,6 @@ class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
     
     var angle: CGFloat = 0 {
         didSet {
-            zIndex = Int(angle)
             transform = CGAffineTransform(rotationAngle: angle)
         }
     }
@@ -62,7 +61,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize: CGSize {
         get {
-            return CGSize(width: CGFloat(collectionView!.numberOfItems(inSection: 0))*itemSize.width,
+            return CGSize(width: CGFloat(collectionView!.numberOfItems(inSection: 0)) * itemSize.width,
                           height: collectionView!.bounds.height)
             
         }
@@ -83,6 +82,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
             attributes.center = CGPoint(x: anchorPoint.x + radius * cos(.pi/2 - attributes.angle), y: anchorPoint.y - radius * sin(.pi/2 - attributes.angle))
             
             attributes.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            attributes.zIndex = i
             return attributes
         }
     }
@@ -99,7 +99,6 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
-    
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         var finalContentOffset = proposedContentOffset
