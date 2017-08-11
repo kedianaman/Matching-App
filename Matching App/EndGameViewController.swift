@@ -21,7 +21,6 @@ class EndGameViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var bestScoreLabel: UILabel!
     @IBOutlet var retryButton: UIButton!
-    @IBOutlet var reviewButton: UIButton!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var exitButton: UIButton!
 
@@ -29,7 +28,6 @@ class EndGameViewController: UIViewController {
         super.viewDidLoad()
         setUpView(paused: paused)
         retryButton.layer.cornerRadius = 20
-        reviewButton.layer.cornerRadius = 20
         continueButton.layer.cornerRadius = 20
         exitButton.layer.cornerRadius = 20
     }
@@ -37,9 +35,8 @@ class EndGameViewController: UIViewController {
     // Sets up the view for either a paused screen or an end screen.
     func setUpView(paused: Bool) {        
         if paused == true {
-            reviewButton.removeFromSuperview()
-            titleLabel.text = "Paused."
-            feedbackLabel.text = " You've paused set \((sectionData?.title)!)."
+            titleLabel.text = "Paused"
+            feedbackLabel.text = "\(sectionData!.title!)"
             scoreLabel.text = "\(score!)*"
             if sectionData!.topScore != nil {
                 bestScoreLabel.text = "\(sectionData!.topScore!)"
@@ -49,7 +46,7 @@ class EndGameViewController: UIViewController {
         } else {
             continueButton.removeFromSuperview()
             titleLabel.text = "Congratulations!"
-            feedbackLabel.text = " You've finished set \((sectionData?.title)!)."
+            feedbackLabel.text = " You've finished \((sectionData?.title)!)"
             scoreLabel.text = "\(score!)"
             if sectionData?.topScore != nil {
                 if (sectionData?.topScore)! < score! {
@@ -62,12 +59,6 @@ class EndGameViewController: UIViewController {
             }
         }
     }
-
-    
-    @IBAction func reviewButtonPressed(_ sender: AnyObject) {
-        performSegue(withIdentifier: "ReviewSegueIdentifier", sender: nil)
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ReviewSegueIdentifier" {

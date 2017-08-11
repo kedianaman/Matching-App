@@ -61,6 +61,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
 //
 //        let newLayout = CircularCollectionViewLayout()
 //        newLayout.radius = layout.radius == 1000 ? 10000 : 1000
+//        newLayout.spacingMultiplier = 0.01
 //        collectionView.setCollectionViewLayout(newLayout, animated: true)
     }
     

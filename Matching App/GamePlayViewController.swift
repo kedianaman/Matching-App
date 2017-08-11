@@ -267,7 +267,11 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             endGameViewController.didMove(toParentViewController: self)
             endGameViewController.view.layer.cornerRadius = 40
             endGameViewController.view.layer.masksToBounds = true
-            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
+//            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
+//                endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
+//                self.hideTopView(willHide: true)
+//            }, completion: nil)
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
                 self.hideTopView(willHide: true)
             }, completion: nil)
@@ -306,14 +310,16 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func animateCards(paused: Bool) {
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
             if paused == true {
+                self.imageCollectionView.transform = CGAffineTransform(translationX: -self.imageCollectionView.bounds.width, y: 0)
+                self.textCollectionView.transform = CGAffineTransform(translationX: self.textCollectionView.bounds.width, y: 0)
 //                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x - 400
 //                self.imageCollectionView.alpha = 0.5
 //                self.imageCollectionView.isUserInteractionEnabled = false
 //                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x + 400
 //                self.textCollectionView.alpha = 0.5
 //                self.textCollectionView.isUserInteractionEnabled = false
-                self.imageCollectionView.alpha = 0.0
-                self.textCollectionView.alpha = 0.0
+//                self.imageCollectionView.alpha = 0.0
+//                self.textCollectionView.alpha = 0.0
                 self.imageCollectionView.isUserInteractionEnabled = false
                 self.textCollectionView.isUserInteractionEnabled = false
             } else {
@@ -323,8 +329,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
 //                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x - 400
 //                self.textCollectionView.alpha = 1.0
 //                self.textCollectionView.isUserInteractionEnabled = true
-                self.imageCollectionView.alpha = 1.0
-                self.textCollectionView.alpha = 1.0
+//                self.imageCollectionView.alpha = 1.0
+//                self.textCollectionView.alpha = 1.0
+                self.imageCollectionView.transform = CGAffineTransform.identity
+                self.textCollectionView.transform = CGAffineTransform.identity
                 self.imageCollectionView.isUserInteractionEnabled = true
                 self.textCollectionView.isUserInteractionEnabled = true
             }
