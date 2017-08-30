@@ -14,6 +14,7 @@ class EndGameViewController: UIViewController {
     
     var paused = false 
     var score: Int?
+    var matched: Int? 
     var sectionData: SectionData?
     
     @IBOutlet var titleLabel: UILabel!
@@ -23,7 +24,8 @@ class EndGameViewController: UIViewController {
     @IBOutlet var retryButton: UIButton!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var exitButton: UIButton!
-
+    @IBOutlet weak var progressView: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView(paused: paused)
@@ -37,27 +39,12 @@ class EndGameViewController: UIViewController {
         if paused == true {
             titleLabel.text = "Paused"
             feedbackLabel.text = "\(sectionData!.title!)"
-            scoreLabel.text = "\(score!)*"
-            if sectionData!.topScore != nil {
-                bestScoreLabel.text = "\(sectionData!.topScore!)"
-            } else {
-                bestScoreLabel.text = "--"
-            }
         } else {
             continueButton.removeFromSuperview()
             titleLabel.text = "Congratulations!"
             feedbackLabel.text = " You've finished \((sectionData?.title)!)"
-            scoreLabel.text = "\(score!)"
-            if sectionData?.topScore != nil {
-                if (sectionData?.topScore)! < score! {
-                    sectionData?.topScore = score
-                }
-                bestScoreLabel.text = String((sectionData?.topScore)!)
-            } else {
-                sectionData?.topScore = score
-                bestScoreLabel.text = String((sectionData?.topScore)!)
-            }
         }
+        progressView.setProgress((Float(Double(matched!)/12.0)), animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

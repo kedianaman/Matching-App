@@ -36,6 +36,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         let cell = sectionCollectionView.dequeueReusableCell(withReuseIdentifier: "SectionCollectionViewCellIdentifier", for: indexPath) as! SectionCollectionViewCell
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
         cell.sectionImage.image = sectionData.backgroundImage
+        cell.sectionImage.layer.cornerRadius = 15.0
         cell.titleLabel.text = sectionData.title
         if sectionData.topScore != nil {
             cell.scoreLabel.text = "Score: \(sectionData.topScore!)"

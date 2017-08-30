@@ -254,15 +254,23 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         endGameViewController = self.storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as? EndGameViewController
         if let endGameViewController = endGameViewController {
             if paused == true {
-                endGameViewController.paused = true
+                endGameViewController.paused = true                
             }
             endGameViewController.sectionData = sectionData
             endGameViewController.score = score
             endGameViewController.willMove(toParentViewController: self)
             self.addChildViewController(endGameViewController)
             self.view.addSubview(endGameViewController.view)
-            let width = self.view.bounds.width * 0.75
-            let height = self.view.bounds.height * 0.75
+            let width: CGFloat!
+            let height: CGFloat!
+            if (self.view.bounds.width > self.view.bounds.height) {
+                width = self.view.bounds.width * 0.6
+                height = self.view.bounds.height * 0.65
+            } else {
+                width = self.view.bounds.width * 0.78
+                height = self.view.bounds.height * 0.5
+            }
+            
             endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
             endGameViewController.didMove(toParentViewController: self)
             endGameViewController.view.layer.cornerRadius = 40

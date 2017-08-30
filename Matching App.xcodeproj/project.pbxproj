@@ -224,7 +224,7 @@
 				ED0AC6F81F378B6800DA40F3 /* ParallaxEffect.swift */,
 				ED4C168A1F395B9A00511C75 /* CustomAnimation.swift */,
 				EDB46C751D0E6489008CE0BB /* Main.storyboard */,
-				EDC2F4721D474553000684D0 /* New Home Screen */,
+				EDC2F4721D474553000684D0 /* HomeScreen */,
 				EDD7B3AC1D219D9700628743 /* Gameplay */,
 				EDD7B3AD1D219DA000628743 /* Post Gameplay */,
 				EDB46C781D0E6489008CE0BB /* Assets.xcassets */,
@@ -292,14 +292,14 @@
 			path = "Matching App TVUITests";
 			sourceTree = "<group>";
 		};
-		EDC2F4721D474553000684D0 /* New Home Screen */ = {
+		EDC2F4721D474553000684D0 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
 				EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */,
 				ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */,
 				EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */,
 			);
-			name = "New Home Screen";
+			name = HomeScreen;
 			sourceTree = "<group>";
 		};
 		EDC2F4731D474560000684D0 /* TableView Homescreen */ = {
