@@ -44,6 +44,7 @@ class EndGameViewController: UIViewController {
             titleLabel.text = "Congratulations!"
             feedbackLabel.text = " You've finished \((sectionData?.title)!)"
         }
+        
         progressView.setProgress((Float(Double(matched!)/12.0)), animated: true)
     }
     

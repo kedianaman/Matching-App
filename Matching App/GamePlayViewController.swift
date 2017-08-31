@@ -77,12 +77,21 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+//    if (self.view.bounds.width > self.view.bounds.height) {
+//    width = self.view.bounds.width * 0.6
+//    height = self.view.bounds.height * 0.65
+//    } else {
+//    width = self.view.bounds.width * 0.78
+//    height = self.view.bounds.height * 0.5
+//    }
+//    
+//    endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
     
     func updateAxisForBoundsChange(size: CGSize) {
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
             // iPad - check orientation in this case.
             if size.width > size.height {
-                self.collectionViewStackView.axis = UILayoutConstraintAxis.horizontal
+               self.collectionViewStackView.axis = UILayoutConstraintAxis.horizontal
             }
             else {
                 self.collectionViewStackView.axis = UILayoutConstraintAxis.vertical
@@ -96,7 +105,37 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         coordinator.animate(alongsideTransition: { (context) in
             self.imageCollectionView.collectionViewLayout.invalidateLayout()
             self.textCollectionView.collectionViewLayout.invalidateLayout()
-        }, completion: nil)
+        }) { (context) in
+//            if size.width > size.height {
+//                if self.endGameViewController != nil {
+////                    print("centerX: \(self.endGameViewController!.view.frame.midX)")
+////                    print("centerY: \(self.endGameViewController!.view.frame.midY)")
+////
+//
+//                    let width = size.width * 0.6
+//                    let height = size.height * 0.65
+//                    print("landscape - width: \(size.width), height: \(size.height)")
+//                    self.endGameViewController!.view.frame = CGRect(x: size.width/2 - width/2, y: height/2, width: width, height: height)
+//                        print("centerY: \(self.endGameViewController!.view.frame.midY)")
+//
+//                 
+//
+//                }
+//            }
+//            else {
+//                if self.endGameViewController != nil {
+////
+//                    let width = size.width * 0.78
+//                    let height = size.height * 0.5
+//                    print("portrait - width: \(size.width), height: \(size.height)")
+//                    self.endGameViewController!.view.frame = CGRect(x: size.width/2 - width/2, y: height/2, width: width, height: height)
+//                    print("centerY: \(self.endGameViewController!.view.frame.midY)")
+//
+//                }
+//                
+//            }
+
+        }
     }
     
     //MARK: Helper Methods 
@@ -254,31 +293,33 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         endGameViewController = self.storyboard?.instantiateViewController(withIdentifier: "EndGameViewController") as? EndGameViewController
         if let endGameViewController = endGameViewController {
             if paused == true {
-                endGameViewController.paused = true                
+                endGameViewController.paused = true
             }
             endGameViewController.sectionData = sectionData
             endGameViewController.score = score
+            endGameViewController.matched = matched
             endGameViewController.willMove(toParentViewController: self)
             self.addChildViewController(endGameViewController)
             self.view.addSubview(endGameViewController.view)
             let width: CGFloat!
             let height: CGFloat!
-            if (self.view.bounds.width > self.view.bounds.height) {
-                width = self.view.bounds.width * 0.6
-                height = self.view.bounds.height * 0.65
-            } else {
-                width = self.view.bounds.width * 0.78
-                height = self.view.bounds.height * 0.5
-            }
+//            if (self.view.bounds.width > self.view.bounds.height) {
+//                width = self.view.bounds.width * 0.6
+//                height = self.view.bounds.height * 0.65
+//            } else {
+//                width = self.view.bounds.width * 0.78
+//                height = self.view.bounds.height * 0.5
+//            }
+            width = 500;
+            height = 400;
             
             endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
+            print("centerX: \(self.endGameViewController!.view.frame.midX)")
+            print("centerY: \(self.endGameViewController!.view.frame.midY)")
+            
             endGameViewController.didMove(toParentViewController: self)
             endGameViewController.view.layer.cornerRadius = 40
             endGameViewController.view.layer.masksToBounds = true
-//            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
-//                endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
-//                self.hideTopView(willHide: true)
-//            }, completion: nil)
             UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
                 self.hideTopView(willHide: true)
