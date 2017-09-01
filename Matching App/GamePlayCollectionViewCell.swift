@@ -42,20 +42,22 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     
     func setMatched() {
         matched = true
-        UIView.transition(with: self, duration: 0.2, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
             self.alpha = 0.0
-            }, completion: nil)
+        }, completion: nil)
         self.isUserInteractionEnabled = false
+//        UIView.transition(with: self, duration: 0.2, options: UIViewAnimationOptions.curveEaseIn, animations: {
+//            self.alpha = 0.0
+//            }, completion: nil)
+//        self.isUserInteractionEnabled = false
     }
     
     func reset() {
 
         if isCurrentlySelected == true || matched == true {
-            UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                self.alpha = 1.0
-                }, completion: nil)
             self.isUserInteractionEnabled = true
+            matched = false
             isCurrentlySelected = false
 
         }

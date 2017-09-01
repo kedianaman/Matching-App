@@ -265,9 +265,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     
     @IBAction func resetGame(segue: UIStoryboardSegue) {
-        animateCards(paused: false)
         removeEndGameChildViewController()
         reset()
+        animateCards(paused: false)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
 
     }
@@ -334,8 +334,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height
                 self.hideTopView(willHide: false)
-            }, completion: nil)
-            endGameViewController.removeFromParentViewController()
+            }, completion: { (complete) in
+                endGameViewController.removeFromParentViewController()
+            })
         }
     }
     
@@ -357,27 +358,20 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
 
     func animateCards(paused: Bool) {
+        if paused == true {
+            animateCards(hide: true)
+        } else {
+            animateCards(hide: false)
+        }
         UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
             if paused == true {
-                self.imageCollectionView.transform = CGAffineTransform(translationX: -self.imageCollectionView.bounds.width, y: 0)
-                self.textCollectionView.transform = CGAffineTransform(translationX: self.textCollectionView.bounds.width, y: 0)
-//                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x - 400
-//                self.imageCollectionView.alpha = 0.5
-//                self.imageCollectionView.isUserInteractionEnabled = false
-//                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x + 400
-//                self.textCollectionView.alpha = 0.5
-//                self.textCollectionView.isUserInteractionEnabled = false
+//                self.imageCollectionView.transform = CGAffineTransform(translationX: -self.imageCollectionView.bounds.width, y: 0)
+//                self.textCollectionView.transform = CGAffineTransform(translationX: self.textCollectionView.bounds.width, y: 0)
 //                self.imageCollectionView.alpha = 0.0
 //                self.textCollectionView.alpha = 0.0
                 self.imageCollectionView.isUserInteractionEnabled = false
                 self.textCollectionView.isUserInteractionEnabled = false
             } else {
-//                self.imageCollectionView.frame.origin.x = self.imageCollectionView.frame.origin.x + 400
-//                self.imageCollectionView.alpha = 1.0
-//                self.imageCollectionView.isUserInteractionEnabled = true
-//                self.textCollectionView.frame.origin.x = self.textCollectionView.frame.origin.x - 400
-//                self.textCollectionView.alpha = 1.0
-//                self.textCollectionView.isUserInteractionEnabled = true
 //                self.imageCollectionView.alpha = 1.0
 //                self.textCollectionView.alpha = 1.0
                 self.imageCollectionView.transform = CGAffineTransform.identity
@@ -386,5 +380,27 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 self.textCollectionView.isUserInteractionEnabled = true
             }
         }, completion: nil)
+    }
+    func animateCards(hide: Bool) {
+        let cells = imageCollectionView.visibleCells + textCollectionView.visibleCells
+        
+        for cell in cells {
+            UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                if let cell = cell as? GamePlayCollectionViewCell {
+                    if cell.isMatched() == false {
+                        if hide == true {
+                            cell.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+                            cell.alpha = 0.0
+                        } else {
+                            cell.transform = CGAffineTransform.identity
+                            cell.alpha = 1.0
+                        }
+                    }
+                }
+                
+                }, completion: { (finished) in
+            })
+        }
+        
     }
 }
