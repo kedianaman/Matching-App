@@ -77,16 +77,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-//    if (self.view.bounds.width > self.view.bounds.height) {
-//    width = self.view.bounds.width * 0.6
-//    height = self.view.bounds.height * 0.65
-//    } else {
-//    width = self.view.bounds.width * 0.78
-//    height = self.view.bounds.height * 0.5
-//    }
-//    
-//    endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
-    
     func updateAxisForBoundsChange(size: CGSize) {
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
             // iPad - check orientation in this case.
@@ -108,9 +98,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }) { (context) in
 //            if size.width > size.height {
 //                if self.endGameViewController != nil {
-////                    print("centerX: \(self.endGameViewController!.view.frame.midX)")
-////                    print("centerY: \(self.endGameViewController!.view.frame.midY)")
-////
 //
 //                    let width = size.width * 0.6
 //                    let height = size.height * 0.65
@@ -276,7 +263,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         animateCards(paused: false)
         removeEndGameChildViewController()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
-        print("game continued")
     }
     
     
@@ -303,15 +289,13 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             self.view.addSubview(endGameViewController.view)
             let width: CGFloat!
             let height: CGFloat!
-//            if (self.view.bounds.width > self.view.bounds.height) {
-//                width = self.view.bounds.width * 0.6
-//                height = self.view.bounds.height * 0.65
-//            } else {
-//                width = self.view.bounds.width * 0.78
-//                height = self.view.bounds.height * 0.5
-//            }
-            width = 500;
-            height = 400;
+            if (self.view.bounds.width > self.view.bounds.height) {
+                width = self.view.bounds.width * 0.6
+                height = self.view.bounds.height * 0.65
+            } else {
+                width = self.view.bounds.width * 0.78
+                height = self.view.bounds.height * 0.5
+            }
             
             endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
             print("centerX: \(self.endGameViewController!.view.frame.midX)")
@@ -389,11 +373,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 if let cell = cell as? GamePlayCollectionViewCell {
                     if cell.isMatched() == false {
                         if hide == true {
-                            cell.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+                            cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                             cell.alpha = 0.0
                         } else {
                             cell.transform = CGAffineTransform.identity
                             cell.alpha = 1.0
+                            if cell.isCurrentlySelected() {
+                                cell.setHighlighted(selected: true)
+                            }
                         }
                     }
                 }

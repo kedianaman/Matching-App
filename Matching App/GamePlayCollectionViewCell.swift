@@ -12,20 +12,21 @@ import UIKit
 class GamePlayCollectionViewCell: UICollectionViewCell {
     
     private var matched = false
-    private var isCurrentlySelected = false
+    private var currentlySelected = false
     
     // Function which reduces the opacity and size of the cell, if the cell is highlighted.
     func setHighlighted(selected: Bool) {
         if selected == true {
-            isCurrentlySelected = true
+            currentlySelected = true
             if self.transform.isIdentity {
                 UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
                     self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
                     self.alpha = 0.5
+//                    self.removeShadow()
                     }, completion: nil)
             }
         } else {
-            isCurrentlySelected = false
+            currentlySelected = false
             if self.transform.isIdentity == false {
                 UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
                     self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
@@ -40,25 +41,25 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
         return matched
     }
     
+    func isCurrentlySelected() -> Bool {
+        return currentlySelected
+    }
+    
     func setMatched() {
         matched = true
         UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             self.alpha = 0.0
         }, completion: nil)
         self.isUserInteractionEnabled = false
-//        UIView.transition(with: self, duration: 0.2, options: UIViewAnimationOptions.curveEaseIn, animations: {
-//            self.alpha = 0.0
-//            }, completion: nil)
-//        self.isUserInteractionEnabled = false
     }
     
     func reset() {
 
-        if isCurrentlySelected == true || matched == true {
+        if currentlySelected == true || matched == true {
             self.isUserInteractionEnabled = true
             matched = false
-            isCurrentlySelected = false
+            currentlySelected = false
 
         }
     }

@@ -31,4 +31,11 @@ extension UIView {
         self.layer.rasterizationScale = UIScreen.main.scale
 
     }
+    
+    func removeShadow() {
+        self.layer.shadowOffset = CGSize(width: 0, height: 0);
+        self.layer.shadowRadius = 0
+        self.layer.shadowOpacity = 0
+        self.layer.shadowColor = UIColor.clear.cgColor
+    }
 }
