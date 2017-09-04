@@ -14,9 +14,16 @@ class EndGameViewController: UIViewController {
     
     var paused = false 
     var score: Int?
-    var matched: Int? 
+    var matched: Int? {
+        didSet {
+            progress = CGFloat(matched!)/12.0
+        }
+    }
     var sectionData: SectionData?
+    var progress: CGFloat!
     
+    @IBOutlet weak var progressBarIndicator: UIView!
+    @IBOutlet weak var progressBarBorder: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
@@ -24,7 +31,6 @@ class EndGameViewController: UIViewController {
     @IBOutlet var retryButton: UIButton!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var exitButton: UIButton!
-    @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +38,16 @@ class EndGameViewController: UIViewController {
         retryButton.layer.cornerRadius = 20
         continueButton.layer.cornerRadius = 20
         exitButton.layer.cornerRadius = 20
+        progressBarBorder.layer.cornerRadius = 20
+        progressBarIndicator.layer.cornerRadius = 20
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.4, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
+            self.progressBarIndicator.frame = CGRect(origin: self.progressBarIndicator.frame.origin, size: CGSize(width: self.progressBarBorder.frame.width * self.progress, height: self.progressBarIndicator.frame.height))
+        }, completion: nil)
+    }
     // Sets up the view for either a paused screen or an end screen.
     func setUpView(paused: Bool) {        
         if paused == true {
@@ -44,15 +58,7 @@ class EndGameViewController: UIViewController {
             titleLabel.text = "Congratulations!"
             feedbackLabel.text = " You've finished \((sectionData?.title)!)"
         }
-        
-        progressView.setProgress((Float(Double(matched!)/12.0)), animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ReviewSegueIdentifier" {
-            let reviewViewController = segue.destination as! ReviewViewController
-            reviewViewController.sectionData = self.sectionData
-        }
-    }
 
   }

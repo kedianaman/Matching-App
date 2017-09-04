@@ -17,6 +17,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     //MARK: Properties 
     
     var endGameViewController: EndGameViewController?
+    var imageCells = [ImageCollectionViewCell]()
+    var textCells = [TextCollectionViewCell]()
     var collection = Collection()
     var sectionData: SectionData!
     var retrying = false
@@ -197,6 +199,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     // function which is called when user selects either a text or an image.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         // deselects old selected image or text and selects and highlights newly selected cell
             if collectionView == imageCollectionView {
             if let oldselectedImageCell = selectedImageCell {
