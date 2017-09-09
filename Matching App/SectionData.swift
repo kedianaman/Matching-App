@@ -16,6 +16,7 @@ class SectionData {
     private var randomizedTexts = [String]()
     private var images = [UIImage]()
     private var randomizedImages = [UIImage]()
+    private var matchedImage = [UIImage: Bool]()
     var title: String?
     var backgroundImage: UIImage?
     var lightBlurredBackgroundImage: UIImage?
@@ -35,24 +36,26 @@ class SectionData {
     
     private var imagesWithText = [String: UIImage]()
     
-    init(imagesWithText: [String:UIImage], key: String) {
+    init(imagesWithText: [String:UIImage], sectionTitle: String) {
         self.imagesWithText = imagesWithText
         for value in imagesWithText.values {
             images.append(value)
+            
         }
-        randomizedImages = images.shuffled()
         for key in imagesWithText.keys {
             texts.append(key)
         }
+        randomizedImages = images.shuffled()
         randomizedTexts = texts.shuffled()
-        title = key
-        backgroundImage = UIImage(named: "\(key) - bg")
-        lightBlurredBackgroundImage = UIImage(named: "\(key) - bgLightBlur")
-        darkBlurredBackgroundImage = UIImage(named: "\(key) - bgDarkBlur")
+        title = sectionTitle
+        backgroundImage = UIImage(named: "\(sectionTitle) - bg")
+        lightBlurredBackgroundImage = UIImage(named: "\(sectionTitle) - bgLightBlur")
+        darkBlurredBackgroundImage = UIImage(named: "\(sectionTitle) - bgDarkBlur")
     }
     // function which takes in a text and image and decides whether the match is correct.
     func match(image: UIImage, text: String) -> Bool {
         if imagesWithText[text] == image {
+            // make image true
             return true
         } else {
             return false

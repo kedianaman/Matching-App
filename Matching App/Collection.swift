@@ -12,7 +12,7 @@ import UIKit
 //complete Collection with section datas for each different section
 class Collection {
     
-    var keys = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Flowers", "Colors", "Transportation"]
+    var sectionTitles = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Flowers", "Colors", "Transportation"]
     
     private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem, "Shapes": texts().shapes, "Colors": texts().colors, "Flowers" : texts().flowers, "Transportation" : texts().transportation]
     
@@ -21,13 +21,13 @@ class Collection {
     // initialization of Collection. Adds all the different section Datas
     init() {
         
-        for key in keys {
+        for sectionTitle in sectionTitles {
             var imagesWithLabel = [String: UIImage]()
             for i in 1...12 {
-                let image = UIImage(named: "\(key) image - \(i)")
-                imagesWithLabel[wordsForKeys[key]![i-1]] = image!
+                let image = UIImage(named: "\(sectionTitle) image - \(i)")
+                imagesWithLabel[wordsForKeys[sectionTitle]![i-1]] = image!
             }
-            sectionDatas.append(SectionData(imagesWithText: imagesWithLabel, key: key))
+            sectionDatas.append(SectionData(imagesWithText: imagesWithLabel, sectionTitle: sectionTitle))
         }
     }
     
