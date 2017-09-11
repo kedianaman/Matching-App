@@ -54,7 +54,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W30-4s-Mnr">
                                                     <rect key="frame" x="10" y="0.0" width="390" height="75"/>
-                                                    <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="50"/>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="50"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -189,7 +189,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aq-Kb-Ehb" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                <rect key="frame" x="570" y="0.0" width="226" height="120"/>
+                                <rect key="frame" x="559" y="0.0" width="248" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="BoD-89-6UQ"/>
                                 </constraints>
@@ -255,9 +255,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal bg " translatesAutoresizingMaskIntoConstraints="NO" id="j0x-bu-Inw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n05-Zj-KGL">
                                                             <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -269,15 +266,10 @@
                                                 <constraints>
                                                     <constraint firstItem="n05-Zj-KGL" firstAttribute="top" secondItem="WkQ-92-LWE" secondAttribute="top" id="1BJ-ZN-W93"/>
                                                     <constraint firstAttribute="trailing" secondItem="n05-Zj-KGL" secondAttribute="trailing" id="2r1-kb-pXf"/>
-                                                    <constraint firstAttribute="trailing" secondItem="j0x-bu-Inw" secondAttribute="trailing" id="4JD-4e-pqf"/>
                                                     <constraint firstAttribute="bottom" secondItem="n05-Zj-KGL" secondAttribute="bottom" id="6fd-8Y-0n3"/>
-                                                    <constraint firstItem="j0x-bu-Inw" firstAttribute="top" secondItem="WkQ-92-LWE" secondAttribute="top" id="C29-KX-EPm"/>
                                                     <constraint firstItem="n05-Zj-KGL" firstAttribute="leading" secondItem="WkQ-92-LWE" secondAttribute="leading" id="WCU-bM-uTB"/>
-                                                    <constraint firstItem="j0x-bu-Inw" firstAttribute="leading" secondItem="WkQ-92-LWE" secondAttribute="leading" id="k1i-Uu-A5X"/>
-                                                    <constraint firstAttribute="bottom" secondItem="j0x-bu-Inw" secondAttribute="bottom" id="mcI-Hu-9RI"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="backgroundImage" destination="j0x-bu-Inw" id="E66-1F-Nul"/>
                                                     <outlet property="nameLabel" destination="n05-Zj-KGL" id="uat-KV-Rjl"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -352,13 +344,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-Sn-3FB" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="1024" height="80"/>
+                                <rect key="frame" x="0.0" y="30" width="1024" height="93.5"/>
                                 <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="669-PZ-i8c" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                <rect key="frame" x="439" y="120" width="147" height="40"/>
+                                <rect key="frame" x="431" y="133.5" width="163" height="47"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -468,6 +460,5 @@
         <image name="PauseButton" width="24" height="24"/>
         <image name="Play " width="48" height="54"/>
         <image name="Retry" width="58" height="58"/>
-        <image name="animal bg " width="538" height="682"/>
     </resources>
 </document>

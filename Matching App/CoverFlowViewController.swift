@@ -80,6 +80,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBAction func exitToMenu(segue:UIStoryboardSegue) {
         //Unwind Segue
         sectionCollectionView.reloadData()
+        
     }
 
     // Function which changes and animates the background image when user scrolls through the collection.

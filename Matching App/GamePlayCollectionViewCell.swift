@@ -48,8 +48,10 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     func setMatched() {
         matched = true
         UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            self.alpha = 0.0
+            self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self.contentView.alpha = 0.0
+//            self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+//            self.alpha = 0.0
         }, completion: nil)
         self.isUserInteractionEnabled = false
     }

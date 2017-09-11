@@ -16,7 +16,8 @@ class SectionData {
     private var randomizedTexts = [String]()
     private var images = [UIImage]()
     private var randomizedImages = [UIImage]()
-    private var matchedImage = [UIImage: Bool]()
+    private var matchedTexts = [String: Bool]()
+    private var matchedImages = [UIImage: Bool]()
     var title: String?
     var backgroundImage: UIImage?
     var lightBlurredBackgroundImage: UIImage?
@@ -39,10 +40,11 @@ class SectionData {
     init(imagesWithText: [String:UIImage], sectionTitle: String) {
         self.imagesWithText = imagesWithText
         for value in imagesWithText.values {
+            matchedImages[value] = false;
             images.append(value)
-            
         }
         for key in imagesWithText.keys {
+            matchedTexts[key] = false;
             texts.append(key)
         }
         randomizedImages = images.shuffled()
@@ -55,7 +57,8 @@ class SectionData {
     // function which takes in a text and image and decides whether the match is correct.
     func match(image: UIImage, text: String) -> Bool {
         if imagesWithText[text] == image {
-            // make image true
+            matchedTexts[text] = true;
+            matchedImages[image] = true;
             return true
         } else {
             return false
@@ -80,6 +83,14 @@ class SectionData {
     
     func randomTextAtIndex(index: Int) -> String {
         return randomizedTexts[index]
+    }
+    
+    func isWordMatched(word: String) -> Bool {
+        return matchedTexts[word]!
+    }
+    
+    func isImageMatched(image: UIImage) -> Bool {
+        return matchedImages[image]!
     }
 }
 

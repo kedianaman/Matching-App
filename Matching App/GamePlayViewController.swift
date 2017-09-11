@@ -174,15 +174,25 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         // if it's an image collection view, return an image cell of index. If it's a text collection view, return text cell of index.
         if collectionView == imageCollectionView {
             let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
-            imageCell.contentImageView.image = sectionData.randomImageAtIndex(index: indexPath.row)
-            imageCell.layer.cornerRadius = 20
+            let image = sectionData.randomImageAtIndex(index: indexPath.row)
+            imageCell.contentImageView.image = image
+            imageCell.contentView.layer.cornerRadius = 20
+            imageCell.contentView.clipsToBounds = true
+//            if sectionData.isImageMatched(image: image) {
+//                imageCell.setMatched()
+//            }
+
             return imageCell
         } else  {
             let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
-            textCell.nameLabel.text = sectionData.randomTextAtIndex(index: indexPath.row)
+            let word = sectionData.randomTextAtIndex(index: indexPath.row)
+            textCell.nameLabel.text = word
             textCell.nameLabel.font = textCell.nameLabel.font.withSize(fontSize)
-            textCell.backgroundImage.image = sectionData.backgroundImage
-            textCell.layer.cornerRadius = 20
+            textCell.contentView.layer.cornerRadius = 20
+            textCell.contentView.clipsToBounds = true
+//            if sectionData.isWordMatched(word: word) {
+//                textCell.setMatched()
+//            }
             return textCell
         }
     }
@@ -376,11 +386,11 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 if let cell = cell as? GamePlayCollectionViewCell {
                     if cell.isMatched() == false {
                         if hide == true {
-                            cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-                            cell.alpha = 0.0
+                            cell.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                            cell.contentView.alpha = 0.0
                         } else {
-                            cell.transform = CGAffineTransform.identity
-                            cell.alpha = 1.0
+                            cell.contentView.transform = CGAffineTransform.identity
+                            cell.contentView.alpha = 1.0
                             if cell.isCurrentlySelected() {
                                 cell.setHighlighted(selected: true)
                             }
