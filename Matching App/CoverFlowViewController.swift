@@ -80,40 +80,32 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBAction func exitToMenu(segue:UIStoryboardSegue) {
         //Unwind Segue
         sectionCollectionView.reloadData()
-        
+        // FIXIT: Make sure the background image and positioning of the card is correct.
     }
 
     // Function which changes and animates the background image when user scrolls through the collection.
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var indexPath: NSIndexPath?
-        var minimumDistanceToCell = CGFloat.greatestFiniteMagnitude
+        var minimumOriginY = CGFloat.greatestFiniteMagnitude
         let visibleCells = sectionCollectionView.visibleCells
         for cell in visibleCells {
-            
-            let cellBoundsInSuperview = cell.convert(cell.bounds, to: self.view)
-            let distanceToCell = abs((cellBoundsInSuperview.origin.x + cellBoundsInSuperview.width) - self.view.center.x)
-            if distanceToCell < minimumDistanceToCell {
-                minimumDistanceToCell = distanceToCell
+            let originY = cell.frame.origin.y
+            if originY < minimumOriginY {
+                minimumOriginY = originY
                 indexPath = sectionCollectionView.indexPath(for: cell) as NSIndexPath?
             }
         }
-        
         if indexPath != nil {
             if currentIndexPath != indexPath {
                 currentIndexPath = indexPath
-                //temporary hack because method returns one cell to the left
-                var modifiedIndex = currentIndexPath!.row + 1
-                if modifiedIndex == collection.numberOfSectionDatas() {
-                    modifiedIndex = modifiedIndex - 1
-                }
                 UIView.transition(with: backgroundImageView, duration: 0.4, options: .transitionCrossDissolve, animations: {
-                    let sectionData = self.collection.sectionDataAtIndex(index: modifiedIndex)
+                    let sectionData = self.collection.sectionDataAtIndex(index: self.currentIndexPath!.row)
                     self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
-                    }, completion: nil)
-                
+                }, completion: nil)
             }
         }
     }
+    
 }
 
 extension CoverFlowViewController: UIViewControllerTransitioningDelegate {

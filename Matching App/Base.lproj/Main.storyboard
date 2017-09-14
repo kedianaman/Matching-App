@@ -189,7 +189,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aq-Kb-Ehb" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                <rect key="frame" x="559" y="0.0" width="248" height="120"/>
+                                <rect key="frame" x="570" y="0.0" width="226" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="BoD-89-6UQ"/>
                                 </constraints>
@@ -344,13 +344,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-Sn-3FB" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="1024" height="93.5"/>
+                                <rect key="frame" x="0.0" y="30" width="1024" height="80"/>
                                 <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="669-PZ-i8c" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                <rect key="frame" x="431" y="133.5" width="163" height="47"/>
+                                <rect key="frame" x="439" y="120" width="147" height="40"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -402,7 +402,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-Fc-Ypz">
                                 <rect key="frame" x="128" y="364" width="0.0" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="06U-1L-UXH"/>
                                     <constraint firstAttribute="height" constant="40" id="InR-36-tqP"/>
