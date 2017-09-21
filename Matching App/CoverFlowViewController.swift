@@ -9,12 +9,13 @@
 import UIKit
 
 class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     // A class which holds the collection view that displays the different categories.
     
     var collection = Collection()
     var currentIndexPath: NSIndexPath?
     let customAnimation = CustomAnimation()
+    var selectedSectionIndex: Int?
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var sectionCollectionView: UICollectionView!
@@ -25,6 +26,15 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         let sectionData = collection.sectionDataAtIndex(index: 0)
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         self.sectionCollectionView.addParalaxToView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+            
+//        if selectedSectionIndex != nil {
+//            self.backgroundImageView.image = collection.sectionDataAtIndex(index: selectedSectionIndex!).lightBlurredBackgroundImage
+//            
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,14 +66,8 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     
     // Function which gets called when user selects a certain card. Takes user to the game view controller.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedSectionIndex = indexPath.row
         performSegue(withIdentifier: "GamePlaySegueIdentifier", sender: indexPath.row)
-
-//        let layout = collectionView.collectionViewLayout as! CircularCollectionViewLayout
-//
-//        let newLayout = CircularCollectionViewLayout()
-//        newLayout.radius = layout.radius == 1000 ? 10000 : 1000
-//        newLayout.spacingMultiplier = 0.01
-//        collectionView.setCollectionViewLayout(newLayout, animated: true)
     }
     
     // Preperation for Segue. Passes the section data to the Game View Controller.
@@ -80,9 +84,13 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBAction func exitToMenu(segue:UIStoryboardSegue) {
         //Unwind Segue
         sectionCollectionView.reloadData()
+//        self.backgroundImageView.image = collection.sectionDataAtIndex(index: currentIndexPath!.row).lightBlurredBackgroundImage
+        //        let indexPath = IndexPath(item: currentIndexPath!.row, section: 0)
+        //        sectionCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        
         // FIXIT: Make sure the background image and positioning of the card is correct.
     }
-
+    
     // Function which changes and animates the background image when user scrolls through the collection.
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var indexPath: NSIndexPath?
@@ -104,6 +112,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
                 }, completion: nil)
             }
         }
+        
     }
     
 }
@@ -116,7 +125,7 @@ extension CoverFlowViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        customAnimation.presenting = false 
+        customAnimation.presenting = false
         return customAnimation
     }
     
