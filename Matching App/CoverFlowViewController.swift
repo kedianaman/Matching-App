@@ -33,8 +33,11 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
             
 //        if selectedSectionIndex != nil {
 //            self.backgroundImageView.image = collection.sectionDataAtIndex(index: selectedSectionIndex!).lightBlurredBackgroundImage
-//            
+//            sectionCollectionView.scrollToItem(at: IndexPath(row: selectedSectionIndex!, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: false)
 //        }
+        
+       
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -115,6 +118,16 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         
     }
     
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        print("finished")
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("finished decelerating")
+    }
+    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        print("changed content inset")
+    }
 }
 
 extension CoverFlowViewController: UIViewControllerTransitioningDelegate {

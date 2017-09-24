@@ -302,13 +302,15 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             self.view.addSubview(endGameViewController.view)
             let width: CGFloat!
             let height: CGFloat!
-            if (self.view.bounds.width > self.view.bounds.height) {
-                width = self.view.bounds.width * 0.6
-                height = self.view.bounds.height * 0.65
-            } else {
-                width = self.view.bounds.width * 0.78
-                height = self.view.bounds.height * 0.5
-            }
+//            if (self.view.bounds.width > self.view.bounds.height) {
+//                width = self.view.bounds.width * 0.6
+//                height = self.view.bounds.height * 0.65
+//            } else {
+//                width = self.view.bounds.width * 0.78
+//                height = self.view.bounds.height * 0.5
+//            }
+            width = 600;
+            height = 500; 
             
             endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
             print("centerX: \(self.endGameViewController!.view.frame.midX)")

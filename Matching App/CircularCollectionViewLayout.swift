@@ -101,6 +101,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
         var finalContentOffset = proposedContentOffset
         let factor = -angleAtExtreme/(collectionViewContentSize.width - collectionView!.bounds.width)
         let proposedAngle = proposedContentOffset.x*factor
