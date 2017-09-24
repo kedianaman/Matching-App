@@ -157,13 +157,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-E1-288">
-                                <rect key="frame" x="-20" y="0.0" width="1406" height="1044"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Y2-JY-F8Y">
-                                <rect key="frame" x="0.0" y="20" width="1366" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTW-De-trz" customClass="LabelWithShadow" customModule="Matching_App" customModuleProvider="target">
-                                        <rect key="frame" x="1252" y="0.0" width="114" height="114"/>
+                                        <rect key="frame" x="1232" y="0.0" width="134" height="134"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bTW-De-trz" secondAttribute="height" multiplier="1:1" id="oYt-AC-aqF"/>
                                         </constraints>
@@ -175,7 +175,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="bTW-De-trz" firstAttribute="top" secondItem="1Y2-JY-F8Y" secondAttribute="top" id="PyR-7v-8Pf"/>
-                                    <constraint firstAttribute="height" constant="120" id="ckn-Ec-Mfv"/>
+                                    <constraint firstAttribute="height" constant="140" id="ckn-Ec-Mfv"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uo-Cf-w49">
@@ -287,7 +287,7 @@
                             <constraint firstItem="3aq-Kb-Ehb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3uo-Cf-w49" secondAttribute="trailing" constant="8" symbolic="YES" id="1pX-ff-rT4"/>
                             <constraint firstItem="3aq-Kb-Ehb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2QA-xU-m90"/>
                             <constraint firstAttribute="bottomMargin" secondItem="pil-QR-Ta7" secondAttribute="bottom" id="2ku-UK-Ot8"/>
-                            <constraint firstItem="ZgR-E1-288" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="2wN-Gx-iVI"/>
+                            <constraint firstItem="ZgR-E1-288" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2wN-Gx-iVI"/>
                             <constraint firstItem="3uo-Cf-w49" firstAttribute="bottom" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" id="6wv-GW-wkL"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3aq-Kb-Ehb" secondAttribute="trailing" id="Cvc-wQ-Ltj"/>
                             <constraint firstItem="3uo-Cf-w49" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Cwq-j6-vRy"/>
@@ -296,16 +296,16 @@
                             <constraint firstItem="3uo-Cf-w49" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SR3-3m-xup"/>
                             <constraint firstAttribute="trailing" secondItem="pil-QR-Ta7" secondAttribute="trailing" constant="20" id="WxI-a3-Li9"/>
                             <constraint firstAttribute="trailing" secondItem="bTW-De-trz" secondAttribute="trailing" id="Y0i-of-gIy"/>
-                            <constraint firstAttribute="trailing" secondItem="ZgR-E1-288" secondAttribute="trailing" constant="-20" id="YeA-PL-BjK"/>
+                            <constraint firstAttribute="trailing" secondItem="ZgR-E1-288" secondAttribute="trailing" id="YeA-PL-BjK"/>
                             <constraint firstItem="pil-QR-Ta7" firstAttribute="top" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" id="dSS-YQ-Frj"/>
                             <constraint firstAttribute="trailing" secondItem="1Y2-JY-F8Y" secondAttribute="trailing" id="fra-MR-cii"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ZgR-E1-288" secondAttribute="bottom" constant="-20" id="fwU-4J-Lp7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZgR-E1-288" secondAttribute="bottom" id="fwU-4J-Lp7"/>
                             <constraint firstItem="1Y2-JY-F8Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gh3-VF-3ga"/>
                             <constraint firstItem="3aq-Kb-Ehb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="hvR-PC-W0Z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3aq-Kb-Ehb" secondAttribute="bottom" constant="520" id="jdw-Yl-4mc"/>
-                            <constraint firstItem="1Y2-JY-F8Y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="lqa-Kv-y2l"/>
+                            <constraint firstItem="1Y2-JY-F8Y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lqa-Kv-y2l"/>
                             <constraint firstItem="bTW-De-trz" firstAttribute="baseline" secondItem="3aq-Kb-Ehb" secondAttribute="baseline" id="prM-GY-ecU"/>
-                            <constraint firstItem="ZgR-E1-288" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-20" id="tjl-jt-RfB"/>
+                            <constraint firstItem="ZgR-E1-288" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tjl-jt-RfB"/>
                             <constraint firstItem="pil-QR-Ta7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="uHQ-G2-0Se"/>
                         </constraints>
                         <variation key="default">

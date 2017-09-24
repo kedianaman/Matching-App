@@ -297,32 +297,24 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             endGameViewController.sectionData = sectionData
             endGameViewController.score = score
             endGameViewController.matched = matched
-            endGameViewController.willMove(toParentViewController: self)
-            self.addChildViewController(endGameViewController)
-            self.view.addSubview(endGameViewController.view)
-            let width: CGFloat!
-            let height: CGFloat!
-//            if (self.view.bounds.width > self.view.bounds.height) {
-//                width = self.view.bounds.width * 0.6
-//                height = self.view.bounds.height * 0.65
-//            } else {
-//                width = self.view.bounds.width * 0.78
-//                height = self.view.bounds.height * 0.5
-//            }
-            width = 600;
-            height = 500; 
             
+            let width: CGFloat = 600
+            let height: CGFloat = 500
             endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
-            print("centerX: \(self.endGameViewController!.view.frame.midX)")
-            print("centerY: \(self.endGameViewController!.view.frame.midY)")
             
-            endGameViewController.didMove(toParentViewController: self)
+            endGameViewController.view.autoresizingMask = UIViewAutoresizing.flexibleTopMargin.union(UIViewAutoresizing.flexibleBottomMargin).union(UIViewAutoresizing.flexibleLeftMargin).union(UIViewAutoresizing.flexibleRightMargin)
+
+            self.view.addSubview(endGameViewController.view)
+            self.addChildViewController(endGameViewController)
+            
             endGameViewController.view.layer.cornerRadius = 40
             endGameViewController.view.layer.masksToBounds = true
             UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
                 self.hideTopView(willHide: true)
-            }, completion: nil)
+            }, completion: { (complete) in
+                endGameViewController.didMove(toParentViewController: self)
+            })
             
         }
     }
@@ -330,10 +322,12 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func removeEndGameChildViewController() {
         if let endGameViewController = endGameViewController {
+            endGameViewController.willMove(toParentViewController: nil)
             UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height
                 self.hideTopView(willHide: false)
             }, completion: { (complete) in
+                endGameViewController.view.removeFromSuperview()
                 endGameViewController.removeFromParentViewController()
             })
         }
