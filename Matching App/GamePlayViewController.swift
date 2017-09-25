@@ -50,6 +50,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
  
     // MARK:- Lifecycle
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageCollectionView.addShadow()

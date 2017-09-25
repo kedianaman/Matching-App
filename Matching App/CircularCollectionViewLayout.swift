@@ -32,7 +32,6 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     
     let itemSize = CGSize(width: 360, height: 480)
     
-    
     var angleAtExtreme: CGFloat {
         return collectionView!.numberOfItems(inSection: 0) > 0 ? -CGFloat(collectionView!.numberOfItems(inSection: 0)-1)*anglePerItem : 0
     }
@@ -116,6 +115,11 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         }
         finalContentOffset.x = multiplier*anglePerItem/factor
         return finalContentOffset
+    }
+
+    func contentOffsetForIndex(index: Int) -> CGPoint {
+        let factor = -angleAtExtreme/(collectionViewContentSize.width - collectionView!.bounds.width)
+        return CGPoint(x: CGFloat(index) * anglePerItem / factor, y: 0)
     }
     
 }
