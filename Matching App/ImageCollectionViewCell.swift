@@ -12,4 +12,7 @@ import UIKit
 class ImageCollectionViewCell: GamePlayCollectionViewCell {
     @IBOutlet weak var contentImageView: UIImageView!
     
+    override func customContentView() -> UIView? {
+        return self.contentImageView
+    }
 }

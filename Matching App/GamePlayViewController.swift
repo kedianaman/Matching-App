@@ -176,8 +176,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
             let image = sectionData.randomImageAtIndex(index: indexPath.row)
             imageCell.contentImageView.image = image
-            imageCell.contentView.layer.cornerRadius = 20
-            imageCell.contentView.clipsToBounds = true
 //            if sectionData.isImageMatched(image: image) {
 //                imageCell.setMatched()
 //            }
@@ -188,8 +186,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let word = sectionData.randomTextAtIndex(index: indexPath.row)
             textCell.nameLabel.text = word
             textCell.nameLabel.font = textCell.nameLabel.font.withSize(fontSize)
-            textCell.contentView.layer.cornerRadius = 20
-            textCell.contentView.clipsToBounds = true
 //            if sectionData.isWordMatched(word: word) {
 //                textCell.setMatched()
 //            }
@@ -207,23 +203,24 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    
     // function which is called when user selects either a text or an image.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // deselects old selected image or text and selects and highlights newly selected cell
             if collectionView == imageCollectionView {
             if let oldselectedImageCell = selectedImageCell {
-                oldselectedImageCell.setHighlighted(selected: false)
+                oldselectedImageCell.currentlySelected = false
             }
             selectedImageCell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell
-            selectedImageCell?.setHighlighted(selected: true)
-                
+            selectedImageCell?.currentlySelected = true
+
         } else if collectionView == textCollectionView {
             if let oldselectedTextCell = selectedTextCell {
-                oldselectedTextCell.setHighlighted(selected: false)
+                oldselectedTextCell.currentlySelected = false
             }
             selectedTextCell = collectionView.cellForItem(at: indexPath) as? TextCollectionViewCell
-            selectedTextCell?.setHighlighted(selected: true)
+            selectedTextCell?.currentlySelected = true
 
         }
         
@@ -233,9 +230,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let text = selectedTextCell?.nameLabel.text
             let match = sectionData.match(image: image!, text: text!)
             if match == true {
-                selectedTextCell?.setMatched()
+                selectedTextCell?.matched = true
                 selectedTextCell = nil
-                selectedImageCell?.setMatched()
+                selectedImageCell?.matched = true
                 selectedImageCell = nil
                 matched = matched + 1
                 audioPlayer.pause()
@@ -247,10 +244,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             } else {
                 score = score + 5
                 AudioServicesPlaySystemSound(1006);
-                selectedImageCell?.setHighlighted(selected: false)
+                selectedImageCell?.currentlySelected = false
                 selectedImageCell?.shake()
                 selectedImageCell = nil
-                selectedTextCell?.setHighlighted(selected: false)
+                selectedTextCell?.currentlySelected = false
                 selectedTextCell?.shake()
                 selectedTextCell = nil
             }
@@ -374,26 +371,15 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }, completion: nil)
     }
+    
     func animateCards(hide: Bool) {
         let cells = imageCollectionView.visibleCells + textCollectionView.visibleCells
         
         for cell in cells {
             UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                 if let cell = cell as? GamePlayCollectionViewCell {
-                    if cell.isMatched() == false {
-                        if hide == true {
-                            cell.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-                            cell.contentView.alpha = 0.0
-                        } else {
-                            cell.contentView.transform = CGAffineTransform.identity
-                            cell.contentView.alpha = 1.0
-                            if cell.isCurrentlySelected() {
-                                cell.setHighlighted(selected: true)
-                            }
-                        }
-                    }
+                    cell.paused = hide
                 }
-                
                 }, completion: { (finished) in
             })
         }

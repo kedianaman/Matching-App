@@ -11,59 +11,67 @@ import UIKit
 
 class GamePlayCollectionViewCell: UICollectionViewCell {
     
-    private var matched = false
-    private var currentlySelected = false
-    
-    // Function which reduces the opacity and size of the cell, if the cell is highlighted.
-    func setHighlighted(selected: Bool) {
-        if selected == true {
-            currentlySelected = true
-            if self.transform.isIdentity {
-                UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                    self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-                    self.alpha = 0.5
-//                    self.removeShadow()
-                    }, completion: nil)
-            }
-        } else {
-            currentlySelected = false
-            if self.transform.isIdentity == false {
-                UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                    self.alpha = 1.0
-                    }, completion: nil)
-            }
-            
+    var matched = false {
+        didSet {
+            layoutCustomContentView(animated: true)
+            self.isUserInteractionEnabled = !matched
         }
     }
     
-    func isMatched() -> Bool {
-        return matched
+    var paused: Bool = false {
+        didSet {
+            layoutCustomContentView(animated: false)
+        }
     }
     
-    func isCurrentlySelected() -> Bool {
-        return currentlySelected
+    var currentlySelected: Bool = false {
+        didSet {
+            layoutCustomContentView(animated: true)
+        }
     }
     
-    func setMatched() {
-        matched = true
-        UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            self.contentView.alpha = 0.0
-//            self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-//            self.alpha = 0.0
-        }, completion: nil)
-        self.isUserInteractionEnabled = false
+    func customContentView() -> UIView? {
+        return nil
+    }
+    
+    func layoutCustomContentView(animated: Bool) {
+        if (animated) {
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                self.setNeedsLayout()
+                self.layoutIfNeeded()
+            }, completion: nil)
+        } else {
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if let customContentView = self.customContentView() {
+            var alpha: CGFloat = 1.0
+            var scale: CGFloat = 1.0
+            if (self.currentlySelected) {
+                scale *= 0.9
+                alpha *= 0.5
+            }
+            if (matched || paused) {
+                scale *= 0.5
+                alpha *= 0
+            }
+            
+            customContentView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            customContentView.alpha = alpha
+            
+            customContentView.layer.cornerRadius = 20
+            customContentView.clipsToBounds = true
+        }
     }
     
     func reset() {
-
-        if currentlySelected == true || matched == true {
-            self.isUserInteractionEnabled = true
-            matched = false
-            currentlySelected = false
-
-        }
+        matched = false
+        currentlySelected = false
     }
 }
 

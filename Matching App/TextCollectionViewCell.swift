@@ -13,9 +13,8 @@ class TextCollectionViewCell: GamePlayCollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    override func reset() {
-        super.reset()
-        self.nameLabel.alpha = 1.0
+    override func customContentView() -> UIView? {
+        return self.nameLabel
     }
 }
 
