@@ -86,6 +86,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func updateAxisForBoundsChange(size: CGSize) {
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
             // iPad - check orientation in this case.
+            
             if size.width > size.height {
                self.collectionViewStackView.axis = UILayoutConstraintAxis.horizontal
             }
@@ -102,31 +103,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             self.imageCollectionView.collectionViewLayout.invalidateLayout()
             self.textCollectionView.collectionViewLayout.invalidateLayout()
         }) { (context) in
-//            if size.width > size.height {
-//                if self.endGameViewController != nil {
-//
-//                    let width = size.width * 0.6
-//                    let height = size.height * 0.65
-//                    print("landscape - width: \(size.width), height: \(size.height)")
-//                    self.endGameViewController!.view.frame = CGRect(x: size.width/2 - width/2, y: height/2, width: width, height: height)
-//                        print("centerY: \(self.endGameViewController!.view.frame.midY)")
-//
-//                 
-//
-//                }
-//            }
-//            else {
-//                if self.endGameViewController != nil {
-////
-//                    let width = size.width * 0.78
-//                    let height = size.height * 0.5
-//                    print("portrait - width: \(size.width), height: \(size.height)")
-//                    self.endGameViewController!.view.frame = CGRect(x: size.width/2 - width/2, y: height/2, width: width, height: height)
-//                    print("centerY: \(self.endGameViewController!.view.frame.midY)")
-//
-//                }
-//                
-//            }
 
         }
     }
@@ -180,19 +156,12 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
             let image = sectionData.randomImageAtIndex(index: indexPath.row)
             imageCell.contentImageView.image = image
-//            if sectionData.isImageMatched(image: image) {
-//                imageCell.setMatched()
-//            }
-
             return imageCell
         } else  {
             let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
             let word = sectionData.randomTextAtIndex(index: indexPath.row)
             textCell.nameLabel.text = word
             textCell.nameLabel.font = textCell.nameLabel.font.withSize(fontSize)
-//            if sectionData.isWordMatched(word: word) {
-//                textCell.setMatched()
-//            }
             return textCell
         }
     }
@@ -268,13 +237,13 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBAction func resetGame(segue: UIStoryboardSegue) {
         removeEndGameChildViewController()
         reset()
-        animateCards(paused: false)
+        animateCards(hide: false)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
 
     }
     
     @IBAction func continueGame(segue:UIStoryboardSegue) {
-        animateCards(paused: false)
+        animateCards(hide: false)
         removeEndGameChildViewController()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
     }
@@ -282,7 +251,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBAction func pauseGame(_ sender: AnyObject) {
         timer.invalidate()
-        animateCards(paused: true)
+        animateCards(hide: true)
         addEndGameChildViewController(paused: true)
     }
     
@@ -350,33 +319,16 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-
-    func animateCards(paused: Bool) {
-        if paused == true {
-            animateCards(hide: true)
-        } else {
-            animateCards(hide: false)
-        }
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
-            if paused == true {
-//                self.imageCollectionView.transform = CGAffineTransform(translationX: -self.imageCollectionView.bounds.width, y: 0)
-//                self.textCollectionView.transform = CGAffineTransform(translationX: self.textCollectionView.bounds.width, y: 0)
-//                self.imageCollectionView.alpha = 0.0
-//                self.textCollectionView.alpha = 0.0
-                self.imageCollectionView.isUserInteractionEnabled = false
-                self.textCollectionView.isUserInteractionEnabled = false
-            } else {
-//                self.imageCollectionView.alpha = 1.0
-//                self.textCollectionView.alpha = 1.0
-                self.imageCollectionView.transform = CGAffineTransform.identity
-                self.textCollectionView.transform = CGAffineTransform.identity
-                self.imageCollectionView.isUserInteractionEnabled = true
-                self.textCollectionView.isUserInteractionEnabled = true
-            }
-        }, completion: nil)
-    }
     
     func animateCards(hide: Bool) {
+        if hide == true {
+            self.imageCollectionView.isUserInteractionEnabled = false
+            self.textCollectionView.isUserInteractionEnabled = false
+        } else {
+            self.imageCollectionView.isUserInteractionEnabled = true
+            self.textCollectionView.isUserInteractionEnabled = true
+        }
+        
         let cells = imageCollectionView.visibleCells + textCollectionView.visibleCells
         
         for cell in cells {

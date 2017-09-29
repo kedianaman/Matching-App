@@ -10,13 +10,15 @@ import UIKit
 
 class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    // A class which holds the collection view that displays the different categories.
-    
+    //MARK: Properties
+
     var collection = Collection()
     var currentIndexPath: NSIndexPath?
     let customAnimation = CustomAnimation()
     var selectedSectionIndex: Int?
     
+    //MARK: IB Outlets
+
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var sectionCollectionView: UICollectionView!
     @IBOutlet weak var titleImageView: UIImageView!
@@ -25,12 +27,28 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         return .lightContent
     }
     
+    //MARK: Life Cycle
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let sectionData = collection.sectionDataAtIndex(index: 0)
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         self.sectionCollectionView.addParalaxToView()
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        // rotation
+        if let index = currentIndexPath {
+            if let customLayout = sectionCollectionView.collectionViewLayout as? CircularCollectionViewLayout {
+                coordinator.animate(alongsideTransition: { (context) in
+                    self.sectionCollectionView.setContentOffset(customLayout.contentOffsetForIndex(index: index.row), animated: true)
+                }, completion: nil)
+            }
+        }
+    }
+    
+    //MARK: Collection View Data Source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collection.numberOfSectionDatas()

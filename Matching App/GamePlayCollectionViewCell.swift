@@ -52,6 +52,7 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
         if let customContentView = self.customContentView() {
             var alpha: CGFloat = 1.0
             var scale: CGFloat = 1.0
+            print(paused)
             if (self.currentlySelected) {
                 scale *= 0.9
                 alpha *= 0.5
