@@ -98,6 +98,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        
         updateAxisForBoundsChange(size: size)
         coordinator.animate(alongsideTransition: { (context) in
             self.imageCollectionView.collectionViewLayout.invalidateLayout()

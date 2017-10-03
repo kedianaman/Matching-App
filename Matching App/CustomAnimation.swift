@@ -33,7 +33,7 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                 fromViewController.sectionCollectionView.transform = CGAffineTransform(translationX: 0, y: fromViewController.sectionCollectionView.bounds.height)
                 fromViewController.sectionCollectionView.setCollectionViewLayout(newLayout, animated: false)
-                fromViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -fromViewController.titleImageView.bounds.height)
+                fromViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -fromViewController.titleImageView.bounds.height - 30)
             }) { (finished) in
                 UIView.animate(withDuration: 0.3, animations: {
                     toViewController.view.alpha = 1.0

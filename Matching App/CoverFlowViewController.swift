@@ -39,6 +39,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         // rotation
+        super.viewWillTransition(to: size, with: coordinator)
         if let index = currentIndexPath {
             if let customLayout = sectionCollectionView.collectionViewLayout as? CircularCollectionViewLayout {
                 coordinator.animate(alongsideTransition: { (context) in
