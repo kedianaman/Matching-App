@@ -21,6 +21,7 @@ class EndGameViewController: UIViewController {
     }
     var sectionData: SectionData?
     var progress: CGFloat!
+    var animateProgressBar = true
     
     @IBOutlet weak var progressBarIndicator: UIView!
     @IBOutlet weak var progressBarBorder: UIView!
@@ -46,7 +47,16 @@ class EndGameViewController: UIViewController {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 0.4, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
             self.progressBarIndicator.frame = CGRect(origin: self.progressBarIndicator.frame.origin, size: CGSize(width: self.progressBarBorder.frame.width * self.progress, height: self.progressBarIndicator.frame.height))
-        }, completion: nil)
+        }, completion: { (complete) in
+            self.animateProgressBar = false
+        })
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if (self.animateProgressBar == false) {
+             self.progressBarIndicator.frame = CGRect(origin: self.progressBarIndicator.frame.origin, size: CGSize(width: self.progressBarBorder.frame.width * self.progress, height: self.progressBarIndicator.frame.height))
+        }
     }
     // Sets up the view for either a paused screen or an end screen.
     func setUpView(paused: Bool) {        

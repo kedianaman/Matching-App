@@ -33,6 +33,7 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         let sectionData = collection.sectionDataAtIndex(index: 0)
+        currentIndexPath = NSIndexPath(row: 0, section: 0)
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         self.sectionCollectionView.addParalaxToView()
     }
