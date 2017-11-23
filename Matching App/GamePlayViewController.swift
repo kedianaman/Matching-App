@@ -24,16 +24,14 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     var retrying = false
     var correctSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "CorrectSound", ofType: "mp3")!)
     var audioPlayer = AVAudioPlayer()
-    var timer = Timer()
-    var score = 0 {
-        didSet {
-            scoreLabel.text = String(score)
-        }
-    }
     var matched = 0
+    var matchedImages = [UIImage]()
+    var matchedTexts = [String]()
     var selectedImageCell: ImageCollectionViewCell?
     var selectedTextCell: TextCollectionViewCell?
     var fontSize = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height) * 0.028
+    
+    var gamePaused = false
 
     
     //MARK: IB Outlets
@@ -44,7 +42,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var textCollectionView: UICollectionView!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var darkView: UIView!
  
@@ -67,6 +64,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         audioPlayer.prepareToPlay()
         self.collectionViewStackView.addParalaxToView()
+        darkView.frame = CGRect(origin: darkView.frame.origin, size: CGSize(width: darkView.frame.width, height: 0.126 * max(self.view.bounds.width, self.view.bounds.height)))
 
     }
     
@@ -77,7 +75,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
         if retrying == true {
             reset()
         }
@@ -110,17 +107,12 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     //MARK: Helper Methods 
     
-    func updateCounter() {
-        score = score + 1
-    }
     
     func endGame() {
-        timer.invalidate()
         addEndGameChildViewController(paused: false)
     }
     
     func reset() {
-        score = 0
         matched = 0
         selectedTextCell = nil
         selectedImageCell = nil
@@ -157,12 +149,28 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCollectionViewCell
             let image = sectionData.randomImageAtIndex(index: indexPath.row)
             imageCell.contentImageView.image = image
+            imageCell.paused = gamePaused
+            imageCell.matched = (matchedImages.contains(image))
+            if let currentlySelectedImageCell = selectedImageCell {
+                if currentlySelectedImageCell.contentImageView.image == image {
+                    imageCell.currentlySelected = true
+                    selectedImageCell = imageCell
+                }
+            }
             return imageCell
         } else  {
             let textCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TextCell", for: indexPath) as! TextCollectionViewCell
             let word = sectionData.randomTextAtIndex(index: indexPath.row)
             textCell.nameLabel.text = word
             textCell.nameLabel.font = textCell.nameLabel.font.withSize(fontSize)
+            textCell.paused = gamePaused
+            textCell.matched = (matchedTexts.contains(word))
+            if let currentlySelectedTextCell = selectedTextCell {
+                if currentlySelectedTextCell.nameLabel.text == word {
+                    textCell.currentlySelected = true
+                    selectedTextCell = textCell
+                }
+            }
             return textCell
         }
     }
@@ -209,6 +217,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 selectedImageCell?.matched = true
                 selectedImageCell = nil
                 matched = matched + 1
+                matchedImages.append(image!)
+                matchedTexts.append(text!)
                 audioPlayer.pause()
                 audioPlayer.play()
                 if matched == sectionData.numberOfAssets() {
@@ -216,7 +226,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
                 
             } else {
-                score = score + 5
                 AudioServicesPlaySystemSound(1006);
                 selectedImageCell?.currentlySelected = false
                 selectedImageCell?.shake()
@@ -239,21 +248,23 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         removeEndGameChildViewController()
         reset()
         animateCards(hide: false)
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
+        gamePaused = false
+        matchedImages.removeAll()
+        matchedTexts.removeAll()
 
     }
     
     @IBAction func continueGame(segue:UIStoryboardSegue) {
         animateCards(hide: false)
         removeEndGameChildViewController()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GamePlayViewController.updateCounter), userInfo: nil, repeats: true)
+        gamePaused = false
     }
     
     
     @IBAction func pauseGame(_ sender: AnyObject) {
-        timer.invalidate()
         animateCards(hide: true)
         addEndGameChildViewController(paused: true)
+        gamePaused = true
     }
     
     //MARK: Pause Controller Helper Functiosn
@@ -266,7 +277,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 endGameViewController.paused = true
             }
             endGameViewController.sectionData = sectionData
-            endGameViewController.score = score
             endGameViewController.matched = matched
             
             let width: CGFloat = 600
@@ -294,7 +304,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     func removeEndGameChildViewController() {
         if let endGameViewController = endGameViewController {
             endGameViewController.willMove(toParentViewController: nil)
-            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height
                 self.hideTopView(willHide: false)
             }, completion: { (complete) in
@@ -306,13 +316,11 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func hideTopView(willHide: Bool) {
         if willHide == true  {
-            self.scoreLabel.alpha = 0.0
             self.titleLabel.alpha = 0.0
             self.darkView.alpha = 0.0
             self.pauseButton.alpha = 0.0
             self.pauseButton.isUserInteractionEnabled = false
         } else {
-            self.scoreLabel.alpha = 1.0
             self.titleLabel.alpha = 1.0
             self.darkView.alpha = 1.0
             self.pauseButton.alpha = 1.0

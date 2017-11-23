@@ -13,6 +13,7 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     let duration = 1.0
     var presenting: Bool!
     var originFrame = CGRect.zero
+    var selectedSectionIndex: Int?
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
@@ -80,6 +81,13 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             toViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -toViewController.titleImageView.bounds.height)
             let newLayout = CircularCollectionViewLayout()
             newLayout.spacingMultiplier = 1.0
+            if let selectedSectionIndex = selectedSectionIndex,
+                let collectionViewLayout = toViewController.sectionCollectionView.collectionViewLayout as? CircularCollectionViewLayout {
+                // Layout immediately to make sure the collection view is the right size
+                // before we calculate the content offset.
+                toViewController.view.layoutIfNeeded()
+                toViewController.sectionCollectionView.contentOffset = collectionViewLayout.contentOffsetForIndex(index: selectedSectionIndex)
+            }
             UIView.animate(withDuration: 0.3, animations: {
                 fromViewController.view.alpha = 0.0
                 toViewController.view.alpha = 1.0

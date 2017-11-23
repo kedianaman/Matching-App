@@ -29,7 +29,7 @@ class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
 }
 
 class CircularCollectionViewLayout: UICollectionViewLayout {
-    
+    var animatingBoundsChange = false
     let itemSize = CGSize(width: 360, height: 480)
     
     var angleAtExtreme: CGFloat {
@@ -86,6 +86,30 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         }
     }
     
+    override func prepare(forAnimatedBoundsChange oldBounds: CGRect) {
+        super.prepare(forAnimatedBoundsChange: oldBounds)
+        animatingBoundsChange = true
+    }
+    
+    override func finalizeAnimatedBoundsChange() {
+        super.finalizeAnimatedBoundsChange()
+        animatingBoundsChange = false
+    }
+    
+    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if (animatingBoundsChange) {
+            return nil
+        }
+        return super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
+    }
+    
+    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if (animatingBoundsChange) {
+            return nil
+        }
+        return super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
+    }
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return attributesList
     }
@@ -116,6 +140,8 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
         finalContentOffset.x = multiplier*anglePerItem/factor
         return finalContentOffset
     }
+    
+    
 
     func contentOffsetForIndex(index: Int) -> CGPoint {
         let factor = -angleAtExtreme/(collectionViewContentSize.width - collectionView!.bounds.width)

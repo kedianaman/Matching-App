@@ -101,19 +101,18 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
-    
     @IBAction func exitToMenu(segue:UIStoryboardSegue) {
         //Unwind Segue
         sectionCollectionView.reloadData()
-        
-        if let selectedSectionIndex = selectedSectionIndex,
-            let collectionViewLayout = sectionCollectionView.collectionViewLayout as? CircularCollectionViewLayout {
-            sectionCollectionView.contentOffset = collectionViewLayout.contentOffsetForIndex(index: selectedSectionIndex)
-        }
     }
     
     // Function which changes and animates the background image when user scrolls through the collection.
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let customLayout = sectionCollectionView.collectionViewLayout as? CircularCollectionViewLayout {
+            if customLayout.spacingMultiplier != 1 {
+                return
+            }
+        }
         var indexPath: NSIndexPath?
         var minimumOriginY = CGFloat.greatestFiniteMagnitude
         let visibleCells = sectionCollectionView.visibleCells
@@ -157,11 +156,13 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
 extension CoverFlowViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        customAnimation.selectedSectionIndex = selectedSectionIndex
         customAnimation.presenting = true
         return customAnimation
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        customAnimation.selectedSectionIndex = selectedSectionIndex
         customAnimation.presenting = false
         return customAnimation
     }

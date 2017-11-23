@@ -13,7 +13,6 @@ import UIKit
 class EndGameViewController: UIViewController {
     
     var paused = false 
-    var score: Int?
     var matched: Int? {
         didSet {
             progress = CGFloat(matched!)/12.0
@@ -27,8 +26,6 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var progressBarBorder: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
-    @IBOutlet var scoreLabel: UILabel!
-    @IBOutlet var bestScoreLabel: UILabel!
     @IBOutlet var retryButton: UIButton!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var exitButton: UIButton!
@@ -41,6 +38,7 @@ class EndGameViewController: UIViewController {
         exitButton.layer.cornerRadius = 20
         progressBarBorder.layer.cornerRadius = 20
         progressBarIndicator.layer.cornerRadius = 20
+        progressBarBorder.addShadow()
     }
     
     override func viewDidAppear(_ animated: Bool) {
