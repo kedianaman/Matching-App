@@ -18,6 +18,7 @@ class EndGameViewController: UIViewController {
             progress = CGFloat(matched!)/12.0
         }
     }
+    var aced: Bool! 
     var sectionData: SectionData?
     var progress: CGFloat!
     var animateProgressBar = true
@@ -65,6 +66,9 @@ class EndGameViewController: UIViewController {
             continueButton.removeFromSuperview()
             titleLabel.text = "Congratulations!"
             feedbackLabel.text = " You've finished \((sectionData?.title)!)"
+            if (aced) {
+                sectionData?.aced = true
+            }
         }
     }
     

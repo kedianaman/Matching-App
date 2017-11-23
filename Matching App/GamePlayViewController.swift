@@ -24,7 +24,9 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     var retrying = false
     var correctSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "CorrectSound", ofType: "mp3")!)
     var audioPlayer = AVAudioPlayer()
-    var matched = 0
+    var numberMatched = 0
+    var aced = true
+    var numIncorrect = 0
     var matchedImages = [UIImage]()
     var matchedTexts = [String]()
     var selectedImageCell: ImageCollectionViewCell?
@@ -113,7 +115,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func reset() {
-        matched = 0
+        numberMatched = 0
         selectedTextCell = nil
         selectedImageCell = nil
         for cell in imageCollectionView.visibleCells {
@@ -216,12 +218,12 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 selectedTextCell = nil
                 selectedImageCell?.matched = true
                 selectedImageCell = nil
-                matched = matched + 1
+                numberMatched = numberMatched + 1
                 matchedImages.append(image!)
                 matchedTexts.append(text!)
                 audioPlayer.pause()
                 audioPlayer.play()
-                if matched == sectionData.numberOfAssets() {
+                if numberMatched == sectionData.numberOfAssets() {
                     endGame()
                 }
                 
@@ -233,6 +235,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 selectedTextCell?.currentlySelected = false
                 selectedTextCell?.shake()
                 selectedTextCell = nil
+                aced = false 
             }
         } else {
             // plays toc sound when only one is selected
@@ -277,7 +280,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 endGameViewController.paused = true
             }
             endGameViewController.sectionData = sectionData
-            endGameViewController.matched = matched
+            endGameViewController.matched = numberMatched
+            endGameViewController.aced = aced
             
             let width: CGFloat = 600
             let height: CGFloat = 500

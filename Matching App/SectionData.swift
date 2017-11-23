@@ -24,15 +24,17 @@ class SectionData {
     var darkBlurredBackgroundImage: UIImage?
     
     // Highest score for section, stored in User Defaults.
-    var topScore: Int? {
+    
+    var aced: Bool? {
         set {
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: title!)
         }
         get {
             let defaults = UserDefaults.standard
-            return defaults.value(forKey: title!) as? Int
+            return defaults.value(forKey: title!) as? Bool
         }
+       
     }
     
     private var imagesWithText = [String: UIImage]()

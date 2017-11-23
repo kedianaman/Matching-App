@@ -28,11 +28,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
         cell.titleLabel.text = sectionData.title
         cell.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
-        if sectionData.topScore != nil {
-            cell.scoreLabel.text = String(sectionData.topScore!)
-        } else {
-            cell.scoreLabel.text = ""
-        }
         return cell
     }
     

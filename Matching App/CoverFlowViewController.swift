@@ -62,13 +62,12 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         let sectionData = collection.sectionDataAtIndex(index: indexPath.row)
         cell.sectionImage.image = sectionData.backgroundImage
         cell.sectionImage.layer.cornerRadius = 15.0
-        cell.titleLabel.text = sectionData.title
-        if sectionData.topScore != nil {
-            cell.scoreLabel.text = "Score: \(sectionData.topScore!)"
-        } else {
-            cell.scoreLabel.text = "Score: --"
+        cell.titleLabel.text = sectionData.title!
+        if let aced = sectionData.aced {
+            if aced == true {
+                cell.titleLabel.text = sectionData.title! + " ⭐️"
+            }
         }
-        
         cell.layer.masksToBounds = false
         cell.layer.shadowOpacity = 0.75
         cell.layer.shadowRadius = 5.0
