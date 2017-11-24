@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EDB46C6D1D0E6489008CE0BB"
-               BuildableName = "Matching App.app"
+               BuildableName = "Match it!.app"
                BlueprintName = "Matching App"
                ReferencedContainer = "container:Matching App.xcodeproj">
             </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDB46C6D1D0E6489008CE0BB"
-            BuildableName = "Matching App.app"
+            BuildableName = "Match it!.app"
             BlueprintName = "Matching App"
             ReferencedContainer = "container:Matching App.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDB46C6D1D0E6489008CE0BB"
-            BuildableName = "Matching App.app"
+            BuildableName = "Match it!.app"
             BlueprintName = "Matching App"
             ReferencedContainer = "container:Matching App.xcodeproj">
          </BuildableReference>
@@ -104,7 +104,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDB46C6D1D0E6489008CE0BB"
-            BuildableName = "Matching App.app"
+            BuildableName = "Match it!.app"
             BlueprintName = "Matching App"
             ReferencedContainer = "container:Matching App.xcodeproj">
          </BuildableReference>

@@ -14,14 +14,9 @@
 		ED2042901D45F90300AF59F2 /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED20428F1D45F90300AF59F2 /* SectionCollectionViewCell.swift */; };
 		ED2409691E7A753C007E2314 /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2409681E7A753C007E2314 /* SectionData.swift */; };
 		ED2754321D2BB19F00612B9E /* LabelWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2754311D2BB19F00612B9E /* LabelWithShadow.swift */; };
-		ED290B8D1D225CCA004DBBC6 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
 		ED3E729B1D2BAA6D008DAC7F /* CorrectSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED3E729A1D2BAA6D008DAC7F /* CorrectSound.mp3 */; };
 		ED4C168B1F395B9A00511C75 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C168A1F395B9A00511C75 /* CustomAnimation.swift */; };
-		ED4FB5131D210E1700E700A4 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
 		ED8BA3CE1D19906000773D69 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA3CD1D19906000773D69 /* TextCollectionViewCell.swift */; };
-		EDA2873A1D2103130049F03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C781D0E6489008CE0BB /* Assets.xcassets */; };
-		EDA2873B1D2106D10049F03D /* SectionBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CA5101D1DA1E300E9A0FF /* SectionBarTableViewCell.swift */; };
-		EDA2873E1D210B390049F03D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C821D1002F700F44EB0 /* ImageCollectionViewCell.swift */; };
 		EDA2F89C1D854CEF0049B735 /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED0EFC8F1D83E13800312054 /* Bariol_Regular.otf */; };
 		EDB46C721D0E6489008CE0BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C711D0E6489008CE0BB /* AppDelegate.swift */; };
 		EDB46C771D0E6489008CE0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB46C751D0E6489008CE0BB /* Main.storyboard */; };
@@ -30,7 +25,6 @@
 		EDB46C871D0E6489008CE0BB /* Matching_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C861D0E6489008CE0BB /* Matching_AppTests.swift */; };
 		EDB46C921D0E6489008CE0BB /* Matching_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C911D0E6489008CE0BB /* Matching_AppUITests.swift */; };
 		EDB46CA01D0E665B008CE0BB /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
-		EDC0506B1D2101AA00B9FD96 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB46C9F1D0E665B008CE0BB /* Collection.swift */; };
 		EDC2F46F1D4743E6000684D0 /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */; };
 		EDC2F4711D47451D000684D0 /* CoverFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */; };
 		EDC34C811D10017100F44EB0 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */; };
@@ -55,20 +49,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = EDB46C6D1D0E6489008CE0BB;
 			remoteInfo = "Matching App";
-		};
-		EDC0504D1D20FDE200B9FD96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EDB46C661D0E6489008CE0BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EDC0503B1D20FDE100B9FD96;
-			remoteInfo = "Matching App TV";
-		};
-		EDC050581D20FDE200B9FD96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EDB46C661D0E6489008CE0BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EDC0503B1D20FDE100B9FD96;
-			remoteInfo = "Matching App TV";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -97,9 +77,6 @@
 		EDB46C911D0E6489008CE0BB /* Matching_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matching_AppUITests.swift; sourceTree = "<group>"; };
 		EDB46C931D0E6489008CE0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB46C9F1D0E665B008CE0BB /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		EDC0503C1D20FDE100B9FD96 /* Matching App TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matching App TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDC0504C1D20FDE200B9FD96 /* Matching App TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matching App TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDC050571D20FDE200B9FD96 /* Matching App TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matching App TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC2F46E1D4743E6000684D0 /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
 		EDC2F4701D47451D000684D0 /* CoverFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverFlowViewController.swift; sourceTree = "<group>"; };
 		EDC34C801D10017100F44EB0 /* GamePlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
@@ -132,27 +109,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDC050391D20FDE100B9FD96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDC050491D20FDE200B9FD96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDC050541D20FDE200B9FD96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -165,6 +121,7 @@
 				EDB46C6F1D0E6489008CE0BB /* Products */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		EDB46C6F1D0E6489008CE0BB /* Products */ = {
 			isa = PBXGroup;
@@ -172,9 +129,6 @@
 				EDB46C6E1D0E6489008CE0BB /* Match it!.app */,
 				EDB46C821D0E6489008CE0BB /* Matching AppTests.xctest */,
 				EDB46C8D1D0E6489008CE0BB /* Matching AppUITests.xctest */,
-				EDC0503C1D20FDE100B9FD96 /* Matching App TV.app */,
-				EDC0504C1D20FDE200B9FD96 /* Matching App TVTests.xctest */,
-				EDC050571D20FDE200B9FD96 /* Matching App TVUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,59 +271,6 @@
 			productReference = EDB46C8D1D0E6489008CE0BB /* Matching AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		EDC0503B1D20FDE100B9FD96 /* Matching App TV */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EDC050641D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TV" */;
-			buildPhases = (
-				EDC050381D20FDE100B9FD96 /* Sources */,
-				EDC050391D20FDE100B9FD96 /* Frameworks */,
-				EDC0503A1D20FDE100B9FD96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Matching App TV";
-			productName = "Matching App TV";
-			productReference = EDC0503C1D20FDE100B9FD96 /* Matching App TV.app */;
-			productType = "com.apple.product-type.application";
-		};
-		EDC0504B1D20FDE200B9FD96 /* Matching App TVTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EDC050651D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVTests" */;
-			buildPhases = (
-				EDC050481D20FDE200B9FD96 /* Sources */,
-				EDC050491D20FDE200B9FD96 /* Frameworks */,
-				EDC0504A1D20FDE200B9FD96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EDC0504E1D20FDE200B9FD96 /* PBXTargetDependency */,
-			);
-			name = "Matching App TVTests";
-			productName = "Matching App TVTests";
-			productReference = EDC0504C1D20FDE200B9FD96 /* Matching App TVTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		EDC050561D20FDE200B9FD96 /* Matching App TVUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EDC050661D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVUITests" */;
-			buildPhases = (
-				EDC050531D20FDE200B9FD96 /* Sources */,
-				EDC050541D20FDE200B9FD96 /* Frameworks */,
-				EDC050551D20FDE200B9FD96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EDC050591D20FDE200B9FD96 /* PBXTargetDependency */,
-			);
-			name = "Matching App TVUITests";
-			productName = "Matching App TVUITests";
-			productReference = EDC050571D20FDE200B9FD96 /* Matching App TVUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -397,26 +298,6 @@
 						LastSwiftMigration = 0800;
 						TestTargetID = EDB46C6D1D0E6489008CE0BB;
 					};
-					EDC0503B1D20FDE100B9FD96 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = T252EPP745;
-						DevelopmentTeamName = "Naman Kedia (Personal Team)";
-						ProvisioningStyle = Automatic;
-					};
-					EDC0504B1D20FDE200B9FD96 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = T252EPP745;
-						DevelopmentTeamName = "Naman Kedia (Personal Team)";
-						ProvisioningStyle = Automatic;
-						TestTargetID = EDC0503B1D20FDE100B9FD96;
-					};
-					EDC050561D20FDE200B9FD96 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = T252EPP745;
-						DevelopmentTeamName = "Naman Kedia (Personal Team)";
-						ProvisioningStyle = Automatic;
-						TestTargetID = EDC0503B1D20FDE100B9FD96;
-					};
 				};
 			};
 			buildConfigurationList = EDB46C691D0E6489008CE0BB /* Build configuration list for PBXProject "Matching App" */;
@@ -435,9 +316,6 @@
 				EDB46C6D1D0E6489008CE0BB /* Matching App */,
 				EDB46C811D0E6489008CE0BB /* Matching AppTests */,
 				EDB46C8C1D0E6489008CE0BB /* Matching AppUITests */,
-				EDC0503B1D20FDE100B9FD96 /* Matching App TV */,
-				EDC0504B1D20FDE200B9FD96 /* Matching App TVTests */,
-				EDC050561D20FDE200B9FD96 /* Matching App TVUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -465,28 +343,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EDB46C8B1D0E6489008CE0BB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDC0503A1D20FDE100B9FD96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EDA2873A1D2103130049F03D /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDC0504A1D20FDE200B9FD96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDC050551D20FDE200B9FD96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -536,32 +392,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDC050381D20FDE100B9FD96 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EDA2873E1D210B390049F03D /* ImageCollectionViewCell.swift in Sources */,
-				EDC0506B1D2101AA00B9FD96 /* Collection.swift in Sources */,
-				ED4FB5131D210E1700E700A4 /* TextCollectionViewCell.swift in Sources */,
-				EDA2873B1D2106D10049F03D /* SectionBarTableViewCell.swift in Sources */,
-				ED290B8D1D225CCA004DBBC6 /* GamePlayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDC050481D20FDE200B9FD96 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDC050531D20FDE200B9FD96 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -574,16 +404,6 @@
 			isa = PBXTargetDependency;
 			target = EDB46C6D1D0E6489008CE0BB /* Matching App */;
 			targetProxy = EDB46C8E1D0E6489008CE0BB /* PBXContainerItemProxy */;
-		};
-		EDC0504E1D20FDE200B9FD96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EDC0503B1D20FDE100B9FD96 /* Matching App TV */;
-			targetProxy = EDC0504D1D20FDE200B9FD96 /* PBXContainerItemProxy */;
-		};
-		EDC050591D20FDE200B9FD96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EDC0503B1D20FDE100B9FD96 /* Matching App TV */;
-			targetProxy = EDC050581D20FDE200B9FD96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -794,108 +614,6 @@
 			};
 			name = Release;
 		};
-		EDC0505E1D20FDE200B9FD96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = "Matching App TV/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TV";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		EDC0505F1D20FDE200B9FD96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = "Matching App TV/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TV";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
-		EDC050601D20FDE200B9FD96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = "Matching App TVTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matching App TV.app/Matching App TV";
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		EDC050611D20FDE200B9FD96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = "Matching App TVTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matching App TV.app/Matching App TV";
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
-		EDC050621D20FDE200B9FD96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = "Matching App TVUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Matching App TV";
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		EDC050631D20FDE200B9FD96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = "Matching App TVUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "NamanKedia.Matching-App-TVUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Matching App TV";
-				TVOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -931,33 +649,6 @@
 			buildConfigurations = (
 				EDB46C9D1D0E6489008CE0BB /* Debug */,
 				EDB46C9E1D0E6489008CE0BB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EDC050641D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TV" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EDC0505E1D20FDE200B9FD96 /* Debug */,
-				EDC0505F1D20FDE200B9FD96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EDC050651D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EDC050601D20FDE200B9FD96 /* Debug */,
-				EDC050611D20FDE200B9FD96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EDC050661D20FDE200B9FD96 /* Build configuration list for PBXNativeTarget "Matching App TVUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EDC050621D20FDE200B9FD96 /* Debug */,
-				EDC050631D20FDE200B9FD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
