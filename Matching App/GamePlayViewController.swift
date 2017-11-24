@@ -22,8 +22,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     var collection = Collection()
     var sectionData: SectionData!
     var retrying = false
-    var correctSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "CorrectSound", ofType: "mp3")!)
-    var audioPlayer = AVAudioPlayer()
     var numberMatched = 0
     var aced = true
     var numIncorrect = 0
@@ -32,12 +30,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     var selectedImageCell: ImageCollectionViewCell?
     var selectedTextCell: TextCollectionViewCell?
     var fontSize = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height) * 0.028
-    
     var gamePaused = false
 
     
     //MARK: IB Outlets
-
     
     @IBOutlet var collectionViewStackView: UIStackView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -59,12 +55,6 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         textCollectionView.addShadow()
         backgroundImageView.image = sectionData.lightBlurredBackgroundImage
         titleLabel.text = sectionData.title
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf:correctSound as URL)
-        } catch {
-            print("Error getting the audio file")
-        }
-        audioPlayer.prepareToPlay()
         self.collectionViewStackView.addParalaxToView()
         darkView.frame = CGRect(origin: darkView.frame.origin, size: CGSize(width: darkView.frame.width, height: 0.126 * max(self.view.bounds.width, self.view.bounds.height)))
 
@@ -221,8 +211,8 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 numberMatched = numberMatched + 1
                 matchedImages.append(image!)
                 matchedTexts.append(text!)
-                audioPlayer.pause()
-                audioPlayer.play()
+                AudioServicesPlaySystemSound(1394);
+
                 if numberMatched == sectionData.numberOfAssets() {
                     endGame()
                 }

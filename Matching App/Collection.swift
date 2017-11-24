@@ -12,7 +12,7 @@ import UIKit
 //complete Collection with section datas for each different section
 class Collection {
     
-    var sectionTitles = ["Animals", "Vegetables", "Fruits", "Solar System", "Shapes", "Flowers", "Colors", "Transport"]
+    var sectionTitles = ["Animals", "Vegetables", "Fruits", "Shapes", "Colors", "Transport", "Flowers", "Solar System"]
     
     private var wordsForKeys = ["Animals": texts().animals, "Vegetables" : texts().vegetables, "Fruits": texts().fruits, "Solar System": texts().solarSystem, "Shapes": texts().shapes, "Colors": texts().colors, "Flowers" : texts().flowers, "Transport" : texts().transportation]
     

@@ -34,7 +34,7 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                 fromViewController.sectionCollectionView.transform = CGAffineTransform(translationX: 0, y: fromViewController.sectionCollectionView.bounds.height)
                 fromViewController.sectionCollectionView.setCollectionViewLayout(newLayout, animated: false)
-                fromViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -fromViewController.titleImageView.bounds.height - 30)
+                fromViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -fromViewController.titleImageView.bounds.height - fromViewController.titleImageView.frame.origin.y)
             }) { (finished) in
                 UIView.animate(withDuration: 0.3, animations: {
                     toViewController.view.alpha = 1.0
@@ -78,7 +78,7 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             toViewController.view.frame = transitionContext.finalFrame(for: toViewController)
             toViewController.view.alpha = 0.0
             toViewController.sectionCollectionView.transform = CGAffineTransform(translationX: 0, y: toViewController.sectionCollectionView.bounds.height)
-            toViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -toViewController.titleImageView.bounds.height)
+            toViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -toViewController.titleImageView.bounds.height - toViewController.titleImageView.frame.origin.y)
             let newLayout = CircularCollectionViewLayout()
             newLayout.spacingMultiplier = 1.0
             if let selectedSectionIndex = selectedSectionIndex,

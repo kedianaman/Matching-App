@@ -65,9 +65,10 @@ class EndGameViewController: UIViewController {
         } else {
             continueButton.removeFromSuperview()
             titleLabel.text = "Congratulations!"
-            feedbackLabel.text = " You've finished \((sectionData?.title)!)"
+            feedbackLabel.text = "\((sectionData!.title)!)"
             if (aced) {
                 sectionData?.aced = true
+                feedbackLabel.text = "\((sectionData!.title)!) ⭐️"
             }
         }
     }

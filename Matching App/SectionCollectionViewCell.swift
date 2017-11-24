@@ -13,7 +13,7 @@ class SectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sectionImage: UIImageView!
     
-    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes!) {
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         super.apply(layoutAttributes)
         let circularlayoutAttributes = layoutAttributes as! CircularCollectionViewLayoutAttributes
         self.layer.anchorPoint = circularlayoutAttributes.anchorPoint
