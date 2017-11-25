@@ -138,7 +138,6 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        print("finished")
         if let selectedSectionIndex = selectedSectionIndex {
             performSegue(withIdentifier: "GamePlaySegueIdentifier", sender: selectedSectionIndex)
         }

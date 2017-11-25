@@ -108,6 +108,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         numberMatched = 0
         selectedTextCell = nil
         selectedImageCell = nil
+        aced = true
         for cell in imageCollectionView.visibleCells {
             if let imageCell = cell as? ImageCollectionViewCell {
                 imageCell.reset()
