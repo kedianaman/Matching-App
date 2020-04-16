@@ -44,7 +44,7 @@ class Collection {
     private struct texts {
         var animals = ["zebra", "elephant", "chicken", "cow", "wolf", "deer", "giraffe", "rhino", "lion", "dog", "beaver", "cat"]
         var vegetables = ["cabbage","potato", "cauliflower", "carrot", "onions", "tomato", "chilli", "okra", "corn", "eggplant", "cucumber", "brocolli"]
-        var fruits = ["apple", "banana", "orange", "grape", "strawberry", "watermelon", "pineapple", "cherry", "pomogranate", "pear", "lychee", "mango"]
+        var fruits = ["apple", "banana", "orange", "grape", "strawberry", "watermelon", "pineapple", "cherry", "pomegranate", "pear", "lychee", "mango"]
         var solarSystem = ["Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Moon", "Milky Way"]
         var shapes = ["circle", "square", "triangle", "rectangle", "oval", "diamond", "pentagon", "hexagon", "octagon", "star", "heart", "arrow"]
         var colors = ["red", "orange", "yellow", "green", "blue", "gray", "violet", "purple", "pink", "brown", "white", "black"]

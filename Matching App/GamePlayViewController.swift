@@ -77,10 +77,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             // iPad - check orientation in this case.
             
             if size.width > size.height {
-               self.collectionViewStackView.axis = UILayoutConstraintAxis.horizontal
+                self.collectionViewStackView.axis = NSLayoutConstraint.Axis.horizontal
             }
             else {
-                self.collectionViewStackView.axis = UILayoutConstraintAxis.vertical
+                self.collectionViewStackView.axis = NSLayoutConstraint.Axis.vertical
             }
         }
     }
@@ -278,10 +278,10 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
             let height: CGFloat = 500
             endGameViewController.view.frame = CGRect(x: self.view.bounds.width/2 - width/2, y: self.view.bounds.height, width: width, height: height)
             
-            endGameViewController.view.autoresizingMask = UIViewAutoresizing.flexibleTopMargin.union(UIViewAutoresizing.flexibleBottomMargin).union(UIViewAutoresizing.flexibleLeftMargin).union(UIViewAutoresizing.flexibleRightMargin)
+            endGameViewController.view.autoresizingMask = UIView.AutoresizingMask.flexibleTopMargin.union(UIView.AutoresizingMask.flexibleBottomMargin).union(UIView.AutoresizingMask.flexibleLeftMargin).union(UIView.AutoresizingMask.flexibleRightMargin)
 
             self.view.addSubview(endGameViewController.view)
-            self.addChildViewController(endGameViewController)
+            self.addChild(endGameViewController)
             
             endGameViewController.view.layer.cornerRadius = 40
             endGameViewController.view.layer.masksToBounds = true
@@ -289,7 +289,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
                 endGameViewController.view.frame.origin.y = self.view.bounds.height/2 - height/2
                 self.hideTopView(willHide: true)
             }, completion: { (complete) in
-                endGameViewController.didMove(toParentViewController: self)
+                endGameViewController.didMove(toParent: self)
             })
             
         }
@@ -298,13 +298,13 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func removeEndGameChildViewController() {
         if let endGameViewController = endGameViewController {
-            endGameViewController.willMove(toParentViewController: nil)
+            endGameViewController.willMove(toParent: nil)
             UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
                 endGameViewController.view.frame.origin.y = self.view.bounds.height
                 self.hideTopView(willHide: false)
             }, completion: { (complete) in
                 endGameViewController.view.removeFromSuperview()
-                endGameViewController.removeFromParentViewController()
+                endGameViewController.removeFromParent()
             })
         }
     }
@@ -336,7 +336,7 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         let cells = imageCollectionView.visibleCells + textCollectionView.visibleCells
         
         for cell in cells {
-            UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                 if let cell = cell as? GamePlayCollectionViewCell {
                     cell.paused = hide
                 }

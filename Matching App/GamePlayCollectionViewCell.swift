@@ -36,7 +36,7 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
     
     func layoutCustomContentView(animated: Bool) {
         if (animated) {
-            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIView.AnimationOptions.beginFromCurrentState, animations: {
                 self.setNeedsLayout()
                 self.layoutIfNeeded()
             }, completion: nil)
@@ -79,7 +79,7 @@ class GamePlayCollectionViewCell: UICollectionViewCell {
 extension UIView {
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         animation.duration = 0.6
         animation.values = [-10.0, 10.0, -8.0, 8.0, -6.0, 6.0, -4, 4.0, 0.0 ]
         layer.add(animation, forKey: "shake")

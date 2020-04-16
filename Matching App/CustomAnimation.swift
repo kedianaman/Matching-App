@@ -31,7 +31,7 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
             toViewController.view.alpha = 0.0
             let newLayout = CircularCollectionViewLayout()
             newLayout.spacingMultiplier = 0.01
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                 fromViewController.sectionCollectionView.transform = CGAffineTransform(translationX: 0, y: fromViewController.sectionCollectionView.bounds.height)
                 fromViewController.sectionCollectionView.setCollectionViewLayout(newLayout, animated: false)
                 fromViewController.titleImageView.transform = CGAffineTransform(translationX: 0, y: -fromViewController.titleImageView.bounds.height - fromViewController.titleImageView.frame.origin.y)
@@ -54,7 +54,7 @@ class CustomAnimation: NSObject, UIViewControllerAnimatedTransitioning {
                     
                     let cells = toViewController.imageCollectionView.visibleCells + toViewController.textCollectionView.visibleCells
                     for cell in cells {
-                        UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                        UIView.animate(withDuration: 0.5 + Double(arc4random_uniform(5)) * 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                             group.enter()
                             cell.transform = CGAffineTransform.identity
                             cell.alpha = 1
