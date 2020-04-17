@@ -34,7 +34,15 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         let sectionData = collection.sectionDataAtIndex(index: 0)
         currentIndexPath = NSIndexPath(row: 0, section: 0)
-        backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+        if #available(iOS 12.0, *) {
+            if (self.traitCollection.userInterfaceStyle == .dark) {
+                self.backgroundImageView.image = sectionData.darkBlurredBackgroundImage
+            } else {
+                self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+            }
+        } else {
+            self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+        }
         self.sectionCollectionView.addParalaxToView()
     }
     
@@ -127,7 +135,15 @@ class CoverFlowViewController: UIViewController, UICollectionViewDelegate, UICol
                 currentIndexPath = indexPath
                 UIView.transition(with: backgroundImageView, duration: 0.4, options: .transitionCrossDissolve, animations: {
                     let sectionData = self.collection.sectionDataAtIndex(index: self.currentIndexPath!.row)
-                    self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+                    if #available(iOS 12.0, *) {
+                        if (self.traitCollection.userInterfaceStyle == .dark) {
+                            self.backgroundImageView.image = sectionData.darkBlurredBackgroundImage
+                        } else {
+                            self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+                        }
+                    } else {
+                        self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+                    }
                 }, completion: nil)
             }
         }

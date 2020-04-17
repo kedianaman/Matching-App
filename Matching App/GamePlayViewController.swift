@@ -53,7 +53,15 @@ class GamePlayViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewDidLoad()
         imageCollectionView.addShadow()
         textCollectionView.addShadow()
-        backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+        if #available(iOS 12.0, *) {
+            if (self.traitCollection.userInterfaceStyle == .dark) {
+                self.backgroundImageView.image = sectionData.darkBlurredBackgroundImage
+            } else {
+                self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+            }
+        } else {
+            self.backgroundImageView.image = sectionData.lightBlurredBackgroundImage
+        }
         titleLabel.text = sectionData.title
         self.collectionViewStackView.addParalaxToView()
         darkView.frame = CGRect(origin: darkView.frame.origin, size: CGSize(width: darkView.frame.width, height: 0.126 * max(self.view.bounds.width, self.view.bounds.height)))
