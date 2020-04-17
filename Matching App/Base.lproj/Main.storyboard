@@ -425,6 +425,7 @@
                         <outlet property="feedbackLabel" destination="669-PZ-i8c" id="3EK-ZQ-KUa"/>
                         <outlet property="progressBarBorder" destination="2Rc-Rx-fAM" id="2Js-Eq-TT5"/>
                         <outlet property="progressBarIndicator" destination="mfq-Fc-Ypz" id="ruQ-ie-o8J"/>
+                        <outlet property="progressBarWidthAnchor" destination="06U-1L-UXH" id="Akh-aD-eLo"/>
                         <outlet property="retryButton" destination="Zej-Vn-LrH" id="OHo-2x-Bis"/>
                         <outlet property="titleLabel" destination="xZ0-Sn-3FB" id="yVy-Ip-uT4"/>
                     </connections>

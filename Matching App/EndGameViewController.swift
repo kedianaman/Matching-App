@@ -30,6 +30,7 @@ class EndGameViewController: UIViewController {
     @IBOutlet var retryButton: UIButton!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var exitButton: UIButton!
+    @IBOutlet weak var progressBarWidthAnchor: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +45,12 @@ class EndGameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+       
+        
         UIView.animate(withDuration: 0.4, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
-            self.progressBarIndicator.frame = CGRect(origin: self.progressBarIndicator.frame.origin, size: CGSize(width: self.progressBarBorder.frame.width * self.progress, height: self.progressBarIndicator.frame.height))
+            let width = self.progressBarBorder.frame.width * self.progress
+            self.progressBarWidthAnchor.constant = width
+            self.view.layoutIfNeeded()
         }, completion: { (complete) in
             self.animateProgressBar = false
         })
@@ -54,7 +59,9 @@ class EndGameViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if (self.animateProgressBar == false) {
-             self.progressBarIndicator.frame = CGRect(origin: self.progressBarIndicator.frame.origin, size: CGSize(width: self.progressBarBorder.frame.width * self.progress, height: self.progressBarIndicator.frame.height))
+            let width = self.progressBarBorder.frame.width * self.progress
+            self.progressBarWidthAnchor.constant = width
+            
         }
     }
     // Sets up the view for either a paused screen or an end screen.
